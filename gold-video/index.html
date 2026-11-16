@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0a08; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0b0a08; }
+      #bg-host, #ov-host { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #bg-host { z-index: 1; }
+      #stage { position: absolute; left: 110px; top: 195px; width: 860px; height: 1529px; z-index: 2;
+        border-radius: 44px; overflow: hidden; background: #000;
+        box-shadow: 0 0 80px rgba(245,196,81,.35), 0 30px 90px rgba(0,0,0,.7); }
+      #src { position: absolute; left: 0; top: 0; width: 860px; height: 1529px; object-fit: cover; }
+      #ring { position: absolute; inset: 0; border-radius: 44px; border: 4px solid #F5C451; z-index: 3;
+        box-shadow: inset 0 0 40px rgba(245,196,81,.25); pointer-events: none; }
+      #ov-host { z-index: 4; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="36.5" data-width="1080" data-height="1920">
+      <div id="bg-host" data-composition-id="bg" data-composition-src="compositions/bg.html"
+        data-start="0" data-duration="36.5" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
+      <div id="stage">
+        <video id="src" class="clip" src="assets/source.mp4" data-start="0" data-duration="36.5"
+          data-track-index="2" data-has-audio="true" playsinline></video>
+        <div id="ring"></div>
+      </div>
+
+      <div id="ov-host" data-composition-id="ov" data-composition-src="compositions/ov.html"
+        data-start="0" data-duration="36.5" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // intro: card arrives from slightly small + blurred
+      tl.fromTo("#stage", { scale: 0.9, opacity: 0, filter: "blur(14px)" },
+        { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.9, ease: "expo.out" }, 0);
+      // glitch / colour-bar moment: shake
+      [[-14,6],[12,-8],[-10,-4],[8,6],[0,0]].forEach((p, i) => {
+        tl.to("#stage", { x: p[0], y: p[1], duration: 0.1, ease: "power1.inOut" }, 9.0 + i * 0.1);
+      });
+      // cut to b-roll / back to presenter: arrive slightly large, settle
+      [18.0, 25.0, 29.0, 35.0].forEach((t) => {
+        tl.fromTo("#stage", { scale: 1.035 }, { scale: 1, duration: 0.55, ease: "power3.out" }, t);
+      });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

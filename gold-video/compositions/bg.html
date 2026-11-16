@@ -1,0 +1,69 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 45%, #2a1f08 0%, #120d04 55%, #070605 100%); }
+    #bg-sweep { position: absolute; left: -700px; top: 260px; width: 2480px; height: 2480px; border-radius: 50%;
+      background: conic-gradient(from 0deg, rgba(245,196,81,0) 0deg, rgba(245,196,81,.16) 40deg, rgba(245,196,81,0) 90deg, rgba(245,196,81,0) 200deg, rgba(255,224,138,.1) 250deg, rgba(245,196,81,0) 300deg); }
+    #bg-svg { position: absolute; inset: 0; }
+    .bg-p { position: absolute; border-radius: 50%; background: #FFE08A; }
+  </style>
+  <div id="root" data-composition-id="bg" data-width="1080" data-height="1920">
+    <div id="bg-sweep"></div>
+    <svg id="bg-svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+      <g id="bg-rings" fill="none" stroke="#F5C451">
+        <ellipse id="bg-r1" cx="540" cy="960" rx="520" ry="920" stroke-opacity=".55" stroke-width="2"/>
+        <ellipse id="bg-r2" cx="540" cy="960" rx="610" ry="840" stroke-opacity=".35" stroke-width="2" stroke-dasharray="6 14"/>
+        <ellipse id="bg-r3" cx="540" cy="960" rx="440" ry="960" stroke-opacity=".3" stroke-width="1.5"/>
+      </g>
+      <g id="bg-dots" fill="#FFE08A">
+        <circle id="bg-d1" r="14"/><circle id="bg-d2" r="9"/><circle id="bg-d3" r="11"/>
+        <circle id="bg-d4" r="7"/><circle id="bg-d5" r="12"/>
+      </g>
+    </svg>
+    <div id="bg-parts"></div>
+  </div>
+  <script>
+    const D = 36.5;
+    const orbs = [
+      { r: "#bg-r1", d: "#bg-d1", rx: 520, ry: 920, tilt: -16, dir: 1, speed: 1.0, off: 0 },
+      { r: "#bg-r1", d: "#bg-d2", rx: 520, ry: 920, tilt: -16, dir: 1, speed: 1.0, off: 3.4 },
+      { r: "#bg-r2", d: "#bg-d3", rx: 610, ry: 840, tilt: 22, dir: -1, speed: 1.4, off: 1.2 },
+      { r: "#bg-r2", d: "#bg-d4", rx: 610, ry: 840, tilt: 22, dir: -1, speed: 1.4, off: 4.5 },
+      { r: "#bg-r3", d: "#bg-d5", rx: 440, ry: 960, tilt: 0, dir: 1, speed: 0.7, off: 2.2 },
+    ];
+    // seeded particles
+    let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+    const parts = document.getElementById("bg-parts");
+    const P = [];
+    for (let i = 0; i < 34; i++) {
+      const el = document.createElement("div"); el.className = "bg-p";
+      const size = 3 + rnd() * 5; el.style.width = el.style.height = size + "px";
+      const x = rnd() * 1080, y = rnd() * 1920, sp = 40 + rnd() * 120, op = 0.2 + rnd() * 0.5;
+      el.style.left = x + "px"; el.style.opacity = op; parts.appendChild(el);
+      P.push({ el, x, y, sp });
+    }
+    function render(t) {
+      const sweep = document.getElementById("bg-sweep");
+      sweep.style.transform = "rotate(" + (t * 6) + "deg)";
+      const pre = t * 1.2; // slow precession
+      orbs.forEach((o) => {
+        const tilt = o.tilt + pre * o.dir;
+        const a = (t / 12) * o.speed * o.dir * Math.PI * 2 + o.off;
+        const ex = o.rx * Math.cos(a), ey = o.ry * Math.sin(a);
+        const rad = tilt * Math.PI / 180;
+        const x = 540 + ex * Math.cos(rad) - ey * Math.sin(rad);
+        const y = 960 + ex * Math.sin(rad) + ey * Math.cos(rad);
+        const d = document.querySelector(o.d);
+        d.setAttribute("cx", x.toFixed(1)); d.setAttribute("cy", y.toFixed(1));
+        document.querySelector(o.r).setAttribute("transform", "rotate(" + tilt + " 540 960)");
+      });
+      P.forEach((p) => { const y = ((p.y - p.sp * t) % 1920 + 1920) % 1920; p.el.style.top = y + "px"; });
+    }
+    const proxy = { t: 0 };
+    const tl = gsap.timeline({ paused: true });
+    tl.to(proxy, { t: D, duration: D, ease: "none", onUpdate: () => render(proxy.t) }, 0);
+    tl.fromTo("#bg-rings", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0);
+    render(0);
+    window.__timelines["bg"] = tl;
+  </script>
+</template>

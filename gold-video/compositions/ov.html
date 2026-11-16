@@ -1,0 +1,60 @@
+<template>
+<style>
+#root{position:absolute;inset:0;font-family:Poppins,sans-serif}
+.chip{position:absolute;left:150px;width:780px;bottom:240px;padding:26px 36px;border-radius:30px;text-align:center;background:rgba(15,16,22,.8);backdrop-filter:blur(22px);border:2px solid rgba(245,196,81,.75);box-shadow:0 0 40px rgba(245,196,81,.3)}
+.lab{font-size:26px;font-weight:700;letter-spacing:.2em;color:#F5C451}
+.big{font-size:54px;font-weight:800;line-height:1.1;color:#fff;margin-top:6px}
+.big b{color:#F5C451}
+.sub{font-size:30px;font-weight:600;color:#FFE08A;margin-top:8px}
+#ov-top{position:absolute;left:0;width:1080px;top:62px;text-align:center;font-size:44px;font-weight:800;letter-spacing:.32em;color:#F5C451;text-shadow:0 0 24px rgba(245,196,81,.6)}
+#ov-top small{display:block;font-size:22px;letter-spacing:.35em;color:#FFE08A;font-weight:600;margin-top:4px}
+#ov-bar{position:absolute;left:110px;top:1790px;width:860px;height:8px;border-radius:4px;background:rgba(245,196,81,.2)}
+#ov-barfill{position:absolute;left:0;top:0;height:100%;width:100%;border-radius:4px;background:linear-gradient(90deg,#B8860B,#FFE08A);transform-origin:left center}
+#ov-flash{position:absolute;inset:0;background:#F5C451;opacity:0}
+#ov-scroll{position:absolute;left:90px;width:900px;top:790px;text-align:center;font-size:92px;font-weight:900;line-height:1.05;color:#fff;text-shadow:0 0 40px rgba(0,0,0,.8),0 6px 0 #B8860B}
+#ov-scroll span{color:#F5C451}
+#c7{bottom:210px;padding:30px 36px}
+#c7 .big{font-size:50px}
+</style>
+<div id="root" data-composition-id="ov" data-width="1080" data-height="1920">
+<div id="ov-flash"></div>
+<div id="ov-top" class="clip" data-start="0.2" data-duration="36.2" data-track-index="0">PUBLIC GOLD<small>AKAUN EMAS</small></div>
+<div id="ov-bar" class="clip" data-start="0.2" data-duration="36.2" data-track-index="0"><div id="ov-barfill"></div></div>
+<div id="ov-scroll" class="clip" data-start="9.0" data-duration="0.95" data-track-index="1">JANGAN<br><span>SCROLL</span> DULU!</div>
+<div id="c1" class="chip clip" data-start="0.7" data-duration="3.5" data-track-index="2"><div class="lab">UNTUK WARGA</div><div class="big">Balik Pulau & Sekitar</div></div>
+<div id="c2" class="chip clip" data-start="4.6" data-duration="3.8" data-track-index="2"><div class="lab">SUDAH ADA?</div><div class="big">Akaun Emas Public Gold</div></div>
+<div id="c4" class="chip clip" data-start="10.6" data-duration="2.4" data-track-index="2"><div class="lab">BARU NAK MULA?</div><div class="big">Daftar Akaun Emas</div></div>
+<div id="c5" class="chip clip" data-start="13.2" data-duration="2.0" data-track-index="2"><div class="lab">MODAL</div><div class="big">Serendah RM100</div></div>
+<div id="c6" class="chip clip" data-start="15.4" data-duration="2.6" data-track-index="2"><div class="lab">BIMBINGAN</div><div class="big">Secara PERCUMA!</div></div>
+<div id="c8" class="chip clip" data-start="25.2" data-duration="3.4" data-track-index="2"><div class="lab">BERMULA</div><div class="big">7 – 13 SEPT 2026</div></div>
+<div id="c9" class="chip clip" data-start="29.5" data-duration="5.0" data-track-index="2"><div class="lab">JOM DATANG!</div><div class="big">TF Value-Mart</div><div class="sub">Pasar Raya Balik Pulau</div></div>
+<div id="c10" class="chip clip" data-start="35.2" data-duration="1.2" data-track-index="2"><div class="lab">JUMPA DI BOOTH!</div></div>
+<div id="c7" class="chip clip" data-start="18.3" data-duration="6.2" data-track-index="2"><div class="lab">BOOTH PUBLIC GOLD</div><div class="big">TF Value-Mart<br><b>Balik Pulau</b></div><div class="sub">7 – 13 September 2026</div></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo("#ov-top",{opacity:0,filter:"blur(10px)"},{opacity:1,filter:"blur(0px)",duration:.6,ease:"power4.out"},.2);
+tl.fromTo("#ov-barfill",{scaleX:0},{scaleX:1,duration:36.2,ease:"none"},.2);
+tl.fromTo("#ov-scroll",{opacity:0,scale:1.4,filter:"blur(12px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:.22,ease:"expo.out"},9.0);
+tl.to("#ov-scroll",{opacity:0,filter:"blur(8px)",duration:.15,ease:"power2.in"},9.8);
+tl.fromTo("#ov-flash",{opacity:.55},{opacity:0,duration:.35,ease:"power2.out"},9.0);
+tl.fromTo("#ov-flash",{opacity:.4},{opacity:0,duration:.3,ease:"power2.out"},9.95);
+function enter(id,s,d,k){
+ const e="#"+id, x=s, o=s+d-.25;
+ if(k==="a")tl.fromTo(e,{opacity:0,y:50,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:.45,ease:"expo.out"},x);
+ else if(k==="b")tl.fromTo(e,{opacity:0,scale:.88,filter:"blur(8px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:.5,ease:"back.out(1.3)"},x);
+ else tl.fromTo(e,{opacity:0,clipPath:"inset(0 100% 0 0 round 30px)"},{opacity:1,clipPath:"inset(0 0% 0 0 round 30px)",duration:.5,ease:"power3.out"},x);
+ tl.to(e,{opacity:0,filter:"blur(8px)",duration:.22,ease:"power2.in"},o);
+}
+enter("c1",0.7,3.5,"a");
+enter("c2",4.6,3.8,"b");
+enter("c4",10.6,2.4,"a");
+enter("c5",13.2,2.0,"b");
+enter("c6",15.4,2.6,"c");
+enter("c8",25.2,3.4,"a");
+enter("c9",29.5,5.0,"b");
+enter("c10",35.2,1.2,"c");
+enter("c7",18.3,6.2,"a");
+window.__timelines["ov"]=tl;
+</script>
+</template>
