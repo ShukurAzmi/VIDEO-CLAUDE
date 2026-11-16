@@ -1,0 +1,35 @@
+<template>
+<style>
+#root{position:absolute;inset:0;font-family:Poppins,sans-serif}
+#sp-panel{position:absolute;left:0;top:0;width:1080px;height:960px;background:radial-gradient(ellipse at 50% 30%,#3a2a0a 0%,#150f04 70%,#0b0a08 100%);overflow:hidden}
+#sp-line{position:absolute;left:0;top:956px;width:1080px;height:8px;background:linear-gradient(90deg,#B8860B,#FFE08A,#B8860B);transform-origin:left center}
+#sp-lab{position:absolute;left:0;width:1080px;top:150px;text-align:center;font-size:34px;font-weight:700;letter-spacing:.3em;color:#F5C451}
+#sp-num{position:absolute;left:0;width:1080px;top:200px;text-align:center;font-size:260px;font-weight:900;line-height:1;color:#fff;text-shadow:0 0 60px rgba(245,196,81,.5)}
+#sp-num small{font-size:110px;color:#F5C451;margin-right:14px}
+.sp-row{position:absolute;left:150px;width:780px;padding:20px 30px;border-radius:24px;background:rgba(245,196,81,.12);border:2px solid rgba(245,196,81,.6);color:#fff;font-size:38px;font-weight:700;display:flex;align-items:center;gap:20px}
+.sp-row b{display:inline-block;width:46px;height:46px;line-height:46px;text-align:center;border-radius:50%;background:#F5C451;color:#1a1304;font-size:30px}
+#sp-r1{top:560px}#sp-r2{top:690px}
+</style>
+<div id="root" data-composition-id="sp" data-width="1080" data-height="1920">
+<div id="sp-panel">
+ <div id="sp-lab">MODAL SERENDAH</div>
+ <div id="sp-num"><small>RM</small><span id="sp-val">0</span></div>
+ <div id="sp-r1" class="sp-row"><b>✓</b>Daftar akaun emas</div>
+ <div id="sp-r2" class="sp-row"><b>✓</b>Bimbingan secara PERCUMA</div>
+</div>
+<div id="sp-line"></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo("#sp-panel",{y:-960},{y:0,duration:.5,ease:"power3.out"},0);
+tl.fromTo("#sp-line",{scaleX:0},{scaleX:1,duration:.5,ease:"power3.out"},.1);
+tl.fromTo("#sp-lab",{opacity:0,filter:"blur(8px)"},{opacity:1,filter:"blur(0px)",duration:.3,ease:"power4.out"},.35);
+const c={v:0};
+tl.to(c,{v:100,duration:.8,ease:"power2.out",onUpdate:()=>{document.getElementById("sp-val").textContent=Math.round(c.v);}},.4);
+tl.fromTo("#sp-r1",{opacity:0,x:-60},{opacity:1,x:0,duration:.4,ease:"expo.out"},1.0);
+tl.fromTo("#sp-r2",{opacity:0,x:-60},{opacity:1,x:0,duration:.4,ease:"expo.out"},1.3);
+tl.to("#sp-panel",{y:-960,duration:.4,ease:"power3.in"},2.4);
+tl.to("#sp-line",{opacity:0,duration:.2},2.45);
+window.__timelines["sp"]=tl;
+</script>
+</template>

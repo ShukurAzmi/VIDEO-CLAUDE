@@ -1,0 +1,31 @@
+<template>
+<style>
+#root{position:absolute;inset:0;font-family:Poppins,sans-serif;text-align:center}
+#cta-lab{position:absolute;left:0;width:1080px;top:430px;font-size:34px;font-weight:700;letter-spacing:.3em;color:#F5C451}
+#cta-big{position:absolute;left:60px;width:960px;top:490px;font-size:104px;font-weight:900;line-height:1.02;color:#fff}
+#cta-big span{color:#F5C451}
+#cta-pill{position:absolute;left:60px;width:960px;top:840px;padding:26px 20px;border-radius:999px;background:rgba(245,196,81,.14);border:2px solid #F5C451;color:#fff;font-size:38px;white-space:nowrap;font-weight:700}
+#cta-pill b{color:#F5C451}
+#cta-loc{position:absolute;left:150px;width:780px;top:1040px;padding:30px;border-radius:30px;background:rgba(15,16,22,.8);border:2px solid rgba(245,196,81,.75);box-shadow:0 0 40px rgba(245,196,81,.3)}
+#cta-loc .l{font-size:28px;font-weight:700;letter-spacing:.2em;color:#F5C451}
+#cta-loc .b{font-size:54px;font-weight:800;color:#fff;margin-top:6px;line-height:1.1}
+#cta-loc .s{font-size:32px;font-weight:600;color:#FFE08A;margin-top:8px}
+#cta-btn{position:absolute;left:200px;width:680px;top:1420px;padding:30px;border-radius:999px;background:linear-gradient(90deg,#B8860B,#FFE08A);color:#1a1304;font-size:48px;font-weight:900;box-shadow:0 0 50px rgba(245,196,81,.55)}
+</style>
+<div id="root" data-composition-id="cta" data-width="1080" data-height="1920">
+<div id="cta-lab" class="clip" data-start="0.5" data-duration="4.0" data-track-index="0">JOM DAFTAR</div>
+<div id="cta-big" class="clip" data-start="0.6" data-duration="3.9" data-track-index="0">Akaun Emas<br><span>Public Gold</span></div>
+<div id="cta-pill" class="clip" data-start="1.1" data-duration="3.4" data-track-index="0"><b>Serendah RM100</b> · Bimbingan Percuma</div>
+<div id="cta-loc" class="clip" data-start="1.5" data-duration="3.0" data-track-index="0"><div class="l">BOOTH PUBLIC GOLD</div><div class="b">TF Value-Mart<br>Balik Pulau</div><div class="s">7 – 13 September 2026</div></div>
+<div id="cta-btn" class="clip" data-start="2.1" data-duration="2.4" data-track-index="0">JUMPA DI BOOTH!</div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo("#cta-lab",{opacity:0,filter:"blur(8px)"},{opacity:1,filter:"blur(0px)",duration:.4,ease:"power4.out"},.5);
+tl.fromTo("#cta-big",{opacity:0,filter:"blur(14px)",scale:1.12},{opacity:1,filter:"blur(0px)",scale:1,duration:.55,ease:"expo.out"},.6);
+tl.fromTo("#cta-pill",{opacity:0,y:40},{opacity:1,y:0,duration:.45,ease:"expo.out"},1.1);
+tl.fromTo("#cta-loc",{opacity:0,clipPath:"inset(0 100% 0 0 round 30px)"},{opacity:1,clipPath:"inset(0 0% 0 0 round 30px)",duration:.55,ease:"power3.out"},1.5);
+tl.fromTo("#cta-btn",{opacity:0,scale:.85},{opacity:1,scale:1,duration:.5,ease:"back.out(1.4)"},2.1);
+window.__timelines["cta"]=tl;
+</script>
+</template>
