@@ -54,7 +54,7 @@ JS=r"""
   win(d,c.s,c.e,{transform:'translateY(80px) scale(.85)'},{transform:'none'},B);}
  // orbit
  const O=document.getElementById('orbit');window._orb=[];
- for(let i=0;i<9;i++){const sp=i%3==2;const d=document.createElement('div');d.className='orb';d.innerHTML=sp?ev._spark:ev._coin;O.appendChild(d);window._orb.push({d,sp,ph:i/9*Math.PI*2})}
+ for(let i=0;i<0;i++){const sp=i%3==2;const d=document.createElement('div');d.className='orb';d.innerHTML=sp?ev._spark:ev._coin;O.appendChild(d);window._orb.push({d,sp,ph:i/9*Math.PI*2})}
  document.getAnimations().forEach(a=>a.pause());
  window._t=(t)=>{document.getAnimations().forEach(a=>a.currentTime=t*1000);
   const cx=540,cy=945,rx=430,ry=150,tilt=-7*Math.PI/180;
