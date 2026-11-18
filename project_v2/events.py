@@ -38,8 +38,12 @@ a=S("masa depan")
 p.append({"top":"UNTUK","main":"MASA DEPAN TENANG","color":"#F5C542","s":a,"e":E("tenang")+0.2,"icon":"shield"})
 a=S("harga memang")
 ev["graph"]={"s":a,"e":E("beli")+0.5,"title":"HARGA: TURUN NAIK"}
+a1=S("tak perlu");a2=S("tapi",S("bukan emas"));a3=S("jangka masa panjang",30)
+ev["imgs"]=[{"f":"img/i1.png","s":a1,"e":E("gaji naik")+0.6,"w":380,"card":False},
+ {"f":"img/i2.png","s":a2,"e":S("fahami")-0.1,"w":380,"card":False},
+ {"f":"img/i3.jpg","s":a3,"e":a3+3.2,"w":380,"card":True}]
 ev["cta"]={"text":"Follow untuk<br>ilmu emas","s":70.8,"e":75.55}
 json.dump(ev,open("events.json","w"),ensure_ascii=False)
 for k in("headers","pops"):
     for x in ev[k]: print(k,x.get("n",""),x.get("main",x.get("title")),round(x["s"],2),round(x["e"],2))
-print("graph",ev["graph"])
+print("graph",ev["graph"]);print([(i["f"],round(i["s"],2),round(i["e"],2)) for i in ev["imgs"]])

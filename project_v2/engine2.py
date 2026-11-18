@@ -2,22 +2,27 @@ import json,sys,os,math
 from playwright.sync_api import sync_playwright
 PAGE=r"""<html><head><style>
 html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:Inter,sans-serif}
-.el{position:absolute;left:0;right:0;display:flex;justify-content:center;opacity:0}
+.el{position:absolute;left:60px;right:160px;display:flex;justify-content:center;opacity:0}
 .hdr{top:150px}
 .hbox{padding:22px 46px 26px;border-radius:22px;text-align:center;background:linear-gradient(#3a2511,#1c1108);border:4px solid #D9A93A;box-shadow:0 10px 30px rgba(0,0,0,.5),inset 0 0 0 2px rgba(255,220,140,.25)}
 .hn{color:#E8B94A;font-weight:700;font-size:30px;letter-spacing:9px}
-.ht{color:#fff;font-weight:800;font-size:54px;line-height:1.12;margin-top:6px;text-transform:uppercase;max-width:800px}
+.ht{color:#fff;font-weight:800;font-size:54px;line-height:1.12;margin-top:6px;text-transform:uppercase;max-width:760px}
 .pop{top:1010px;flex-direction:column;align-items:center}
 .pt{font-weight:900;font-size:56px;text-transform:uppercase;text-shadow:0 4px 0 #000,0 0 18px rgba(0,0,0,.8);-webkit-text-stroke:2px #000;paint-order:stroke fill}
-.pm{font-weight:900;font-size:88px;line-height:1.05;text-align:center;text-transform:uppercase;max-width:980px;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 #000,0 0 26px rgba(0,0,0,.7)}
-.icon{position:absolute;left:50px;top:20px}
+.pm{font-weight:900;font-size:88px;line-height:1.05;text-align:center;text-transform:uppercase;max-width:860px;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 #000,0 0 26px rgba(0,0,0,.7)}
+.icon{position:absolute;left:0;top:20px}
+.hasic .pm,.hasic .pt{margin-left:130px;max-width:700px}
 .cap{top:1330px}
 .ct{font-weight:900;font-size:50px;color:#fff;text-transform:uppercase;-webkit-text-stroke:2.5px #000;paint-order:stroke fill;text-shadow:0 4px 6px rgba(0,0,0,.8)}
 .ct b{color:#F5C542}
-.cta{top:1180px}
+.cta{top:1110px}
 .cbox{display:flex;align-items:center;gap:22px;padding:26px 46px;border-radius:999px;background:linear-gradient(135deg,#F5C542,#C9930F);box-shadow:0 12px 40px rgba(0,0,0,.35)}
 .gr{top:1010px}
 .gbox{width:800px;padding:20px 30px 16px;border-radius:24px;background:linear-gradient(#3a2511,#1c1108);border:4px solid #D9A93A;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.im{position:absolute;opacity:0;left:660px;top:380px}
+.im img{display:block;width:100%}
+.card img{-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);filter:saturate(1.1) drop-shadow(0 0 18px rgba(245,197,66,.45))}
+.stk img{filter:drop-shadow(0 0 22px rgba(245,197,66,.45)) drop-shadow(0 8px 16px rgba(0,0,0,.4))}
 .orb{position:absolute;left:0;top:0;opacity:0}
 </style></head><body><div id=orbit></div><div id=root></div></body></html>"""
 ICONS={
@@ -33,10 +38,14 @@ JS=r"""
  const win=(el,s,e,kin,kout,easing)=>{const D=(e-s)*1000,a=Math.min(300,D/3)/D,b=1-Math.min(200,D/4)/D;
   el.animate([Object.assign({opacity:0,easing:easing||E},kin),Object.assign({opacity:1,transform:'none'},{offset:a}),{opacity:1,transform:'none',offset:b},Object.assign({opacity:0},kout)],{duration:D,delay:s*1000,fill:'none'});};
  (ev.headers||[]).forEach(h=>{const d=mk('hdr',`<div class=hbox><div class=hn>PERKARA #${h.n}</div><div class=ht>${h.title}</div></div>`);
-  win(d,h.s,h.e,{transform:'translateY(-60px) scale(.9)'},{transform:'translateY(-30px)'},B);});
+  win(d,h.s,h.e,{transform:'translateY(-15px) scale(.92)'},{transform:'translateY(-10px)'},B);});
  (ev.pops||[]).forEach(p=>{const ic=p.icon?`<div class=icon>${ev._icons[p.icon]}</div>`:'';
-  const d=mk('pop',`${ic}${p.top?`<div class=pt style="color:${p.topColor||'#fff'}">${p.top}</div>`:''}<div class=pm style="color:${p.color||'#F5C542'}">${p.main}</div>`);
+  const d=mk('pop'+(p.icon?' hasic':''),`${ic}${p.top?`<div class=pt style="color:${p.topColor||'#fff'}">${p.top}</div>`:''}<div class=pm style="color:${p.color||'#F5C542'}">${p.main}</div>`);
   win(d,p.s,p.e,{transform:'scale(.4)'},{transform:'scale(1.1)'},B);});
+ (ev.imgs||[]).forEach(m=>{const d=document.createElement('div');d.className='im '+(m.card?'card':'stk');d.style.width=m.w+'px';if(m.card)d.style.left='660px';d.innerHTML=`<img src="${ev._imgdata[m.f]}">`;R.appendChild(d);
+  const D=(m.e-m.s)*1000,a=Math.min(350,D/3)/D,b=1-Math.min(250,D/4)/D;
+  d.animate([{opacity:0,transform:'translateY(30px) scale(.92)',easing:'cubic-bezier(.22,1,.36,1)'},{opacity:.93,transform:'none',offset:a},{opacity:.93,transform:'none',offset:b},{opacity:0,transform:'translateY(-20px) scale(1.04)'}],{duration:D,delay:m.s*1000,fill:'none'});
+  d.firstChild.animate([{transform:'translateY(0)'},{transform:'translateY(-14px)'},{transform:'translateY(0)'}],{duration:2400,delay:m.s*1000,iterations:Infinity,easing:'ease-in-out'});});
  if(ev.graph){const g=ev.graph;
   const d=mk('gr',`<div class=gbox><div style="display:flex;justify-content:space-between;align-items:center"><div style="color:#E8B94A;font-weight:800;font-size:30px;letter-spacing:5px">${g.title}</div><div style="color:#bfa56a;font-weight:600;font-size:22px">ILUSTRASI</div></div>
   <svg width=740 height=190 viewBox="0 0 740 190" style="display:block;margin-top:6px"><g stroke="rgba(255,255,255,.12)" stroke-width=2><path d="M0 47H740M0 95H740M0 143H740"/></g>
@@ -73,6 +82,8 @@ def main():
     with sync_playwright() as pw:
         b=pw.chromium.launch(executable_path='/opt/pw-browsers/chromium-1243/chrome-linux64/chrome',args=['--no-sandbox'])
         pg=b.new_page(viewport={"width":1080,"height":1920});pg.set_content(PAGE)
+        import base64
+        ev['_imgdata']={m['f']:'data:image/'+('png' if m['f'].endswith('png') else 'jpeg')+';base64,'+base64.b64encode(open(m['f'],'rb').read()).decode() for m in ev.get('imgs',[])}
         ev['_icons']=ICONS;ev['_coin']=COIN;ev['_spark']=SPARK;pg.evaluate(JS,ev)
         times=[still] if still is not None else [i/fps for i in range(int(ev["duration"]*fps))]
         for i,t in enumerate(times):
