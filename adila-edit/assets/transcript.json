@@ -1,0 +1,122 @@
+[
+  {
+    "text": "Bumi",
+    "start": 0.09,
+    "end": 0.91,
+    "id": "w0"
+  },
+  {
+    "text": "yang",
+    "start": 0.91,
+    "end": 1.82,
+    "id": "w1"
+  },
+  {
+    "text": "manakah",
+    "start": 1.82,
+    "end": 3.44,
+    "id": "w2"
+  },
+  {
+    "text": "yang",
+    "start": 3.44,
+    "end": 4,
+    "id": "w3"
+  },
+  {
+    "text": "tak",
+    "start": 4,
+    "end": 4.42,
+    "id": "w4"
+  },
+  {
+    "text": "pernah",
+    "start": 4.42,
+    "end": 5.27,
+    "id": "w5"
+  },
+  {
+    "text": "basah",
+    "start": 5.27,
+    "end": 6,
+    "id": "w6"
+  },
+  {
+    "text": "bila",
+    "start": 6,
+    "end": 7.49,
+    "id": "w7"
+  },
+  {
+    "text": "hujan",
+    "start": 7.49,
+    "end": 9.35,
+    "id": "w8"
+  },
+  {
+    "text": "mencura",
+    "start": 9.35,
+    "end": 12,
+    "id": "w9"
+  },
+  {
+    "text": "Aduh",
+    "start": 12.11,
+    "end": 13.32,
+    "id": "w10"
+  },
+  {
+    "text": "usah",
+    "start": 13.32,
+    "end": 14.64,
+    "id": "w11"
+  },
+  {
+    "text": "berubah",
+    "start": 14.64,
+    "end": 17,
+    "id": "w12"
+  },
+  {
+    "text": "usah",
+    "start": 17,
+    "end": 17.86,
+    "id": "w13"
+  },
+  {
+    "text": "diturutkan",
+    "start": 17.86,
+    "end": 20.02,
+    "id": "w14"
+  },
+  {
+    "text": "hati",
+    "start": 20.02,
+    "end": 20.88,
+    "id": "w15"
+  },
+  {
+    "text": "marah",
+    "start": 20.88,
+    "end": 22,
+    "id": "w16"
+  },
+  {
+    "text": "Di",
+    "start": 22.17,
+    "end": 22.77,
+    "id": "w17"
+  },
+  {
+    "text": "hati",
+    "start": 22.77,
+    "end": 24.3,
+    "id": "w18"
+  },
+  {
+    "text": "kecilmu",
+    "start": 24.3,
+    "end": 27,
+    "id": "w19"
+  }
+]
