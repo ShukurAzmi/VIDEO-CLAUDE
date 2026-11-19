@@ -1,0 +1,100 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    .nt-tag { position: absolute; left: 620px; font-family: Poppins, sans-serif; font-weight: 800; color: #fff; font-size: 46px;
+      padding: 14px 30px; border-radius: 22px; box-shadow: 0 8px 0 #1E2A5A; border: 4px solid #1E2A5A; opacity: 0; transform-origin: 0% 50%; }
+    .nt-tag small { display: block; font-family: Nunito, sans-serif; font-size: 32px; font-weight: 900; opacity: .95; margin-top: -4px; }
+    #nt-tag1 { top: 470px; background: #E0457B; }
+    #nt-tag2 { top: 640px; background: #19A6A1; }
+    #nt-card { position: absolute; left: 625px; top: 600px; width: 340px; height: 470px; background: #FFF8E8; border: 5px solid #1E2A5A;
+      border-radius: 40px; box-shadow: 0 12px 0 #1E2A5A; opacity: 0; font-family: Poppins, sans-serif; color: #1E2A5A; }
+    #nt-card h3 { position: absolute; top: 26px; left: 0; right: 0; text-align: center; font-family: Nunito, sans-serif; font-weight: 900; font-size: 36px; color: #127E7A; }
+    #nt-count { position: absolute; top: 72px; left: 0; right: 0; height: 120px; text-align: center; }
+    .nt-num { position: absolute; left: 0; right: 0; text-align: center; font-size: 116px; font-weight: 900; line-height: 1; color: #9A7410; opacity: 0; }
+    #nt-unit { position: absolute; left: 0; right: 0; text-align: center; top: 196px; font-size: 44px; font-weight: 800; }
+    #nt-jar { position: absolute; left: 0; top: 190px; width: 340px; height: 360px; }
+    .nt-coin { position: absolute; width: 66px; height: 54px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #FFE58A, #F2C53D 55%, #C99A1E);
+      border: 4px solid #9A7410; font-family: Poppins, sans-serif; font-weight: 800; font-size: 24px; color: #7A5A08; text-align: center; line-height: 48px; opacity: 0; }
+    #nt-badge { position: absolute; left: 625px; top: 470px; width: 340px; text-align: center; background: #F2C53D; border: 5px solid #1E2A5A; border-radius: 26px;
+      box-shadow: 0 8px 0 #1E2A5A; font-family: Poppins, sans-serif; font-weight: 900; font-size: 42px; color: #1E2A5A; padding: 10px 0; opacity: 0; }
+    #nt-loop { top: 760px; background: #19A6A1; }
+    #nt-stamp { position: absolute; left: 585px; top: 620px; width: 395px; padding: 22px 10px 26px; white-space: nowrap; text-align: center; border: 9px solid #E0457B; border-radius: 34px;
+      background: rgba(255,250,240,.96); font-family: Poppins, sans-serif; color: #1E2A5A; opacity: 0; box-shadow: 0 12px 0 #E0457B; }
+    #nt-stamp .a { font-size: 42px; font-weight: 800; }
+    #nt-stamp .b { font-size: 60px; font-weight: 900; color: #C99A1E; line-height: 1.05; }
+    #nt-stamp .c { display: inline-block; margin-top: 10px; font-size: 50px; font-weight: 900; color: #fff; background: #E0457B; padding: 4px 26px; border-radius: 16px; }
+    #nt-up { position: absolute; left: 620px; top: 760px; width: 345px; padding: 18px 26px; background: #1E2A5A; color: #fff; border-radius: 26px;
+      font-family: Poppins, sans-serif; font-weight: 800; font-size: 40px; line-height: 1.1; opacity: 0; box-shadow: 0 8px 0 #19A6A1; }
+    #nt-up b { color: #F2C53D; font-size: 64px; }
+    #nt-up svg { position: absolute; right: 18px; bottom: 16px; width: 90px; height: 74px; }
+  </style>
+  <div id="root" data-composition-id="notes" data-width="1080" data-height="1920">
+    <div id="nt-tag1" class="nt-tag">RM15,000<small>hutang nak settle</small></div>
+    <div id="nt-tag2" class="nt-tag">2 tahun<small>= 24 bulan</small></div>
+    <div id="nt-card">
+      <h3>Simpan emas</h3>
+      <div id="nt-count">
+        <span class="nt-num" id="nt-n1">1</span>
+<span class="nt-num" id="nt-n2">2</span>
+<span class="nt-num" id="nt-n3">3</span>
+<span class="nt-num" id="nt-n4">4</span>
+<span class="nt-num" id="nt-n5">5</span>
+<span class="nt-num" id="nt-n6">6</span>
+<span class="nt-num" id="nt-n7">7</span>
+<span class="nt-num" id="nt-n8">8</span>
+<span class="nt-num" id="nt-n9">9</span>
+<span class="nt-num" id="nt-n10">10</span>
+<span class="nt-num" id="nt-n11">11</span>
+<span class="nt-num" id="nt-n12">12</span>
+      </div>
+      <div id="nt-unit">gram</div>
+      <div id="nt-jar">
+        <div class="nt-coin" data-layout-ignore id="nt-coin1" style="left:30px;top:200px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin2" style="left:108px;top:200px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin3" style="left:186px;top:200px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin4" style="left:264px;top:200px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin5" style="left:30px;top:136px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin6" style="left:108px;top:136px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin7" style="left:186px;top:136px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin8" style="left:264px;top:136px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin9" style="left:30px;top:72px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin10" style="left:108px;top:72px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin11" style="left:186px;top:72px">1g</div>
+        <div class="nt-coin" data-layout-ignore id="nt-coin12" style="left:264px;top:72px">1g</div>
+      </div>
+    </div>
+    <div id="nt-badge" data-layout-allow-overlap>1 tahun = 12g</div>
+    <div id="nt-loop" class="nt-tag">Ulang tahun ke-2<small>jangan putus!</small></div>
+    <div id="nt-stamp"><div class="a">24 bulan = 24g</div><div class="b">&asymp; RM15K++</div><div class="c">LANGSAI!</div></div>
+    <div id="nt-up">Harga emas naik<br/><b>~10%</b> setahun
+      <svg viewBox="0 0 110 90"><path id="nt-upline" d="M6 80 L36 56 L58 66 L100 14" fill="none" stroke="#F2C53D" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M78 12 L102 12 L102 36" fill="none" stroke="#F2C53D" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const popIn = (id, t) => tl.fromTo(id, { opacity: 0, scale: 0.5, x: 60 }, { opacity: 1, scale: 1, x: 0, duration: 0.4, ease: "back.out(2)" }, t);
+      const out = (id, t) => tl.to(id, { opacity: 0, x: 80, duration: 0.3, ease: "power2.in" }, t);
+      popIn("#nt-tag1", 1.1); popIn("#nt-tag2", 2.2);
+      out("#nt-tag1", 3.2); out("#nt-tag2", 3.4);
+      tl.fromTo("#nt-card", { opacity: 0, y: 80, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 3.55);
+      const ct = [3.6, 4.15, 4.7, 5.25, 5.800000000000001, 6.35, 6.9, 7.450000000000001, 8.0, 8.55, 9.1, 9.65];
+      ct.forEach((t, i) => {
+        tl.fromTo("#nt-coin" + (i + 1), { opacity: 0, y: -320, rotation: -30 }, { opacity: 1, y: 0, rotation: 0, duration: 0.38, ease: "bounce.out" }, t);
+        tl.fromTo("#nt-n" + (i + 1), { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)" }, t + 0.15);
+        if (i < 11) tl.to("#nt-n" + (i + 1), { opacity: 0, duration: 0.05 }, ct[i + 1] + 0.15);
+      });
+      tl.fromTo("#nt-badge", { opacity: 0, scale: 0.3, rotation: -10 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.45, ease: "back.out(2.6)" }, 10.5);
+      tl.to("#nt-card, #nt-badge", { opacity: 0, y: 60, duration: 0.35, ease: "power2.in" }, 11.8);
+      popIn("#nt-loop", 12.2); out("#nt-loop", 13.5);
+      tl.fromTo("#nt-stamp", { opacity: 0, scale: 2.2, rotation: -14 }, { opacity: 1, scale: 1, rotation: -5, duration: 0.32, ease: "power4.in" }, 13.6);
+      tl.fromTo("#nt-stamp", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 13.92);
+      tl.fromTo("#nt-up", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.8)" }, 15.4);
+      tl.fromTo("#nt-upline", { strokeDasharray: 160, strokeDashoffset: 160 }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" }, 15.6);
+      tl.to("#nt-stamp", { opacity: 0, scale: 0.8, duration: 0.25, ease: "power2.in" }, 15.15);
+      
+      window.__timelines["notes"] = tl;
+    })();
+  </script>
+</template>
