@@ -214,7 +214,7 @@ scene({
     const col = (id, head, em, bg, bd) => `<div id="${id}" style="width:400px;height:370px;border-radius:30px;background:${bg};border:3px solid ${bd};box-shadow:0 16px 36px rgba(0,0,0,.45);padding:24px;text-align:center;position:relative">
       <div style="font-size:90px;line-height:1">${em}</div><div class="hl" style="font-size:56px;color:#fff;margin-top:6px">${head}</div><div class="rows" style="margin-top:14px"></div></div>`;
     o.cL = mk(r, col('cl', 'BELI', '🛍️', 'linear-gradient(160deg,#3a2a0e,#1c1306)', '#F5C542'), 'left:80px;top:280px');
-    o.cR = mk(r, col('cr', 'SIMPAN', '🐷', 'linear-gradient(160deg,#2a2d33,#15171b)', '#7d8590'), 'left:520px;top:280px');
+    o.cR = mk(r, col('cr', 'SIMPAN', '💰', 'linear-gradient(160deg,#2a2d33,#15171b)', '#7d8590'), 'left:520px;top:280px');
     o.vs = mk(r, `<div style="width:90px;height:90px;border-radius:50%;background:#E53935;color:#fff;font-weight:900;font-size:40px;display:flex;align-items:center;justify-content:center;border:5px solid #fff">VS</div>`, 'left:455px;top:420px');
     const row = (txt, c) => `<div style="font-weight:800;font-size:34px;color:${c};margin:8px 0;white-space:nowrap">${txt}</div>`;
     o.l1 = mk(o.cL.querySelector('.rows'), row('⚡ CEPAT', '#FFE48A'), 'position:relative');
