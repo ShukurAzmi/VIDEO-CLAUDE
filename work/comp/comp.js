@@ -83,6 +83,7 @@ scene({
         Tahniah! 🎉 <b>Masuk sikit je</b>, esok <b>confirm untung</b> 💰<br><span style="color:#1a73e8;text-decoration:underline">klik-link-ni.xyz</span><div style="text-align:right;font-size:18px;color:#888;margin-top:6px">11:47 PM ✓✓</div></div>
       </div></div>`, 'left:46px;top:400px;transform-origin:50% 100%');
     o.st = mk(r, `<div class="stamp">AWAS!</div>`, 'left:30px;top:640px;transform-origin:50% 50%');
+    o.al = mk(r, '', 'left:0;top:0;width:1080px;height:1920px;box-shadow:inset 0 0 160px 40px rgba(229,57,53,.85)');
   },
   upd(t, o) {
     ap(o.pill, pop(t, 5.5, 0, { from: .6, dy: -20 }));
@@ -92,6 +93,7 @@ scene({
     [...ty.children].forEach((d, i) => d.style.transform = `translateY(${Math.sin(t * 14 - i) * 5}px)`);
     const m = document.getElementById('msg'); const ms = pop(t, 5.8, 0, { from: .5, d: .35 }); m.style.opacity = ms.o; m.style.transform = ms.tr; m.style.transformOrigin = '0 0';
     ap(o.st, slam(t, 8.05, 0, -12));
+    o.al.style.opacity = t > 7.75 ? (.5 + .5 * Math.sin((t - 7.75) * 2 * Math.PI * 2.2)) * (1 - P(t, 8.7, .3)) : 0;
   }
 });
 
@@ -412,14 +414,29 @@ function layoutAt(t) {
 }
 function applyBase(L) {
   bw.style.left = L.x + 'px'; bw.style.top = L.y + 'px'; bw.style.width = L.w + 'px'; bw.style.height = L.h + 'px'; bw.style.borderRadius = L.r + 'px';
-  bimg.style.transform = `translate(${L.fx - FX0 * L.s}px,${L.fy - FY0 * L.s}px) scale(${L.s})`;
+  bimg.style.transform = bimg2.style.transform = `translate(${L.fx - FX0 * L.s}px,${L.fy - FY0 * L.s}px) scale(${L.s})`;
   ring.style.left = (L.x - 6) + 'px'; ring.style.top = (L.y - 6) + 'px'; ring.style.width = (L.w + 12) + 'px'; ring.style.height = (L.h + 12) + 'px'; ring.style.borderRadius = (L.r + 6) + 'px'; ring.style.opacity = L.ring;
 }
 
-window.render = async function (t) {
-  const fr = Math.min(NFR, Math.max(1, Math.round(t * FPS) + 1));
+// ---- v2 timeline: new output time -> old (v1) animation time; crossfade at cuts ----
+const SEG2 = window.SEG2, SEG1 = window.SEG1, bimg2 = $('bimg2');
+const CUTB = []; { let o = 0; SEG2.forEach((s, i) => { o += s[1] - s[0]; if (i < SEG2.length - 1) CUTB.push(o); }); }
+const NEWEND = SEG2.reduce((a, s) => a + s[1] - s[0], 0), OLDEND = SEG1.reduce((a, s) => a + s[1] - s[0], 0);
+function n2o(tn) {
+  if (tn >= NEWEND) return OLDEND + (tn - NEWEND);
+  let o = 0, src = SEG2[SEG2.length - 1][1];
+  for (const [a, b] of SEG2) { if (tn <= o + b - a) { src = a + tn - o; break; } o += b - a; }
+  let q = 0; for (const [a, b] of SEG1) { if (src < a) return q; if (src <= b) return q + src - a; q += b - a; } return q;
+}
+window.render = async function (tn) {
+  const fr = Math.min(NFR, Math.max(1, Math.round(tn * FPS) + 1));
   const src = FRAMEDIR + String(fr).padStart(5, '0') + '.jpg';
   if (bimg.getAttribute('src') !== src) { bimg.src = src; try { await bimg.decode(); } catch (e) { } }
+  let xf = 0; const ci = CUTB.findIndex(c => tn >= c - 1e-6 && tn < c + 4 / FPS);
+  if (ci >= 0) { const k = Math.min(3, Math.floor((tn - CUTB[ci]) * FPS + 1e-6)); const s2 = `../tails/c${ci}_${k + 1}.jpg`;
+    if (bimg2.getAttribute('src') !== s2) { bimg2.src = s2; try { await bimg2.decode(); } catch (e) { } } xf = 1 - (k + 1) / 5; }
+  bimg2.style.opacity = xf;
+  const t = n2o(tn);
   const { L, cur, prev, i } = layoutAt(t);
   applyBase(L);
   // transitions
@@ -431,7 +448,7 @@ window.render = async function (t) {
   for (const ft of [4.04, 8.08, 21.47, 27.52, 36.7, 48.32, 54.6]) if (t >= ft && t < ft + .2) fl = Math.max(fl, .45 * (1 - (t - ft) / .2));
   flash.style.opacity = fl;
   const grade = cur.grade || 'none';
-  bimg.style.filter = (grade === 'none' ? '' : grade) + (blur > .2 ? ` blur(${blur}px)` : '');
+  bimg.style.filter = bimg2.style.filter = (grade === 'none' ? '' : grade) + (blur > .2 ? ` blur(${blur}px)` : '');
   tintEl.style.background = cur.tint || 'transparent'; tintEl.style.opacity = cur.tint ? C(P(t, cur.s, .4)) : 0;
   const sh = cur.shadeF ? cur.shadeF(t) : (cur.shade || 0); shade.style.opacity = sh;
   bgEl.style.background = BGS[cur.bgStyle || 'def'];
