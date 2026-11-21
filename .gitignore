@@ -1,0 +1,4 @@
+work/*
+!work/tools/
+!work/comp/
+work/comp/words.js
