@@ -1,0 +1,15 @@
+# media & render intermediates (Yaya: commit code, not media)
+work/*.mp4
+work/*.mov
+work/*.wav
+work/*.jpg
+work/bf*/
+work/tails*/
+work/prev/
+work/stills/
+work/fin/
+work/sfx/
+work/fonts/
+work/*.log
+work/tr_raw.json
+output/*.mp4
