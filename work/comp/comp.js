@@ -45,12 +45,12 @@ scene({
   s: 0, e: 4.96, tr: 'cut', shade: 1,
   L: t => FULL(1.24 + .04 * P(t, 0, 4.9) + .09 * Math.exp(-Math.max(0, t - 4.04) * 5) * (t >= 4.04), 170),
   build(r, o) {
-    o.l1 = mk(r, `<div class="hl" style="font-size:54px;color:#fff;text-align:center">DUIT YANG KITA KUMPUL</div>`, 'left:60px;right:140px;top:282px;text-align:center');
-    o.l2 = mk(r, `<div class="hl gold stroke" style="font-size:104px;text-align:center;-webkit-text-stroke:4px #000">BERTAHUN-TAHUN</div>`, 'left:60px;right:140px;top:340px');
+    o.l1 = mk(r, `<div class="hl" style="font-size:54px;color:#fff;text-align:center;white-space:nowrap">DUIT YANG KITA KUMPUL</div>`, 'left:60px;right:140px;top:282px;text-align:center');
+    o.l2 = mk(r, `<div class="hl gold stroke" style="font-size:86px;text-align:center;white-space:nowrap;-webkit-text-stroke:4px #000">BERTAHUN-TAHUN</div>`, 'left:60px;right:140px;top:340px');
     o.bar = mk(r, `<div style="width:760px;height:26px;border-radius:13px;background:rgba(255,255,255,.15);border:2px solid rgba(245,197,66,.6);overflow:hidden"><div id="hb" style="height:100%;width:0;background:linear-gradient(90deg,#C9930F,#FFE48A)"></div></div>
       <div style="display:flex;justify-content:space-between;color:#e8d9b0;font-weight:700;font-size:24px;letter-spacing:4px;margin-top:8px"><span>SIMPANAN</span><span id="hp">0%</span></div>`, 'left:160px;top:470px');
     o.k1 = mk(r, `<div class="hl stroke" style="font-size:62px;color:#fff;text-align:center">HILANG DALAM</div>`, 'left:60px;right:140px;top:280px');
-    o.k2 = mk(r, `<div class="hl stroke" style="font-size:124px;color:#F5C542;text-align:center;-webkit-text-stroke:5px #000;text-shadow:0 0 40px rgba(229,57,53,.6)">SATU MALAM</div>`, 'left:60px;right:140px;top:340px');
+    o.k2 = mk(r, `<div class="hl stroke" style="font-size:124px;color:#F5C542;text-align:center;white-space:nowrap;-webkit-text-stroke:5px #000;text-shadow:0 0 40px rgba(229,57,53,.6)">SATU MALAM</div>`, 'left:60px;right:140px;top:340px');
   },
   upd(t, o) {
     ap(o.l1, pop(t, 0.05, 3.3, { from: .7, dy: 30 }));
