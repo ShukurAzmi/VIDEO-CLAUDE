@@ -29,10 +29,10 @@ const jit = (t, k = 1) => { const f = Math.floor(t * 8); const r = Math.sin(f * 
 // ---------------- Layouts (face at 490,800 in source) ----------------
 const FX0 = 490, FY0 = 800;
 const FULL = (z = 1, dy = 0, dx = 0) => ({ x: 0, y: 0, w: 1080, h: 1920, r: 0, s: z, fx: 490 + dx, fy: 800 + dy, ring: 0 });
-const LOWER = (z = 1) => ({ x: 60, y: 730, w: 960, h: 1050, r: 46, s: z, fx: 480, fy: 400, ring: .9 });
-const SPLITR = (z = 1) => ({ x: 450, y: 390, w: 580, h: 1070, r: 40, s: z, fx: 300, fy: 450, ring: .9 });
+const LOWER = (z = 1) => ({ x: 80, y: 700, w: 840, h: 770, r: 46, s: z, fx: 420, fy: 390, ring: .9 });
+const SPLITR = (z = 1) => ({ x: 470, y: 390, w: 460, h: 1070, r: 40, s: z, fx: 230, fy: 450, ring: .9 });
 const PIP = (x = 640, y = 290, d = 290) => ({ x, y, w: d, h: d, r: d / 2, s: .5, fx: d / 2, fy: d / 2 + 5, ring: 1 });
-const CARDBR = () => ({ x: 590, y: 860, w: 400, h: 560, r: 34, s: .75, fx: 200, fy: 290, ring: .9 });
+const CARDBR = () => ({ x: 540, y: 880, w: 380, h: 540, r: 34, s: .75, fx: 190, fy: 285, ring: .9 });
 function mixL(a, b, p) { const o = {}; for (const k in a) o[k] = lerp(a[k], b[k], p); return o; }
 
 // ---------------- Scenes ----------------
@@ -45,12 +45,12 @@ scene({
   s: 0, e: 4.96, tr: 'cut', shade: 1,
   L: t => FULL(1.24 + .04 * P(t, 0, 4.9) + .09 * Math.exp(-Math.max(0, t - 4.04) * 5) * (t >= 4.04), 170),
   build(r, o) {
-    o.l1 = mk(r, `<div class="hl" style="font-size:54px;color:#fff;text-align:center">DUIT YANG KITA KUMPUL</div>`, 'left:0;right:0;top:282px;text-align:center');
-    o.l2 = mk(r, `<div class="hl gold stroke" style="font-size:104px;text-align:center;-webkit-text-stroke:4px #000">BERTAHUN-TAHUN</div>`, 'left:0;right:0;top:340px');
+    o.l1 = mk(r, `<div class="hl" style="font-size:54px;color:#fff;text-align:center">DUIT YANG KITA KUMPUL</div>`, 'left:60px;right:140px;top:282px;text-align:center');
+    o.l2 = mk(r, `<div class="hl gold stroke" style="font-size:104px;text-align:center;-webkit-text-stroke:4px #000">BERTAHUN-TAHUN</div>`, 'left:60px;right:140px;top:340px');
     o.bar = mk(r, `<div style="width:760px;height:26px;border-radius:13px;background:rgba(255,255,255,.15);border:2px solid rgba(245,197,66,.6);overflow:hidden"><div id="hb" style="height:100%;width:0;background:linear-gradient(90deg,#C9930F,#FFE48A)"></div></div>
       <div style="display:flex;justify-content:space-between;color:#e8d9b0;font-weight:700;font-size:24px;letter-spacing:4px;margin-top:8px"><span>SIMPANAN</span><span id="hp">0%</span></div>`, 'left:160px;top:470px');
-    o.k1 = mk(r, `<div class="hl stroke" style="font-size:62px;color:#fff;text-align:center">HILANG DALAM</div>`, 'left:0;right:0;top:280px');
-    o.k2 = mk(r, `<div class="hl stroke" style="font-size:124px;color:#F5C542;text-align:center;-webkit-text-stroke:5px #000;text-shadow:0 0 40px rgba(229,57,53,.6)">SATU MALAM</div>`, 'left:0;right:0;top:340px');
+    o.k1 = mk(r, `<div class="hl stroke" style="font-size:62px;color:#fff;text-align:center">HILANG DALAM</div>`, 'left:60px;right:140px;top:280px');
+    o.k2 = mk(r, `<div class="hl stroke" style="font-size:124px;color:#F5C542;text-align:center;-webkit-text-stroke:5px #000;text-shadow:0 0 40px rgba(229,57,53,.6)">SATU MALAM</div>`, 'left:60px;right:140px;top:340px');
   },
   upd(t, o) {
     ap(o.l1, pop(t, 0.05, 3.3, { from: .7, dy: 30 }));
@@ -104,9 +104,9 @@ scene({
   build(r, o) {
     o.lt = mk(r, `<div style="display:flex;align-items:center;gap:22px;padding:16px 34px 16px 18px;border-radius:999px;background:rgba(12,9,4,.72);border:2px solid rgba(245,197,66,.7);box-shadow:0 12px 30px rgba(0,0,0,.4)">
        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#FFE48A,#C9930F);display:flex;align-items:center;justify-content:center;font-family:Play;font-weight:800;font-size:36px;color:#1a1205">A</div>
-       <div><div style="font-family:Play;font-weight:800;font-size:40px;color:#F5C542;line-height:1">Adila Gold</div><div style="color:#fff;font-weight:600;font-size:24px;letter-spacing:2px;margin-top:4px">DEALER AKTIF PUBLIC GOLD</div></div></div>`, 'left:0;right:0;top:288px;display:flex;justify-content:center');
-    o.q = mk(r, `<div style="font-family:Marker;font-size:230px;color:#F5C542;text-shadow:0 8px 0 #000,0 0 30px rgba(0,0,0,.6)">?</div>`, 'left:790px;top:470px;transform-origin:50% 80%');
-    o.q2 = mk(r, `<div style="font-family:Marker;font-size:44px;color:#fff;text-shadow:0 4px 0 #000;transform:rotate(8deg)">untuk apa?</div>`, 'left:745px;top:770px');
+       <div><div style="font-family:Play;font-weight:800;font-size:40px;color:#F5C542;line-height:1">Adila Gold</div><div style="color:#fff;font-weight:600;font-size:24px;letter-spacing:2px;margin-top:4px">DEALER AKTIF PUBLIC GOLD</div></div></div>`, 'left:60px;right:140px;top:288px;display:flex;justify-content:center');
+    o.q = mk(r, `<div style="font-family:Marker;font-size:230px;color:#F5C542;text-shadow:0 8px 0 #000,0 0 30px rgba(0,0,0,.6)">?</div>`, 'left:750px;top:470px;transform-origin:50% 80%');
+    o.q2 = mk(r, `<div style="font-family:Marker;font-size:44px;color:#fff;text-shadow:0 4px 0 #000;transform:rotate(8deg)">untuk apa?</div>`, 'left:700px;top:770px');
   },
   upd(t, o) {
     ap(o.lt, pop(t, 9.15, 12.25, { from: .7, dy: -30 }));
@@ -150,8 +150,8 @@ scene({
   L: t => FULL(1.22 + .1 * eio(P(t, 20.55, 4.5)), 170),
   grade: 'saturate(.85) contrast(1.1)',
   build(r, o) {
-    o.a = mk(r, `<div class="tape" style="font-size:110px;color:#ff5a52">SCAM</div>`, 'left:0;right:0;top:268px;text-align:center');
-    o.b = mk(r, `<div class="tape" style="font-size:66px;background:#F5C542;color:#1a1205;text-shadow:0 2px 0 #fff8;box-shadow:0 8px 20px rgba(0,0,0,.5),inset 0 0 0 3px #c99a20">SANGAT BIJAK</div>`, 'left:0;right:0;top:412px;text-align:center');
+    o.a = mk(r, `<div class="tape" style="font-size:110px;color:#ff5a52">SCAM</div>`, 'left:60px;right:140px;top:268px;text-align:center');
+    o.b = mk(r, `<div class="tape" style="font-size:66px;background:#F5C542;color:#1a1205;text-shadow:0 2px 0 #fff8;box-shadow:0 8px 20px rgba(0,0,0,.5),inset 0 0 0 3px #c99a20">SANGAT BIJAK</div>`, 'left:60px;right:140px;top:412px;text-align:center');
   },
   upd(t, o) {
     const a = pop(t, 21.45, 0, { from: 1.8, ease: eo, d: .18 }); a.tr += ' rotate(-3deg)'; ap(o.a, a);
@@ -164,10 +164,10 @@ scene({
   s: 25.1, e: 28.1, tr: 'slide', bgShow: 1,
   L: t => LOWER(1.0 + .04 * P(t, 25.1, 3)),
   build(r, o) {
-    o.bub = mk(r, `<div style="position:relative;width:900px;padding:34px 44px 38px;border-radius:44px;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,.5)">
+    o.bub = mk(r, `<div style="position:relative;width:840px;padding:30px 40px 34px;border-radius:44px;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,.5)">
       <div style="font-weight:800;font-size:26px;letter-spacing:5px;color:#E53935">💬 KATA SCAMMER:</div>
-      <div style="font-family:Play;font-style:italic;font-weight:800;font-size:64px;line-height:1.08;color:#141414;margin-top:8px">“Masuk sikit je, esok <span style="color:#1f8a3b">confirm</span> dah untung!”</div>
-      <div style="position:absolute;left:520px;bottom:-46px;width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-top:60px solid #fff"></div></div>`, 'left:90px;top:300px;transform-origin:60% 100%');
+      <div style="font-family:Play;font-style:italic;font-weight:800;font-size:58px;line-height:1.08;color:#141414;margin-top:8px">“Masuk sikit je, esok <span style="color:#1f8a3b">confirm</span> dah untung!”</div>
+      <div style="position:absolute;left:520px;bottom:-46px;width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-top:60px solid #fff"></div></div>`, 'left:80px;top:290px;transform-origin:60% 100%');
     o.arrow = mk(r, `<svg width="210" height="150" viewBox="0 0 210 150"><path id="ar" d="M10 140 L70 95 L110 112 L195 20" stroke="#2ecc71" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><path d="M160 18 L198 16 L194 54" stroke="#2ecc71" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" id="ah" opacity="0"/></svg>`, 'left:820px;top:200px');
     o.st = mk(r, `<div class="stamp" style="font-size:96px;background:rgba(255,255,255,.0)">PERANGKAP!</div>`, 'left:130px;top:390px');
   },
@@ -187,8 +187,8 @@ scene({
   build(r, o) {
     const strip = (txt, bg, col, rot) => `<div style="display:inline-block;padding:16px 34px;background:${bg};color:${col};font-weight:900;font-size:70px;text-transform:uppercase;transform:rotate(${rot}deg);
       clip-path:polygon(0 6%,4% 0,12% 5%,22% 0,35% 4%,48% 0,60% 5%,73% 1%,86% 5%,96% 0,100% 8%,99% 92%,95% 100%,84% 95%,70% 100%,57% 96%,44% 100%,30% 95%,18% 100%,6% 96%,0 100%);box-shadow:0 10px 20px rgba(0,0,0,.4)">${txt}</div>`;
-    o.a = mk(r, strip('TAK ADA ILMU', '#f3ecdf', '#151515', -2), 'left:0;right:0;top:270px;text-align:center');
-    o.b = mk(r, strip('= KITA SENDIRI <span style="color:#F5C542">PERCAYA</span>', '#151515', '#fff', 1.5).replace('font-size:70px', 'font-size:58px'), 'left:0;right:0;top:395px;text-align:center');
+    o.a = mk(r, strip('TAK ADA ILMU', '#f3ecdf', '#151515', -2), 'left:60px;right:140px;top:270px;text-align:center');
+    o.b = mk(r, strip('= KITA SENDIRI <span style="color:#F5C542">PERCAYA</span>', '#151515', '#fff', 1.5).replace('font-size:70px', 'font-size:58px'), 'left:60px;right:140px;top:395px;text-align:center');
   },
   upd(t, o) {
     ap(o.a, pop(t, 29.3, 0, { from: .5, dy: -40, rot: -6 }));
@@ -202,14 +202,14 @@ scene({
   L: t => PIP(90, 290, 270),
   build(r, o) {
     o.t = mk(r, `<div style="font-weight:700;font-size:28px;letter-spacing:6px;color:#e8d9b0">BAKI</div><div class="hl" style="font-size:84px;color:#fff">SIMPANAN</div><div class="hl" style="font-size:84px;color:#F5C542">KITA</div>`, 'left:410px;top:300px');
-    o.ch = mk(r, `<div style="position:relative;width:900px;height:520px;border-radius:30px;background:rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.12)">
-      <svg width="900" height="520" viewBox="0 0 900 520" style="position:absolute;inset:0">
+    o.ch = mk(r, `<div style="position:relative;width:840px;height:500px;border-radius:30px;background:rgba(0,0,0,.45);border:2px solid rgba(255,255,255,.12)">
+      <svg width="840" height="500" viewBox="0 0 900 520" preserveAspectRatio="none" style="position:absolute;inset:0">
         <g stroke="rgba(255,255,255,.08)" stroke-width="2">${[100, 200, 300, 400].map(y => `<line x1="40" x2="870" y1="${y}" y2="${y}"/>`).join('')}</g>
         <path id="cArea" fill="url(#cg)" opacity=".5"/><path id="cLine" fill="none" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
         <circle id="cDot" r="16"/>
         <defs><linearGradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" id="cs1" stop-color="#F5C542"/><stop offset="1" stop-color="#F5C542" stop-opacity="0"/></linearGradient></defs>
       </svg></div>`, 'left:90px;top:650px');
-    o.heart = mk(r, `<div class="glass" style="padding:14px 26px;color:#fff;font-weight:800;font-size:36px;display:flex;align-items:center;gap:14px">💔 SAKIT HATI</div>`, 'left:560px;top:700px');
+    o.heart = mk(r, `<div class="glass" style="padding:14px 26px;color:#fff;font-weight:800;font-size:36px;display:flex;align-items:center;gap:14px">💔 SAKIT HATI</div>`, 'left:520px;top:690px');
     o.les = mk(r, `<div class="stamp" style="font-size:110px">LESAP</div>`, 'left:260px;top:850px');
   },
   upd(t, o) {
@@ -249,7 +249,7 @@ scene({
   build(r, o) {
     const w = (txt, sz) => `<div style="font-family:Play;font-style:italic;font-weight:700;font-size:${sz}px;color:#fff;text-shadow:0 0 24px rgba(160,200,255,.55),0 4px 14px rgba(0,0,0,.7)">${txt}</div>`;
     o.a = mk(r, w('segan…', 84), 'left:110px;top:282px'); o.b = mk(r, w('malu…', 84), 'left:640px;top:282px');
-    o.c = mk(r, `<div class="glass" style="padding:14px 34px;display:flex;align-items:center;gap:18px"><span style="font-size:48px">🤐</span><span style="font-weight:900;font-size:58px;color:#fff;letter-spacing:2px">PENDAM SENDIRI</span></div>`, 'left:0;right:0;top:288px;display:flex;justify-content:center');
+    o.c = mk(r, `<div class="glass" style="padding:14px 34px;display:flex;align-items:center;gap:18px"><span style="font-size:48px">🤐</span><span style="font-weight:900;font-size:58px;color:#fff;letter-spacing:2px">PENDAM SENDIRI</span></div>`, 'left:60px;right:140px;top:288px;display:flex;justify-content:center');
   },
   upd(t, o) {
     const fl = (s, e, k) => { const st = pop(t, s, e, { from: .9, dy: 30, ease: eo, d: .6 }); st.tr += ` translateY(${Math.sin(t * 1.4 + k) * 6}px)`; return st; };
@@ -281,7 +281,7 @@ scene({
   L: t => FULL(1.05 + .06 * P(t, 48.9, 2.7), 0),
   grade: 'saturate(1.12) brightness(1.04)',
   build(r, o) {
-    o.h = mk(r, `<div class="glass" style="padding:16px 36px;display:flex;align-items:baseline;gap:18px"><span style="font-family:Play;font-weight:800;font-size:64px;color:#F5C542">Simpanan</span><span style="font-weight:900;font-size:64px;color:#fff">≠</span><span style="font-weight:900;font-size:50px;color:#fff">DUIT SAHAJA</span></div>`, 'left:0;right:0;top:282px;display:flex;justify-content:center');
+    o.h = mk(r, `<div class="glass" style="padding:16px 36px;display:flex;align-items:baseline;gap:18px"><span style="font-family:Play;font-weight:800;font-size:64px;color:#F5C542">Simpanan</span><span style="font-weight:900;font-size:64px;color:#fff">≠</span><span style="font-weight:900;font-size:50px;color:#fff">DUIT SAHAJA</span></div>`, 'left:60px;right:140px;top:282px;display:flex;justify-content:center');
     o.sp = mk(r, Array.from({ length: 18 }, (_, i) => `<i style="position:absolute;width:${6 + (i % 4) * 3}px;height:${6 + (i % 4) * 3}px;border-radius:50%;background:#FFE48A;box-shadow:0 0 12px #F5C542" data-i="${i}"></i>`).join(''), 'left:0;top:0;width:1080px;height:1920px');
   },
   upd(t, o) {
@@ -292,24 +292,24 @@ scene({
 
 // 12. DUIT -> EMAS (factory line) --------------------------------------------------
 const NOTE_SVG = '<svg width="190" height="100" viewBox="0 0 190 100"><rect x="3" y="3" width="184" height="94" rx="10" fill="#7fb98a" stroke="#2f6b3a" stroke-width="5"/><circle cx="95" cy="50" r="26" fill="none" stroke="#2f6b3a" stroke-width="5"/><text x="95" y="61" text-anchor="middle" font-family="Mont" font-weight="900" font-size="30" fill="#2f6b3a">RM</text></svg>';
-const BAR_SVG = '<svg width="260" height="150" viewBox="0 0 260 150"><defs><linearGradient id="gb" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".45" stop-color="#F5C542"/><stop offset="1" stop-color="#A87410"/></linearGradient><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#FFE48A"/><stop offset="1" stop-color="#E0A82E"/></linearGradient></defs><path d="M40 40 L220 40 L250 140 L10 140 Z" fill="url(#gb)" stroke="#8a5e08" stroke-width="4"/><path d="M40 40 L220 40 L205 10 L55 10 Z" fill="url(#gt)" stroke="#8a5e08" stroke-width="4"/><text x="130" y="105" text-anchor="middle" font-family="Mont" font-weight="900" font-size="28" fill="#7a5200" letter-spacing="3">FINE GOLD</text><text x="130" y="128" text-anchor="middle" font-family="Mont" font-weight="700" font-size="16" fill="#7a5200">999.9</text></svg>';
+const BAR_SVG = '<svg width="260" height="150" viewBox="0 0 260 150"><defs><linearGradient id="gb" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFF1B8"/><stop offset=".45" stop-color="#F5C542"/><stop offset="1" stop-color="#A87410"/></linearGradient><linearGradient id="gt" x1="0" x2="1"><stop offset="0" stop-color="#FFE48A"/><stop offset="1" stop-color="#E0A82E"/></linearGradient></defs><path d="M40 40 L220 40 L250 140 L10 140 Z" fill="url(#gb)" stroke="#8a5e08" stroke-width="4"/><path d="M40 40 L220 40 L205 10 L55 10 Z" fill="url(#gt)" stroke="#8a5e08" stroke-width="4"/><text x="130" y="105" text-anchor="middle" font-family="Mont" font-weight="900" font-size="25" fill="#7a5200" letter-spacing="2">PUBLIC GOLD</text><text x="130" y="128" text-anchor="middle" font-family="Mont" font-weight="700" font-size="16" fill="#7a5200">999.9</text></svg>';
 scene({
   s: 51.55, e: 55.05, tr: 'slide', bgShow: 1,
   L: t => PIP(660, 290, 270),
   build(r, o) {
     o.t = mk(r, `<div class="hl" style="font-size:56px;color:#fff">ALIHKAN</div><div class="hl" style="font-size:56px;color:#fff">SIMPANAN KE</div><div style="font-family:Play;font-weight:800;font-size:92px;color:#F5C542;line-height:1">bentuk emas</div>`, 'left:80px;top:300px');
-    o.belt = mk(r, `<div style="width:960px;height:30px;border-radius:15px;background:repeating-linear-gradient(90deg,#3a2a12 0 40px,#25190a 40px 80px);border:3px solid #6b4a16" id="belt"></div>`, 'left:60px;top:1010px');
-    o.mach = mk(r, `<div style="width:220px;height:250px;border-radius:26px;background:linear-gradient(#2c2010,#140d05);border:4px solid #D9A93A;display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(245,197,66,.25)"><div style="font-size:90px;color:#F5C542;font-weight:900">→</div></div>`, 'left:430px;top:770px');
+    o.belt = mk(r, `<div style="width:860px;height:30px;border-radius:15px;background:repeating-linear-gradient(90deg,#3a2a12 0 40px,#25190a 40px 80px);border:3px solid #6b4a16" id="belt"></div>`, 'left:60px;top:1010px');
+    o.mach = mk(r, `<div style="width:220px;height:250px;border-radius:26px;background:linear-gradient(#2c2010,#140d05);border:4px solid #D9A93A;display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(245,197,66,.25)"><div style="font-size:90px;color:#F5C542;font-weight:900">→</div></div>`, 'left:360px;top:770px');
     o.n = [0, 1, 2].map(() => mk(r, NOTE_SVG, 'left:0;top:900px'));
-    o.bar = mk(r, BAR_SVG, 'left:740px;top:860px;transform-origin:50% 80%');
-    o.glow = mk(r, `<div style="width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,120,.55),rgba(255,200,80,0) 65%)"></div>`, 'left:660px;top:730px');
-    o.lbl = mk(r, `<div class="hl stroke" style="font-size:120px;color:#F5C542;-webkit-text-stroke:4px #000">EMAS</div>`, 'left:600px;top:620px');
+    o.bar = mk(r, BAR_SVG, 'left:660px;top:860px;transform-origin:50% 80%');
+    o.glow = mk(r, `<div style="width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,220,120,.55),rgba(255,200,80,0) 65%)"></div>`, 'left:580px;top:730px');
+    o.lbl = mk(r, `<div class="hl stroke" style="font-size:120px;color:#F5C542;-webkit-text-stroke:4px #000">EMAS</div>`, 'left:560px;top:620px');
   },
   upd(t, o) {
     ap(o.t, pop(t, 51.6, 0, { from: .8, dy: 30 }));
     document.getElementById('belt').style.backgroundPosition = `${t * 160}px 0`;
     ap(o.belt, pop(t, 51.7, 0, { from: 1, ease: eo })); ap(o.mach, pop(t, 51.9, 0, { from: .5 }));
-    o.n.forEach((d, i) => { const ph = (t - 52.0 - i * .8); const x = 40 + ph * 330; d.style.opacity = ph > 0 && x < 360 ? 1 : 0; d.style.transform = `translateX(${x}px) rotate(${Math.sin(t * 6 + i) * 3}deg)`; });
+    o.n.forEach((d, i) => { const ph = (t - 52.0 - i * .8); const x = 40 + ph * 330; d.style.opacity = ph > 0 && x < 290 ? 1 : 0; d.style.transform = `translateX(${x}px) rotate(${Math.sin(t * 6 + i) * 3}deg)`; });
     const b = pop(t, 54.55, 0, { from: .2, d: .45 }); b.tr += ` rotate(${Math.sin(t * 2) * 2}deg)`; ap(o.bar, b);
     o.glow.style.opacity = C(P(t, 54.55, .4)) * (.75 + .25 * Math.sin(t * 5)); o.glow.style.transform = `scale(${.8 + .2 * Math.sin(t * 3)})`;
     ap(o.lbl, pop(t, 54.64, 0, { from: .3 }));
@@ -322,7 +322,7 @@ scene({
   L: t => FULL(1.0 + .42 * (1 - eio(P(t, 55.05, 1.4))), 0),
   grade: 'saturate(1.08)',
   build(r, o) {
-    o.p = mk(r, `<div class="glass" style="padding:16px 34px;display:flex;align-items:center;gap:18px"><span style="font-size:52px">💛</span><span style="font-weight:900;font-size:58px;color:#fff">VIDEO INI <span class="gold">BERMANFAAT?</span></span></div>`, 'left:0;right:0;top:288px;display:flex;justify-content:center');
+    o.p = mk(r, `<div class="glass" style="padding:16px 34px;display:flex;align-items:center;gap:18px"><span style="font-size:52px">💛</span><span style="font-weight:900;font-size:58px;color:#fff">VIDEO INI <span class="gold">BERMANFAAT?</span></span></div>`, 'left:60px;right:140px;top:288px;display:flex;justify-content:center');
   },
   upd(t, o) { ap(o.p, pop(t, 57.0, 0, { from: .5 })); }
 });
@@ -332,15 +332,15 @@ scene({
   s: 59.9, e: 63.6, tr: 'slide', bgShow: 1,
   L: t => LOWER(1.0),
   build(r, o) {
-    o.hub = mk(r, `<div style="width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,#FFE48A,#C9930F);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(245,197,66,.5)"><svg width="80" height="80" viewBox="0 0 24 24"><path fill="#1a1205" d="M18 16.1c-.8 0-1.4.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .5.1.7L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9-1.2-2.9-2.8-2.9z"/></svg></div>`, 'left:465px;top:300px');
-    o.env = [0, 1, 2, 3].map(i => mk(r, `<div style="font-size:64px">✉️</div>`, 'left:505px;top:335px'));
-    o.fr = [[110, 300], [820, 290], [150, 520], [800, 520]].map(([x, y]) => mk(r, `<div style="width:110px;height:110px;border-radius:50%;background:#2a1d0b;border:4px solid #F5C542;display:flex;align-items:center;justify-content:center;font-size:62px">🙂</div>`, `left:${x}px;top:${y}px`));
-    o.txt = mk(r, `<div class="hl" style="font-size:54px;color:#fff;text-align:center">SHARE KEPADA <span class="gold">RAKAN-RAKAN</span></div>`, 'left:0;right:0;top:640px');
+    o.hub = mk(r, `<div style="width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,#FFE48A,#C9930F);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(245,197,66,.5)"><svg width="80" height="80" viewBox="0 0 24 24"><path fill="#1a1205" d="M18 16.1c-.8 0-1.4.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .5.1.7L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9-1.2-2.9-2.8-2.9z"/></svg></div>`, 'left:425px;top:300px');
+    o.env = [0, 1, 2, 3].map(i => mk(r, `<div style="font-size:64px">✉️</div>`, 'left:465px;top:335px'));
+    o.fr = [[110, 300], [780, 290], [150, 520], [760, 520]].map(([x, y]) => mk(r, `<div style="width:110px;height:110px;border-radius:50%;background:#2a1d0b;border:4px solid #F5C542;display:flex;align-items:center;justify-content:center;font-size:62px">🙂</div>`, `left:${x}px;top:${y}px`));
+    o.txt = mk(r, `<div class="hl" style="font-size:44px;color:#fff;text-align:center;white-space:nowrap">SHARE KEPADA <span class="gold">RAKAN-RAKAN</span></div>`, 'left:60px;right:140px;top:640px');
   },
   upd(t, o) {
     ap(o.hub, pop(t, 60.0, 0, { from: .3 }));
-    const T = [[110, 300], [820, 290], [150, 520], [800, 520]];
-    o.env.forEach((d, i) => { const p = eo(P(t, 60.65 + i * .18, .6)); d.style.opacity = p > 0 && p < 1 ? 1 : 0; d.style.transform = `translate(${(T[i][0] - 475) * p}px,${(T[i][1] - 305) * p - Math.sin(p * Math.PI) * 120}px) rotate(${p * 360 * (i % 2 ? 1 : -1)}deg)`; });
+    const T = [[110, 300], [780, 290], [150, 520], [760, 520]];
+    o.env.forEach((d, i) => { const p = eo(P(t, 60.65 + i * .18, .6)); d.style.opacity = p > 0 && p < 1 ? 1 : 0; d.style.transform = `translate(${(T[i][0] - 435) * p}px,${(T[i][1] - 305) * p - Math.sin(p * Math.PI) * 120}px) rotate(${p * 360 * (i % 2 ? 1 : -1)}deg)`; });
     o.fr.forEach((d, i) => ap(d, pop(t, 61.1 + i * .18, 0, { from: .3 })));
     ap(o.txt, pop(t, 60.65, 0, { from: .7, dy: 20 }));
   }
@@ -361,7 +361,7 @@ scene({
       </div></div>`, 'left:46px;top:420px;transform-origin:50% 100%');
     o.pill = mk(r, `<div class="glass" style="padding:14px 28px;color:#fff;font-weight:800;font-size:36px">AKAUN EMAS <span class="gold">PUBLIC GOLD</span></div>`, 'left:46px;top:300px');
     o.hand = mk(r, `<div style="font-size:90px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))">👆</div>`, 'left:200px;top:1000px');
-    o.btn = mk(r, `<div class="btn">KLIK LINK IN BIO <span style="font-size:52px">👆</span></div>`, 'left:0;right:0;top:1290px;display:flex;justify-content:center');
+    o.btn = mk(r, `<div class="btn">KLIK LINK IN BIO <span style="font-size:52px">👆</span></div>`, 'left:60px;right:140px;top:1290px;display:flex;justify-content:center');
   },
   upd(t, o) {
     const p = eo(P(t, 63.6, .55)); o.ph.style.opacity = C(p * 2); o.ph.style.transform = `translateY(${lerp(900, 0, p)}px) rotate(${lerp(10, 3, p)}deg)`;
@@ -377,9 +377,9 @@ scene({
   s: 68.27, e: 99, tr: 'slide', bgShow: 1,
   L: t => PIP(390, 470, 300),
   build(r, o) {
-    o.wm = mk(r, `<img src="../adila_gold_wm.png" style="height:120px">`, 'left:0;right:0;top:830px;text-align:center');
-    o.sub = mk(r, `<div style="color:#fff;font-weight:700;font-size:34px;letter-spacing:6px;text-align:center">DEALER AKTIF PUBLIC GOLD</div>`, 'left:0;right:0;top:980px');
-    o.btn = mk(r, `<div class="btn" style="font-size:46px;padding:24px 46px">KLIK LINK IN BIO <span>👆</span></div>`, 'left:0;right:0;top:1290px;display:flex;justify-content:center');
+    o.wm = mk(r, `<img src="../adila_gold_wm.png" style="height:120px">`, 'left:60px;right:140px;top:830px;text-align:center');
+    o.sub = mk(r, `<div style="color:#fff;font-weight:700;font-size:34px;letter-spacing:6px;text-align:center">DEALER AKTIF PUBLIC GOLD</div>`, 'left:60px;right:140px;top:980px');
+    o.btn = mk(r, `<div class="btn" style="font-size:46px;padding:24px 46px">KLIK LINK IN BIO <span>👆</span></div>`, 'left:60px;right:140px;top:1290px;display:flex;justify-content:center');
   },
   upd(t, o) { ap(o.wm, pop(t, 68.4, 0, { from: .6 })); ap(o.sub, pop(t, 68.6, 0, { from: .8, dy: 20 })); ap(o.btn, { o: 1, tr: `scale(${1 + .04 * Math.sin(t * 7)})` }); }
 });
