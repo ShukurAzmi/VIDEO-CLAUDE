@@ -1,0 +1,1 @@
+curves=master='0/0.03 0.25/0.21 0.5/0.5 0.75/0.79 1/0.97',colorbalance=rs=-0.03:gs=0.0:bs=0.04:rm=0.03:gm=0.0:bm=-0.03:rh=0.05:gh=0.02:bh=-0.05,eq=saturation=1.06:contrast=1.03,vignette=PI/5
