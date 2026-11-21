@@ -20,3 +20,6 @@ work/fin/
 work/bfB/
 work/tailsB/
 work/fin2/
+*.png
+!.claude/skills/**/*.png
+*.zip
