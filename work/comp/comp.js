@@ -433,7 +433,7 @@ window.render = async function (tn) {
   const src = FRAMEDIR + String(fr).padStart(5, '0') + '.jpg';
   if (bimg.getAttribute('src') !== src) { bimg.src = src; try { await bimg.decode(); } catch (e) { } }
   let xf = 0; const ci = CUTB.findIndex(c => tn >= c - 1e-6 && tn < c + 4 / FPS);
-  if (ci >= 0) { const k = Math.min(3, Math.floor((tn - CUTB[ci]) * FPS + 1e-6)); const s2 = `../tails/c${ci}_${k + 1}.jpg`;
+  if (ci >= 0) { const k = Math.min(3, Math.floor((tn - CUTB[ci]) * FPS + 1e-6)); const s2 = `${window.TAILDIR||"../tails/"}c${ci}_${k + 1}.jpg`;
     if (bimg2.getAttribute('src') !== s2) { bimg2.src = s2; try { await bimg2.decode(); } catch (e) { } } xf = 1 - (k + 1) / 5; }
   bimg2.style.opacity = xf;
   const t = n2o(tn);
