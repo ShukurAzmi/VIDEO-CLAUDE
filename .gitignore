@@ -13,3 +13,4 @@ work/fonts/
 work/*.log
 work/tr_raw.json
 output/*.mp4
+output/*.jpg

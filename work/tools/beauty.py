@@ -24,20 +24,20 @@ def beautify(img, box):
     out = np.clip(sm.astype(np.float32) + detail * 0.35, 0, 255).astype(np.uint8)
     # 2) de-yellow + brighten + slight rosy (natural light makeup base)
     lab = cv2.cvtColor(out, cv2.COLOR_BGR2LAB).astype(np.float32)
-    lab[..., 0] = lab[..., 0] * 1.04 + 8
-    lab[..., 2] = 128 + (lab[..., 2] - 128) * 0.62 - 1.5      # much less yellow
-    lab[..., 1] = 128 + (lab[..., 1] - 128) * 0.95 + 2.5      # hint of pink
+    lab[..., 0] = lab[..., 0] * 1.02 + 3
+    lab[..., 2] = 128 + (lab[..., 2] - 128) * 0.80 - 0.5      # much less yellow
+    lab[..., 1] = 128 + (lab[..., 1] - 128) * 0.97 + 1.0      # hint of pink
     # 3) blush on cheeks
     bl = np.zeros((ch, cw), np.float32)
     for cx in (0.27, 0.73):
         cv2.ellipse(bl, (int(fx + w*cx), int(fy + h*0.70)), (int(w*0.13), int(h*0.09)), 0, 0, 360, 1.0, -1)
     bl = cv2.GaussianBlur(bl, (0, 0), w*0.06) * mask
-    lab[..., 1] += bl * 7; lab[..., 0] += bl * 1.5
+    lab[..., 1] += bl * 4; lab[..., 0] += bl * 1.0
     out = cv2.cvtColor(np.clip(lab, 0, 255).astype(np.uint8), cv2.COLOR_LAB2BGR).astype(np.float32)
     # 4) glow: soft bloom of the highlights (screen blend)
     hl = np.clip((out - 150) * 1.6, 0, 255); bloom = cv2.GaussianBlur(hl, (0, 0), 14) / 255.0
-    out = 255 - (255 - out) * (1 - bloom * 0.35)
-    a = (mask * 0.85)[..., None]
+    out = 255 - (255 - out) * (1 - bloom * 0.18)
+    a = (cv2.GaussianBlur(mask, (0, 0), 14) * 0.6)[..., None]
     res = c.astype(np.float32) * (1 - a) + out * a
     img = img.copy(); img[y0:y1, x0:x1] = np.clip(res, 0, 255).astype(np.uint8)
     return img
