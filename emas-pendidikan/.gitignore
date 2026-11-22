@@ -1,0 +1,14 @@
+node_modules/
+stills/
+stills2/
+frames/
+*.mp4
+*.log
+frames_nadim/
+*.wav
+frames_shukur/
+*.f32
+*.m4a
+frames_shukur2/
+frames_final/
+stills3/
