@@ -1,61 +1,61 @@
 {
- "duration": 92.6,
+ "duration": 90.4,
  "shots": [
   {
    "id": "uni",
    "start": 0,
-   "end": 11.46
+   "end": 12.5
   },
   {
    "id": "night",
-   "start": 11.46,
-   "end": 20.15
+   "start": 12.5,
+   "end": 20.34
   },
   {
    "id": "dining",
-   "start": 20.15,
-   "end": 32.21
+   "start": 20.34,
+   "end": 32.459
   },
   {
    "id": "decide",
-   "start": 32.21,
-   "end": 38.41
+   "start": 32.459,
+   "end": 38.68
   },
   {
    "id": "mamak",
-   "start": 38.41,
-   "end": 44.2
+   "start": 38.68,
+   "end": 43.76
   },
   {
    "id": "montage",
-   "start": 44.2,
-   "end": 51.62
+   "start": 43.76,
+   "end": 50.74
   },
   {
    "id": "chart",
-   "start": 51.62,
-   "end": 59.4
+   "start": 50.74,
+   "end": 58.29
   },
   {
    "id": "reveal",
-   "start": 59.4,
-   "end": 70.17
+   "start": 58.29,
+   "end": 67.47
   },
   {
    "id": "hug",
-   "start": 70.17,
-   "end": 81.14
+   "start": 67.47,
+   "end": 76.79
   },
   {
    "id": "shop",
-   "start": 81.14,
-   "end": 92.6
+   "start": 76.79,
+   "end": 90.4
   }
  ],
  "titles": [
   {
    "start": 0.3,
-   "end": 11.31,
+   "end": 12.35,
    "lines": [
     {
      "cls": "big",
@@ -68,8 +68,8 @@
    ]
   },
   {
-   "start": 11.61,
-   "end": 20.0,
+   "start": 12.65,
+   "end": 20.19,
    "lines": [
     {
      "cls": "big",
@@ -82,8 +82,8 @@
    ]
   },
   {
-   "start": 20.45,
-   "end": 28.54,
+   "start": 20.64,
+   "end": 28.24,
    "lines": [
     {
      "cls": "sub",
@@ -96,8 +96,8 @@
    ]
   },
   {
-   "start": 28.64,
-   "end": 32.06,
+   "start": 28.34,
+   "end": 32.309,
    "lines": [
     {
      "cls": "quote",
@@ -106,8 +106,8 @@
    ]
   },
   {
-   "start": 32.46,
-   "end": 38.26,
+   "start": 32.709,
+   "end": 38.53,
    "lines": [
     {
      "cls": "gold",
@@ -120,8 +120,8 @@
    ]
   },
   {
-   "start": 38.56,
-   "end": 44.05,
+   "start": 38.83,
+   "end": 43.61,
    "lines": [
     {
      "cls": "quote",
@@ -130,8 +130,8 @@
    ]
   },
   {
-   "start": 44.4,
-   "end": 51.47,
+   "start": 43.96,
+   "end": 50.59,
    "lines": [
     {
      "cls": "big",
@@ -144,8 +144,8 @@
    ]
   },
   {
-   "start": 51.82,
-   "end": 59.25,
+   "start": 50.94,
+   "end": 58.14,
    "lines": [
     {
      "cls": "sub",
@@ -162,8 +162,8 @@
    ]
   },
   {
-   "start": 59.55,
-   "end": 64.48,
+   "start": 58.44,
+   "end": 63.54,
    "lines": [
     {
      "cls": "big",
@@ -176,8 +176,8 @@
    ]
   },
   {
-   "start": 64.48,
-   "end": 70.02,
+   "start": 63.54,
+   "end": 67.32,
    "lines": [
     {
      "cls": "sub",
@@ -194,28 +194,28 @@
    ]
   },
   {
-   "start": 70.57,
-   "end": 76.26,
+   "start": 67.87,
+   "end": 71.28,
    "lines": [
     {
      "cls": "quote",
-     "text": "“Baba, macam mana<br>Baba simpan semua ni?”"
+     "text": "“Baba, macam mana<br>Baba sempat simpan?”"
     }
    ]
   },
   {
-   "start": 76.26,
-   "end": 80.99,
+   "start": 71.28,
+   "end": 76.64,
    "lines": [
     {
      "cls": "quote",
-     "text": "“Ayah bukan orang kaya.<br>Ayah cuma mula awal.”"
+     "text": "“Baba bukan orang kaya.<br>Baba cuma mula dari awal.”"
     }
    ]
   },
   {
-   "start": 85.62,
-   "end": 92.6,
+   "start": 81.64,
+   "end": 90.4,
    "lines": [
     {
      "cls": "big",
@@ -230,500 +230,515 @@
  ],
  "subs": [
   {
-   "start": 0.8,
-   "end": 2.08,
+   "start": 0.9,
+   "end": 2.34,
    "text": "Hari ni,"
   },
   {
-   "start": 2.08,
-   "end": 2.58,
+   "start": 2.34,
+   "end": 3.14,
    "text": "Nadim daftar"
   },
   {
-   "start": 2.58,
-   "end": 4.14,
+   "start": 3.14,
+   "end": 4.88,
    "text": "masuk universiti."
   },
   {
-   "start": 4.14,
-   "end": 4.68,
+   "start": 4.88,
+   "end": 5.56,
    "text": "Semua yuran"
   },
   {
-   "start": 4.68,
-   "end": 5.78,
+   "start": 5.56,
+   "end": 6.78,
    "text": "dah settle."
   },
   {
-   "start": 5.78,
-   "end": 6.66,
-   "text": "Tapi tak"
+   "start": 6.78,
+   "end": 7.54,
+   "text": "Tapi,"
   },
   {
-   "start": 6.66,
-   "end": 7.1,
-   "text": "ramai yang"
+   "start": 7.54,
+   "end": 8.0,
+   "text": "tak ramai"
   },
   {
-   "start": 7.1,
-   "end": 7.9,
-   "text": "tahu,"
+   "start": 8.0,
+   "end": 8.86,
+   "text": "yang tahu,"
   },
   {
-   "start": 7.9,
-   "end": 8.28,
+   "start": 8.86,
+   "end": 9.36,
    "text": "duit ni"
   },
   {
-   "start": 8.28,
-   "end": 8.72,
-   "text": "ayah dia"
+   "start": 9.36,
+   "end": 9.86,
+   "text": "Baba dia"
   },
   {
-   "start": 8.72,
-   "end": 9.34,
+   "start": 9.86,
+   "end": 10.44,
    "text": "mula simpan"
   },
   {
-   "start": 9.34,
-   "end": 10.04,
+   "start": 10.44,
+   "end": 11.18,
    "text": "sejak <b>10</b>"
   },
   {
-   "start": 10.04,
-   "end": 10.6,
+   "start": 11.18,
+   "end": 11.72,
    "text": "tahun yang"
   },
   {
-   "start": 10.6,
-   "end": 11.62,
-   "text": "lalu."
+   "start": 11.72,
+   "end": 12.6,
+   "text": "lepas."
   },
   {
-   "start": 11.62,
-   "end": 13.56,
+   "start": 12.9,
+   "end": 14.86,
    "text": "Tahun <b>2016</b>,"
   },
   {
-   "start": 13.84,
-   "end": 14.44,
+   "start": 15.06,
+   "end": 15.58,
    "text": "Encik Nor"
   },
   {
-   "start": 14.44,
-   "end": 15.72,
+   "start": 15.58,
+   "end": 16.9,
    "text": "gaji <b>RM3,000</b>"
   },
   {
-   "start": 15.72,
-   "end": 17.02,
+   "start": 16.9,
+   "end": 18.18,
    "text": "sebulan."
   },
   {
-   "start": 17.02,
-   "end": 17.72,
+   "start": 18.18,
+   "end": 19.22,
    "text": "Nadim baru"
   },
   {
-   "start": 17.72,
-   "end": 18.3,
-   "text": "umur 8"
+   "start": 19.22,
+   "end": 20.4,
+   "text": "8 tahun."
   },
   {
-   "start": 18.3,
-   "end": 19.42,
-   "text": "tahun."
+   "start": 20.78,
+   "end": 21.6,
+   "text": "Satu malam"
   },
   {
-   "start": 21.38,
-   "end": 22.36,
-   "text": "Satu malam,"
-  },
-  {
-   "start": 22.36,
-   "end": 22.84,
+   "start": 21.6,
+   "end": 22.16,
    "text": "dia kira"
   },
   {
-   "start": 22.84,
-   "end": 23.8,
+   "start": 22.16,
+   "end": 22.8,
    "text": "kos anak"
   },
   {
-   "start": 23.8,
-   "end": 24.78,
+   "start": 22.8,
+   "end": 23.86,
    "text": "masuk universiti"
   },
   {
-   "start": 24.78,
-   "end": 25.78,
+   "start": 23.86,
+   "end": 24.74,
    "text": "nanti."
   },
   {
-   "start": 25.78,
-   "end": 26.34,
+   "start": 24.88,
+   "end": 25.46,
    "text": "Paling kurang"
   },
   {
-   "start": 26.34,
-   "end": 27.88,
+   "start": 25.46,
+   "end": 27.36,
    "text": "pun <b>RM40,000</b>."
   },
   {
-   "start": 28.64,
-   "end": 29.4,
+   "start": 28.34,
+   "end": 29.22,
    "text": "Banyaknya,"
   },
   {
-   "start": 29.4,
-   "end": 29.52,
+   "start": 29.22,
+   "end": 29.34,
    "text": "Baba."
   },
   {
-   "start": 29.52,
-   "end": 30.08,
-   "text": "Mana kita"
+   "start": 29.34,
+   "end": 30.02,
+   "text": "Mana lagi"
   },
   {
-   "start": 30.08,
-   "end": 30.54,
-   "text": "nak cari"
+   "start": 30.02,
+   "end": 30.32,
+   "text": "kita nak"
   },
   {
-   "start": 30.54,
-   "end": 31.12,
-   "text": "duit sebanyak"
+   "start": 30.32,
+   "end": 30.8,
+   "text": "cari duit"
   },
   {
-   "start": 31.12,
-   "end": 31.92,
-   "text": "itu?"
+   "start": 30.8,
+   "end": 32.659,
+   "text": "sebanyak tu."
   },
   {
-   "start": 33.0,
-   "end": 33.38,
+   "start": 32.759,
+   "end": 33.26,
    "text": "Encik Nor"
   },
   {
-   "start": 33.38,
-   "end": 34.06,
+   "start": 33.26,
+   "end": 34.02,
    "text": "buat satu"
   },
   {
-   "start": 34.06,
-   "end": 35.16,
+   "start": 34.02,
+   "end": 35.18,
    "text": "keputusan."
   },
   {
-   "start": 35.16,
-   "end": 35.82,
+   "start": 35.18,
+   "end": 36.2,
    "text": "Setiap bulan"
   },
   {
-   "start": 35.82,
-   "end": 36.66,
-   "text": "<b>RM100,</b>"
+   "start": 36.2,
+   "end": 37.14,
+   "text": "<b>RM100</b> dia"
   },
   {
-   "start": 36.66,
-   "end": 37.12,
-   "text": "dia tukar"
+   "start": 37.14,
+   "end": 37.8,
+   "text": "tukar menjadi"
   },
   {
-   "start": 37.12,
-   "end": 38.64,
-   "text": "menjadi emas."
+   "start": 37.8,
+   "end": 38.92,
+   "text": "emas."
   },
   {
-   "start": 38.68,
-   "end": 39.32,
+   "start": 38.94,
+   "end": 39.56,
    "text": "Kawan-kawan dia"
   },
   {
-   "start": 39.32,
-   "end": 40.08,
+   "start": 39.56,
+   "end": 40.44,
    "text": "gelak."
   },
   {
-   "start": 40.66,
-   "end": 41.6,
+   "start": 40.44,
+   "end": 40.98,
    "text": "<b>RM100</b> je"
   },
   {
-   "start": 41.6,
-   "end": 42.22,
+   "start": 40.98,
+   "end": 41.82,
    "text": "ke?"
   },
   {
-   "start": 42.22,
-   "end": 42.82,
-   "text": "Apa sangat"
+   "start": 41.82,
+   "end": 42.54,
+   "text": "Apalah sangat"
   },
   {
-   "start": 42.82,
-   "end": 43.34,
+   "start": 42.54,
+   "end": 42.88,
    "text": "yang boleh"
   },
   {
-   "start": 43.34,
-   "end": 44.2,
-   "text": "buat?"
+   "start": 42.88,
+   "end": 43.82,
+   "text": "dapat?"
   },
   {
-   "start": 44.7,
-   "end": 46.22,
+   "start": 44.2,
+   "end": 45.78,
    "text": "Tahun berganti."
   },
   {
-   "start": 46.22,
-   "end": 47.08,
+   "start": 45.78,
+   "end": 46.14,
    "text": "Ada masa"
   },
   {
-   "start": 47.08,
-   "end": 47.88,
+   "start": 46.14,
+   "end": 47.18,
    "text": "susah,"
   },
   {
-   "start": 47.88,
-   "end": 48.36,
+   "start": 47.18,
+   "end": 47.56,
    "text": "ada masa"
   },
   {
-   "start": 48.36,
-   "end": 49.2,
+   "start": 47.56,
+   "end": 48.3,
    "text": "sempit."
   },
   {
-   "start": 49.2,
-   "end": 49.92,
-   "text": "Tapi dia"
+   "start": 48.3,
+   "end": 49.14,
+   "text": "Tapi,"
   },
   {
-   "start": 49.92,
-   "end": 50.38,
-   "text": "tak pernah"
+   "start": 49.14,
+   "end": 49.44,
+   "text": "dia tak"
   },
   {
-   "start": 50.38,
-   "end": 51.82,
-   "text": "berhenti."
+   "start": 49.44,
+   "end": 50.74,
+   "text": "pernah berhenti."
   },
   {
-   "start": 51.92,
-   "end": 52.52,
+   "start": 50.74,
+   "end": 51.8,
    "text": "Harga emas"
   },
   {
-   "start": 52.52,
-   "end": 53.34,
-   "text": "pula naik."
+   "start": 51.8,
+   "end": 52.46,
+   "text": "pula naik"
   },
   {
-   "start": 53.34,
-   "end": 54.08,
-   "text": "Dari sekitar"
+   "start": 52.46,
+   "end": 53.26,
+   "text": "dari sekitar"
   },
   {
-   "start": 54.08,
-   "end": 56.3,
+   "start": 53.26,
+   "end": 54.88,
    "text": "<b>RM170</b> segram"
   },
   {
-   "start": 56.3,
-   "end": 57.42,
+   "start": 54.88,
+   "end": 56.1,
    "text": "kepada lebih"
   },
   {
-   "start": 57.42,
-   "end": 59.2,
+   "start": 56.1,
+   "end": 58.46,
    "text": "<b>RM600</b> segram."
   },
   {
-   "start": 60.1,
-   "end": 60.64,
+   "start": 58.46,
+   "end": 58.94,
    "text": "<b>10</b> tahun"
   },
   {
-   "start": 60.64,
-   "end": 61.88,
+   "start": 58.94,
+   "end": 60.12,
    "text": "kemudian,"
   },
   {
-   "start": 61.88,
-   "end": 62.4,
-   "text": "jumlah dia"
+   "start": 60.12,
+   "end": 60.48,
+   "text": "jumlah yang"
   },
   {
-   "start": 62.4,
-   "end": 64.48,
-   "text": "simpan <b>RM12,000</b>."
+   "start": 60.48,
+   "end": 61.36,
+   "text": "dia simpan"
   },
   {
-   "start": 64.58,
-   "end": 65.28,
-   "text": "Tapi nilai"
+   "start": 61.36,
+   "end": 63.5,
+   "text": "<b>RM12,000</b> sudah."
   },
   {
-   "start": 65.28,
-   "end": 65.94,
-   "text": "emas itu"
+   "start": 63.64,
+   "end": 64.239,
+   "text": "Tapi,"
   },
   {
-   "start": 65.94,
-   "end": 67.02,
+   "start": 64.239,
+   "end": 64.78,
+   "text": "nilai emas"
+  },
+  {
+   "start": 64.78,
+   "end": 65.72,
    "text": "sekarang lebih"
   },
   {
-   "start": 67.02,
-   "end": 69.08,
+   "start": 65.72,
+   "end": 67.28,
    "text": "<b>RM25,000</b>."
   },
   {
-   "start": 71.76,
-   "end": 72.52,
+   "start": 68.16,
+   "end": 68.8,
    "text": "Baba,"
   },
   {
-   "start": 72.52,
-   "end": 73.02,
+   "start": 68.8,
+   "end": 69.38,
    "text": "macam mana"
   },
   {
-   "start": 73.02,
-   "end": 73.9,
-   "text": "Baba simpan"
+   "start": 69.38,
+   "end": 70.1,
+   "text": "Baba sempat"
   },
   {
-   "start": 73.9,
-   "end": 75.96,
-   "text": "semua ini?"
+   "start": 70.1,
+   "end": 70.94,
+   "text": "simpan semua"
   },
   {
-   "start": 76.36,
-   "end": 76.88,
-   "text": "Ayah bukan"
+   "start": 70.94,
+   "end": 71.38,
+   "text": "ni?"
   },
   {
-   "start": 76.88,
-   "end": 77.78,
+   "start": 71.38,
+   "end": 73.0,
+   "text": "Baba bukan"
+  },
+  {
+   "start": 73.0,
+   "end": 73.58,
    "text": "orang kaya,"
   },
   {
-   "start": 77.78,
-   "end": 78.78,
+   "start": 73.58,
+   "end": 74.34,
    "text": "Nadim."
   },
   {
-   "start": 78.78,
-   "end": 79.34,
-   "text": "Ayah cuma"
+   "start": 74.44,
+   "end": 75.06,
+   "text": "Baba cuma"
   },
   {
-   "start": 79.34,
-   "end": 80.96,
-   "text": "mula awal."
+   "start": 75.06,
+   "end": 75.86,
+   "text": "mula dari"
   },
   {
-   "start": 81.82,
-   "end": 82.32,
+   "start": 75.86,
+   "end": 76.88,
+   "text": "awal."
+  },
+  {
+   "start": 77.2,
+   "end": 77.56,
    "text": "Anak kita"
   },
   {
-   "start": 82.32,
-   "end": 83.16,
+   "start": 77.56,
+   "end": 78.5,
    "text": "membesar lebih"
   },
   {
-   "start": 83.16,
-   "end": 83.78,
+   "start": 78.5,
+   "end": 79.48,
    "text": "cepat dari"
   },
   {
-   "start": 83.78,
-   "end": 84.34,
-   "text": "yang kita"
+   "start": 79.48,
+   "end": 79.9,
+   "text": "apa yang"
   },
   {
-   "start": 84.34,
-   "end": 85.64,
-   "text": "sangka."
+   "start": 79.9,
+   "end": 81.26,
+   "text": "kita sangka."
   },
   {
-   "start": 85.72,
-   "end": 86.22,
-   "text": "Jom mula"
+   "start": 81.3,
+   "end": 81.74,
+   "text": "So,"
   },
   {
-   "start": 86.22,
-   "end": 86.92,
+   "start": 81.74,
+   "end": 82.28,
+   "text": "jom mula"
+  },
+  {
+   "start": 82.28,
+   "end": 83.04,
    "text": "simpan emas"
   },
   {
-   "start": 86.92,
-   "end": 87.72,
+   "start": 83.04,
+   "end": 83.64,
    "text": "untuk anak"
   },
   {
-   "start": 87.72,
-   "end": 88.84,
+   "start": 83.64,
+   "end": 84.62,
    "text": "dari sekarang."
   },
   {
-   "start": 88.84,
-   "end": 89.18,
+   "start": 84.62,
+   "end": 85.04,
    "text": "Boleh save"
   },
   {
-   "start": 89.18,
-   "end": 89.62,
-   "text": "video ini"
+   "start": 85.04,
+   "end": 85.64,
+   "text": "video ni"
   },
   {
-   "start": 89.62,
-   "end": 90.24,
+   "start": 85.64,
+   "end": 86.44,
    "text": "untuk rujukan"
   },
   {
-   "start": 90.24,
-   "end": 90.68,
+   "start": 86.44,
+   "end": 87.12,
    "text": "masa akan"
   },
   {
-   "start": 90.68,
-   "end": 91.64,
+   "start": 87.12,
+   "end": 88.12,
    "text": "datang."
   }
  ],
  "talk": [
   {
    "who": "ibu",
-   "start": 28.64,
-   "end": 31.42
+   "start": 28.34,
+   "end": 32.159
   },
   {
    "who": "f1",
-   "start": 40.66,
-   "end": 43.7
+   "start": 40.44,
+   "end": 43.32
   },
   {
    "who": "aiman",
-   "start": 71.76,
-   "end": 75.46
+   "start": 68.16,
+   "end": 71.38
   },
   {
    "who": "ayah",
-   "start": 76.36,
-   "end": 80.46
+   "start": 71.38,
+   "end": 76.38
   }
  ],
  "fades": [
   {
-   "at": 11.46,
+   "at": 12.5,
    "dur": 0.3
   },
   {
-   "at": 59.4,
+   "at": 58.29,
    "dur": 0.3
   }
  ]

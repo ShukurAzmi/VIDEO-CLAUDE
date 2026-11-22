@@ -23,12 +23,15 @@ cut=lambda i:round((W[i-1][2]+W[i][1])/2,3)   # boundary just before word i
 iNight=seq('Tahun','2016'); iDining=seq('Satu','malam'); iIbu=seq('Banyaknya'); iIbuEnd=seq('sebanyak')+1
 iDecide=seq('Encik','Hakim|Nor|Noh','buat'); iMamak=seq('Kawan-kawan'); iF1=seq('RM100','je'); iF1End=seq('boleh','dapat|buat')+1
 iMont=seq('Tahun','berganti'); iChart=seq('Harga','emas'); iReveal=seq('10','tahun','kemudian'); iValue=seq('Tapi','nilai')
-iHug=seq('Ayah|Baba','macam'); iAyah=seq('Ayah','bukan'); iAyahEnd=seq('mula','awal')+1; iShop=seq('Anak','kita'); iJom=seq('Jom','mula')
+iHug=seq('Ayah|Baba','macam'); iAyah=seq('Ayah|Baba','bukan'); iAyahEnd=find('awal',seq('Ayah|Baba','bukan')); iShop=seq('Anak','kita'); iJom=seq('Jom|jom','mula')
 NAME=W[2][0].rstrip('.,')
 BABA=any(x[0].rstrip('.,?!')=='Baba' for x in W)
 Q_IBU='“Banyaknya, Baba…<br>mana nak cari?”' if BABA else '“Banyaknya, bang…<br>mana nak cari?”'
+SELF='Baba' if any(W[k][0]=='Baba' and W[k+1][0]=='bukan' for k in range(len(W)-1)) else 'Ayah'
+DARI=' dari' if any(W[k][0]=='dari' and W[k+1][0].startswith('awal') for k in range(len(W)-1)) else ''
+Q_AYAH=f'“{SELF} bukan orang kaya.<br>{SELF} cuma mula{DARI} awal.”'
 Q_F1='“Seratus je ke?”' if BABA else '“Seratus ringgit je?”'
-Q_ANAK='“Baba, macam mana<br>Baba simpan semua ni?”' if BABA else '“Ayah, macam mana<br>ayah sempat simpan?”'
+Q_ANAK='“Baba, macam mana<br>Baba sempat simpan?”' if BABA else '“Ayah, macam mana<br>ayah sempat simpan?”'
 b=[0,cut(iNight),cut(iDining),cut(iDecide),cut(iMamak),cut(iMont),cut(iChart),cut(iReveal),cut(iHug),cut(iShop),DUR]
 ids=['uni','night','dining','decide','mamak','montage','chart','reveal','hug','shop']
 shots=[(ids[k],b[k],b[k+1]) for k in range(10)]
@@ -46,7 +49,7 @@ titles=[
  (b[7]+0.15,st(iValue)-0.1,[T('big','10 TAHUN KEMUDIAN'),T('sub','Jumlah disimpan: RM12,000')]),
  (st(iValue)-0.1,e(b[8]),[T('sub','Nilai emas sekarang'),T('gold','±RM25,000+'),T('small','*anggaran; harga emas berubah-ubah')]),
  (b[8]+0.4,st(iAyah)-0.1,[T('quote',Q_ANAK)]),
- (st(iAyah)-0.1,e(b[9]),[T('quote','“Ayah bukan orang kaya.<br>Ayah cuma mula awal.”')]),
+ (st(iAyah)-0.1,e(b[9]),[T('quote',Q_AYAH)]),
  (st(iJom)-0.1,DUR,[T('big','JOM SIMPAN EMAS'),T('sub','untuk anak, dari sekarang')]),
 ]
 subs=[];cur=[]
