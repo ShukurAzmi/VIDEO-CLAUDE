@@ -236,16 +236,16 @@ export function setChart() {
   const data = [[2016, 170], [2020, 250], [2023, 290], [2026, 620]];
   const stacks = [];
   data.forEach(([yr, pr], i) => {
-    const g = new THREE.Group(); const x = -1.2 + i * 0.8; g.position.set(x, 0, 0); s.add(g);
+    const g = new THREE.Group(); const x = -0.96 + i * 0.64; g.position.set(x, 0, 0); s.add(g);
     const n = Math.round(pr / 26);
     const bars = [];
-    for (let k = 0; k < n; k++) { const b = goldBar(4); b.position.y = 0.05 + k * 0.1; b.rotation.y = (k % 2) * Math.PI / 2 * 0 + (rnd() - .5) * 0.08; g.add(b); bars.push(b); }
-    const lbl = plane(0.7, 0.26, new THREE.MeshBasicMaterial({ map: canvasTex(320, 120, (cx, w, h) => { cx.fillStyle = '#f3e3b0'; cx.font = '800 72px Poppins'; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText(String(yr), w / 2, h / 2); }), transparent: true }));
+    for (let k = 0; k < n; k++) { const b = goldBar(3.4); b.position.y = 0.045 + k * 0.085; b.rotation.y = (k % 2) * Math.PI / 2 * 0 + (rnd() - .5) * 0.08; g.add(b); bars.push(b); }
+    const lbl = plane(0.6, 0.22, new THREE.MeshBasicMaterial({ map: canvasTex(320, 120, (cx, w, h) => { cx.fillStyle = '#f3e3b0'; cx.font = '800 72px Poppins'; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText(String(yr), w / 2, h / 2); }), transparent: true }));
     lbl.position.set(0, 0.02, 0.5); lbl.rotation.x = -Math.PI / 2 + 0.5; g.add(lbl);
     let tag = null;
     if (i === 0 || i === data.length - 1) {
-      tag = plane(1.1, 0.4, new THREE.MeshBasicMaterial({ map: canvasTex(440, 160, (cx, w, h) => { cx.fillStyle = 'rgba(0,0,0,0)'; cx.clearRect(0, 0, w, h); cx.fillStyle = '#fff'; cx.font = '800 76px Poppins'; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText('±RM' + pr, w / 2, h / 2 - 8); cx.font = '600 30px Poppins'; cx.fillStyle = '#f3d47a'; cx.fillText('segram', w / 2, h - 18); }), transparent: true }));
-      tag.position.set(0, 0.05 + n * 0.1 + 0.35, 0); g.add(tag);
+      tag = plane(0.9, 0.33, new THREE.MeshBasicMaterial({ map: canvasTex(440, 160, (cx, w, h) => { cx.fillStyle = 'rgba(0,0,0,0)'; cx.clearRect(0, 0, w, h); cx.fillStyle = '#fff'; cx.font = '800 76px Poppins'; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText('±RM' + pr, w / 2, h / 2 - 8); cx.font = '600 30px Poppins'; cx.fillStyle = '#f3d47a'; cx.fillText('segram', w / 2, h - 18); }), transparent: true }));
+      tag.position.set(0, 0.05 + n * 0.085 + 0.3, 0); g.add(tag);
     }
     stacks.push({ g, bars, tag, n });
   });

@@ -4,7 +4,7 @@ import { SHOTS } from './shots.js';
 
 const q = new URLSearchParams(location.search);
 const TL = await (await fetch(q.get('tl') || 'timeline.json')).json();
-await document.fonts.load('800 40px Poppins'); await document.fonts.load('700 40px Lora'); await document.fonts.load('italic 600 40px Lora'); await document.fonts.ready;
+await document.fonts.load('800 40px Poppins'); await document.fonts.load('700 40px Lora'); await document.fonts.load('italic 700 40px Lora'); await document.fonts.ready;
 await document.getElementById('wm').decode();
 
 const builders = { uni: SETS.setUni, livingNight: () => SETS.setLiving(false), livingDay: () => SETS.setLiving(true), dining: SETS.setDining, mamak: SETS.setMamak, study: SETS.setStudy, chart: SETS.setChart, shop: SETS.setShop };

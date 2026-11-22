@@ -117,9 +117,9 @@ export const SHOTS = {
       if (st.tag) { st.tag.visible = k >= 1; st.tag.lookAt(cam.position); }
     });
     camPath(cam, [
-      { f: 0, p: [-1.4, 0.9, 3.2], l: [-0.8, 0.5, 0], fov: 44 },
-      { f: 0.75, p: [0.2, 1.7, 5.4], l: [0.0, 1.2, 0], fov: 44 },
-      { f: 1, p: [0.35, 1.9, 5.6], l: [0.15, 1.3, 0], fov: 44 }], f, ctx.t);
+      { f: 0, p: [-1.0, 0.7, 2.4], l: [-0.8, 0.5, 0], fov: 44 },
+      { f: 0.7, p: [0.1, 1.3, 4.9], l: [0.0, 1.05, 0], fov: 44 },
+      { f: 1, p: [0.15, 1.4, 5.0], l: [0.05, 1.1, 0], fov: 44 }], f, ctx.t);
   } },
   // 8. Present day: the box of gold and the offer letter
   reveal: { set: 'livingDay', run(S, f, lt, d, cam, ctx) {

@@ -1,4 +1,6 @@
 node_modules/
 stills/
+stills2/
+frames/
 *.mp4
-*.wav
+*.log

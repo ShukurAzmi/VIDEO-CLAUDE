@@ -1,0 +1,715 @@
+{
+ "duration": 79.0,
+ "shots": [
+  {
+   "id": "uni",
+   "start": 0,
+   "end": 9.45
+  },
+  {
+   "id": "night",
+   "start": 9.45,
+   "end": 16.7
+  },
+  {
+   "id": "dining",
+   "start": 16.7,
+   "end": 27.35
+  },
+  {
+   "id": "decide",
+   "start": 27.35,
+   "end": 33.35
+  },
+  {
+   "id": "mamak",
+   "start": 33.35,
+   "end": 38.2
+  },
+  {
+   "id": "montage",
+   "start": 38.2,
+   "end": 44.0
+  },
+  {
+   "id": "chart",
+   "start": 44.0,
+   "end": 50.35
+  },
+  {
+   "id": "reveal",
+   "start": 50.35,
+   "end": 58.9
+  },
+  {
+   "id": "hug",
+   "start": 58.9,
+   "end": 67.35
+  },
+  {
+   "id": "shop",
+   "start": 67.35,
+   "end": 79.0
+  }
+ ],
+ "titles": [
+  {
+   "start": 0.3,
+   "end": 9.3,
+   "lines": [
+    {
+     "cls": "big",
+     "text": "HARI PENDAFTARAN"
+    },
+    {
+     "cls": "sub",
+     "text": "Aiman masuk universiti"
+    }
+   ]
+  },
+  {
+   "start": 9.6,
+   "end": 16.6,
+   "lines": [
+    {
+     "cls": "big",
+     "text": "10 TAHUN SEBELUMNYA"
+    },
+    {
+     "cls": "sub",
+     "text": "2016 · Gaji RM3,000 sebulan"
+    }
+   ]
+  },
+  {
+   "start": 17.0,
+   "end": 23.6,
+   "lines": [
+    {
+     "cls": "sub",
+     "text": "Kos belajar ijazah"
+    },
+    {
+     "cls": "gold",
+     "text": "±RM40,000"
+    }
+   ]
+  },
+  {
+   "start": 23.7,
+   "end": 27.3,
+   "lines": [
+    {
+     "cls": "quote",
+     "text": "“Banyaknya, bang…<br>mana nak cari?”"
+    }
+   ]
+  },
+  {
+   "start": 27.6,
+   "end": 33.3,
+   "lines": [
+    {
+     "cls": "gold",
+     "text": "RM100 sebulan"
+    },
+    {
+     "cls": "sub",
+     "text": "ditukar jadi emas"
+    }
+   ]
+  },
+  {
+   "start": 33.5,
+   "end": 38.1,
+   "lines": [
+    {
+     "cls": "quote",
+     "text": "“Seratus ringgit je?”"
+    }
+   ]
+  },
+  {
+   "start": 38.4,
+   "end": 43.9,
+   "lines": [
+    {
+     "cls": "big",
+     "text": "TAHUN BERGANTI…"
+    },
+    {
+     "cls": "sub",
+     "text": "tapi dia tak pernah berhenti"
+    }
+   ]
+  },
+  {
+   "start": 44.2,
+   "end": 50.3,
+   "lines": [
+    {
+     "cls": "sub",
+     "text": "Harga emas segram"
+    },
+    {
+     "cls": "gold",
+     "text": "±RM170 → ±RM620"
+    },
+    {
+     "cls": "small",
+     "text": "*anggaran"
+    }
+   ]
+  },
+  {
+   "start": 50.5,
+   "end": 55.0,
+   "lines": [
+    {
+     "cls": "big",
+     "text": "10 TAHUN KEMUDIAN"
+    },
+    {
+     "cls": "sub",
+     "text": "Jumlah disimpan: RM12,000"
+    }
+   ]
+  },
+  {
+   "start": 55.0,
+   "end": 58.8,
+   "lines": [
+    {
+     "cls": "sub",
+     "text": "Nilai emas sekarang"
+    },
+    {
+     "cls": "gold",
+     "text": "±RM25,000+"
+    },
+    {
+     "cls": "small",
+     "text": "*anggaran; harga emas berubah-ubah"
+    }
+   ]
+  },
+  {
+   "start": 59.3,
+   "end": 62.6,
+   "lines": [
+    {
+     "cls": "quote",
+     "text": "“Ayah, macam mana<br>ayah sempat simpan?”"
+    }
+   ]
+  },
+  {
+   "start": 62.8,
+   "end": 67.3,
+   "lines": [
+    {
+     "cls": "quote",
+     "text": "“Ayah bukan orang kaya.<br>Ayah cuma mula awal.”"
+    }
+   ]
+  },
+  {
+   "start": 71.3,
+   "end": 79.0,
+   "lines": [
+    {
+     "cls": "big",
+     "text": "JOM SIMPAN EMAS"
+    },
+    {
+     "cls": "sub",
+     "text": "untuk anak, dari sekarang"
+    }
+   ]
+  }
+ ],
+ "subs": [
+  {
+   "start": 0.2,
+   "end": 1.0,
+   "text": "Hari ni,"
+  },
+  {
+   "start": 1.0,
+   "end": 1.6,
+   "text": "Aiman daftar"
+  },
+  {
+   "start": 1.6,
+   "end": 3.1,
+   "text": "masuk universiti."
+  },
+  {
+   "start": 3.2,
+   "end": 3.7,
+   "text": "Semua yuran"
+  },
+  {
+   "start": 3.7,
+   "end": 4.8,
+   "text": "dah settle."
+  },
+  {
+   "start": 4.9,
+   "end": 5.2,
+   "text": "Tapi tak"
+  },
+  {
+   "start": 5.2,
+   "end": 6.2,
+   "text": "ramai tahu,"
+  },
+  {
+   "start": 6.2,
+   "end": 6.7,
+   "text": "duit ni"
+  },
+  {
+   "start": 6.7,
+   "end": 7.1,
+   "text": "ayah dia"
+  },
+  {
+   "start": 7.1,
+   "end": 7.8,
+   "text": "mula simpan"
+  },
+  {
+   "start": 7.8,
+   "end": 8.5,
+   "text": "sejak <b>10</b>"
+  },
+  {
+   "start": 8.5,
+   "end": 9.6,
+   "text": "tahun lepas."
+  },
+  {
+   "start": 9.8,
+   "end": 11.5,
+   "text": "Tahun <b>2016</b>."
+  },
+  {
+   "start": 11.7,
+   "end": 12.8,
+   "text": "Encik Hakim"
+  },
+  {
+   "start": 12.8,
+   "end": 14.0,
+   "text": "gaji <b>RM3,000</b>"
+  },
+  {
+   "start": 14.0,
+   "end": 15.0,
+   "text": "sebulan."
+  },
+  {
+   "start": 15.1,
+   "end": 15.7,
+   "text": "Aiman baru"
+  },
+  {
+   "start": 15.7,
+   "end": 16.9,
+   "text": "lapan tahun."
+  },
+  {
+   "start": 17.0,
+   "end": 18.0,
+   "text": "Satu malam,"
+  },
+  {
+   "start": 18.0,
+   "end": 18.4,
+   "text": "dia kira"
+  },
+  {
+   "start": 18.4,
+   "end": 18.9,
+   "text": "kos anak"
+  },
+  {
+   "start": 18.9,
+   "end": 19.7,
+   "text": "masuk universiti"
+  },
+  {
+   "start": 19.7,
+   "end": 20.6,
+   "text": "nanti."
+  },
+  {
+   "start": 20.8,
+   "end": 21.8,
+   "text": "Paling kurang"
+  },
+  {
+   "start": 21.8,
+   "end": 23.5,
+   "text": "<b>RM40,000</b>."
+  },
+  {
+   "start": 23.7,
+   "end": 25.4,
+   "text": "Banyaknya bang."
+  },
+  {
+   "start": 25.6,
+   "end": 26.0,
+   "text": "Mana kita"
+  },
+  {
+   "start": 26.0,
+   "end": 26.4,
+   "text": "nak cari"
+  },
+  {
+   "start": 26.4,
+   "end": 27.0,
+   "text": "duit sebanyak"
+  },
+  {
+   "start": 27.0,
+   "end": 27.4,
+   "text": "tu?"
+  },
+  {
+   "start": 27.4,
+   "end": 28.1,
+   "text": "Encik Hakim"
+  },
+  {
+   "start": 28.1,
+   "end": 28.6,
+   "text": "buat satu"
+  },
+  {
+   "start": 28.6,
+   "end": 29.8,
+   "text": "keputusan."
+  },
+  {
+   "start": 29.8,
+   "end": 30.8,
+   "text": "Setiap bulan,"
+  },
+  {
+   "start": 30.8,
+   "end": 32.1,
+   "text": "<b>RM100</b> dia"
+  },
+  {
+   "start": 32.1,
+   "end": 32.7,
+   "text": "tukar jadi"
+  },
+  {
+   "start": 32.7,
+   "end": 33.6,
+   "text": "emas."
+  },
+  {
+   "start": 33.6,
+   "end": 34.4,
+   "text": "Kawan-kawan dia"
+  },
+  {
+   "start": 34.4,
+   "end": 35.1,
+   "text": "gelak."
+  },
+  {
+   "start": 35.2,
+   "end": 36.6,
+   "text": "<b>RM100</b> je?"
+  },
+  {
+   "start": 36.6,
+   "end": 37.2,
+   "text": "Apa sangat"
+  },
+  {
+   "start": 37.2,
+   "end": 37.5,
+   "text": "yang boleh"
+  },
+  {
+   "start": 37.5,
+   "end": 38.4,
+   "text": "dapat?"
+  },
+  {
+   "start": 38.5,
+   "end": 39.8,
+   "text": "Tahun berganti."
+  },
+  {
+   "start": 39.8,
+   "end": 40.3,
+   "text": "Ada masa"
+  },
+  {
+   "start": 40.3,
+   "end": 41.0,
+   "text": "susah,"
+  },
+  {
+   "start": 41.0,
+   "end": 41.4,
+   "text": "ada masa"
+  },
+  {
+   "start": 41.4,
+   "end": 42.3,
+   "text": "sempit."
+  },
+  {
+   "start": 42.5,
+   "end": 42.8,
+   "text": "Tapi dia"
+  },
+  {
+   "start": 42.8,
+   "end": 43.2,
+   "text": "tak pernah"
+  },
+  {
+   "start": 43.2,
+   "end": 44.2,
+   "text": "berhenti."
+  },
+  {
+   "start": 44.3,
+   "end": 44.8,
+   "text": "Harga emas"
+  },
+  {
+   "start": 44.8,
+   "end": 45.7,
+   "text": "pula naik,"
+  },
+  {
+   "start": 45.7,
+   "end": 46.3,
+   "text": "dari sekitar"
+  },
+  {
+   "start": 46.3,
+   "end": 48.2,
+   "text": "<b>RM170</b> segram,"
+  },
+  {
+   "start": 48.2,
+   "end": 48.8,
+   "text": "kepada lebih"
+  },
+  {
+   "start": 48.8,
+   "end": 50.5,
+   "text": "<b>RM600</b> segram."
+  },
+  {
+   "start": 50.5,
+   "end": 51.1,
+   "text": "<b>10</b> tahun"
+  },
+  {
+   "start": 51.1,
+   "end": 51.9,
+   "text": "kemudian,"
+  },
+  {
+   "start": 51.9,
+   "end": 52.4,
+   "text": "jumlah yang"
+  },
+  {
+   "start": 52.4,
+   "end": 53.4,
+   "text": "dia simpan,"
+  },
+  {
+   "start": 53.4,
+   "end": 54.9,
+   "text": "<b>RM12,000</b>."
+  },
+  {
+   "start": 55.1,
+   "end": 55.6,
+   "text": "Tapi nilai"
+  },
+  {
+   "start": 55.6,
+   "end": 56.0,
+   "text": "emas tu"
+  },
+  {
+   "start": 56.0,
+   "end": 56.8,
+   "text": "sekarang,"
+  },
+  {
+   "start": 56.8,
+   "end": 58.8,
+   "text": "lebih <b>RM25,000</b>."
+  },
+  {
+   "start": 59.4,
+   "end": 60.2,
+   "text": "Ayah,"
+  },
+  {
+   "start": 60.2,
+   "end": 60.7,
+   "text": "macam mana"
+  },
+  {
+   "start": 60.7,
+   "end": 61.3,
+   "text": "ayah sempat"
+  },
+  {
+   "start": 61.3,
+   "end": 62.0,
+   "text": "simpan semua"
+  },
+  {
+   "start": 62.0,
+   "end": 62.7,
+   "text": "ni?"
+  },
+  {
+   "start": 62.9,
+   "end": 63.4,
+   "text": "Ayah bukan"
+  },
+  {
+   "start": 63.4,
+   "end": 64.4,
+   "text": "orang kaya,"
+  },
+  {
+   "start": 64.4,
+   "end": 65.3,
+   "text": "Aiman."
+  },
+  {
+   "start": 65.7,
+   "end": 66.3,
+   "text": "Ayah cuma"
+  },
+  {
+   "start": 66.3,
+   "end": 67.5,
+   "text": "mula awal."
+  },
+  {
+   "start": 67.7,
+   "end": 68.2,
+   "text": "Anak kita"
+  },
+  {
+   "start": 68.2,
+   "end": 68.9,
+   "text": "membesar lebih"
+  },
+  {
+   "start": 68.9,
+   "end": 69.6,
+   "text": "cepat dari"
+  },
+  {
+   "start": 69.6,
+   "end": 70.0,
+   "text": "yang kita"
+  },
+  {
+   "start": 70.0,
+   "end": 70.9,
+   "text": "sangka."
+  },
+  {
+   "start": 71.4,
+   "end": 71.8,
+   "text": "Jom mula"
+  },
+  {
+   "start": 71.8,
+   "end": 72.5,
+   "text": "simpan emas"
+  },
+  {
+   "start": 72.5,
+   "end": 73.3,
+   "text": "untuk anak,"
+  },
+  {
+   "start": 73.3,
+   "end": 74.5,
+   "text": "dari sekarang."
+  },
+  {
+   "start": 74.8,
+   "end": 75.2,
+   "text": "Boleh save"
+  },
+  {
+   "start": 75.2,
+   "end": 75.9,
+   "text": "video ini"
+  },
+  {
+   "start": 75.9,
+   "end": 76.5,
+   "text": "untuk rujukan"
+  },
+  {
+   "start": 76.5,
+   "end": 77.0,
+   "text": "masa akan"
+  },
+  {
+   "start": 77.0,
+   "end": 78.0,
+   "text": "datang."
+  }
+ ],
+ "talk": [
+  {
+   "who": "ibu",
+   "start": 23.7,
+   "end": 27.3
+  },
+  {
+   "who": "f1",
+   "start": 35.2,
+   "end": 37.9
+  },
+  {
+   "who": "aiman",
+   "start": 59.4,
+   "end": 62.2
+  },
+  {
+   "who": "ayah",
+   "start": 62.9,
+   "end": 67.0
+  }
+ ],
+ "fades": [
+  {
+   "at": 9.45,
+   "dur": 0.3
+  },
+  {
+   "at": 50.35,
+   "dur": 0.3
+  }
+ ]
+}
