@@ -4,3 +4,5 @@ stills2/
 frames/
 *.mp4
 *.log
+frames_nadim/
+*.wav

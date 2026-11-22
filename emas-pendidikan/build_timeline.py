@@ -1,49 +1,61 @@
-import json,re
-words=json.load(open('audio/words.json'))['words']
-fix={0:None}
+# Builds timeline.json from word timings. Usage: python3 build_timeline.py audio/words_X.json DURATION
+import json,re,sys
+WF=sys.argv[1] if len(sys.argv)>1 else 'audio/words.json'
+words=json.load(open(WF))['words']
 W=[]
 for i,w in enumerate(words):
     t=w['text']
     if i==1: t='ni,'
     if t=='bank.': t='bang.'
     W.append((t,w['start_ms']/1000,w['end_ms']/1000))
-DUR=79.0
-shots=[('uni',0,9.45),('night',9.45,16.7),('dining',16.7,27.35),('decide',27.35,33.35),('mamak',33.35,38.2),('montage',38.2,44.0),('chart',44.0,50.35),('reveal',50.35,58.9),('hug',58.9,67.35),('shop',67.35,DUR)]
+DUR=float(sys.argv[2]) if len(sys.argv)>2 else W[-1][2]+1.5
+def find(text,after=0):
+    for i in range(after,len(W)):
+        if W[i][0].rstrip('.,?!')==text: return i
+    raise ValueError(text)
+def seq(*ts):  # index of first word of a phrase
+    for i in range(len(W)-len(ts)+1):
+        if all(W[i+k][0].rstrip('.,?!')==ts[k] for k in range(len(ts))): return i
+    raise ValueError(ts)
+st=lambda i:W[i][1]; en=lambda i:W[i][2]
+cut=lambda i:round((W[i-1][2]+W[i][1])/2,3)   # boundary just before word i
+iNight=seq('Tahun','2016'); iDining=seq('Satu','malam'); iIbu=seq('Banyaknya'); iIbuEnd=seq('sebanyak','tu')+1
+iDecide=seq('Encik','Hakim','buat'); iMamak=seq('Kawan-kawan'); iF1=seq('RM100','je'); iF1End=seq('boleh','dapat')+1
+iMont=seq('Tahun','berganti'); iChart=seq('Harga','emas'); iReveal=seq('10','tahun','kemudian'); iValue=seq('Tapi','nilai')
+iHug=seq('Ayah','macam'); iAyah=seq('Ayah','bukan'); iAyahEnd=seq('mula','awal')+1; iShop=seq('Anak','kita'); iJom=seq('Jom','mula')
+NAME=W[2][0].rstrip('.,')
+b=[0,cut(iNight),cut(iDining),cut(iDecide),cut(iMamak),cut(iMont),cut(iChart),cut(iReveal),cut(iHug),cut(iShop),DUR]
+ids=['uni','night','dining','decide','mamak','montage','chart','reveal','hug','shop']
+shots=[(ids[k],b[k],b[k+1]) for k in range(10)]
 T=lambda c,x: {'cls':c,'text':x}
+e=lambda x:round(x-0.15,3)
 titles=[
- (0.3,9.3,[T('big','HARI PENDAFTARAN'),T('sub','Aiman masuk universiti')]),
- (9.6,16.6,[T('big','10 TAHUN SEBELUMNYA'),T('sub','2016 · Gaji RM3,000 sebulan')]),
- (17.0,23.6,[T('sub','Kos belajar ijazah'),T('gold','±RM40,000')]),
- (23.7,27.3,[T('quote','“Banyaknya, bang…<br>mana nak cari?”')]),
- (27.6,33.3,[T('gold','RM100 sebulan'),T('sub','ditukar jadi emas')]),
- (33.5,38.1,[T('quote','“Seratus ringgit je?”')]),
- (38.4,43.9,[T('big','TAHUN BERGANTI…'),T('sub','tapi dia tak pernah berhenti')]),
- (44.2,50.3,[T('sub','Harga emas segram'),T('gold','±RM170 → ±RM620'),T('small','*anggaran')]),
- (50.5,55.0,[T('big','10 TAHUN KEMUDIAN'),T('sub','Jumlah disimpan: RM12,000')]),
- (55.0,58.8,[T('sub','Nilai emas sekarang'),T('gold','±RM25,000+'),T('small','*anggaran; harga emas berubah-ubah')]),
- (59.3,62.6,[T('quote','“Ayah, macam mana<br>ayah sempat simpan?”')]),
- (62.8,67.3,[T('quote','“Ayah bukan orang kaya.<br>Ayah cuma mula awal.”')]),
- (71.3,DUR,[T('big','JOM SIMPAN EMAS'),T('sub','untuk anak, dari sekarang')]),
+ (0.3,e(b[1]),[T('big','HARI PENDAFTARAN'),T('sub',f'{NAME} masuk universiti')]),
+ (b[1]+0.15,e(b[2]),[T('big','10 TAHUN SEBELUMNYA'),T('sub','2016 · Gaji RM3,000 sebulan')]),
+ (b[2]+0.3,st(iIbu)-0.1,[T('sub','Kos belajar ijazah'),T('gold','±RM40,000')]),
+ (st(iIbu),e(b[3]),[T('quote','“Banyaknya, bang…<br>mana nak cari?”')]),
+ (b[3]+0.25,e(b[4]),[T('gold','RM100 sebulan'),T('sub','ditukar jadi emas')]),
+ (b[4]+0.15,e(b[5]),[T('quote','“Seratus ringgit je?”')]),
+ (b[5]+0.2,e(b[6]),[T('big','TAHUN BERGANTI…'),T('sub','tapi dia tak pernah berhenti')]),
+ (b[6]+0.2,e(b[7]),[T('sub','Harga emas segram'),T('gold','±RM170 → ±RM620'),T('small','*anggaran')]),
+ (b[7]+0.15,st(iValue)-0.1,[T('big','10 TAHUN KEMUDIAN'),T('sub','Jumlah disimpan: RM12,000')]),
+ (st(iValue)-0.1,e(b[8]),[T('sub','Nilai emas sekarang'),T('gold','±RM25,000+'),T('small','*anggaran; harga emas berubah-ubah')]),
+ (b[8]+0.4,st(iAyah)-0.1,[T('quote','“Ayah, macam mana<br>ayah sempat simpan?”')]),
+ (st(iAyah)-0.1,e(b[9]),[T('quote','“Ayah bukan orang kaya.<br>Ayah cuma mula awal.”')]),
+ (st(iJom)-0.1,DUR,[T('big','JOM SIMPAN EMAS'),T('sub','untuk anak, dari sekarang')]),
 ]
-# subtitle chunks: max 2 words, break after punctuation
 subs=[];cur=[]
-def flush():
-    global cur
-    if cur: subs.append(cur); cur=[]
 for w in W:
     cur.append(w)
-    if re.search(r'[.,?!]$',w[0]) or len(cur)==2 or len(' '.join(x[0] for x in cur))>14: flush()
-flush()
+    if re.search(r'[.,?!]$',w[0]) or len(cur)==2 or len(' '.join(x[0] for x in cur))>14: subs.append(cur); cur=[]
+if cur: subs.append(cur)
 S=[]
 for k,c in enumerate(subs):
-    st=c[0][1]; en=c[-1][2]
-    nxt=subs[k+1][0][1] if k+1<len(subs) else en+0.8
-    en=min(nxt, en+0.5)
-    txt=' '.join(re.sub(r'^(RM[\d,]+|\d{2,4})',r'<b>\1</b>',x[0]) for x in c)
-    S.append({'start':round(st,3),'end':round(en,3),'text':txt})
-tl={'duration':DUR,'shots':[{'id':a,'start':b,'end':c} for a,b,c in shots],
-    'titles':[{'start':a,'end':b,'lines':l} for a,b,l in titles],'subs':S,
-    'talk':[{'who':'ibu','start':23.7,'end':27.3},{'who':'f1','start':35.2,'end':37.9},{'who':'aiman','start':59.4,'end':62.2},{'who':'ayah','start':62.9,'end':67.0}],
-    'fades':[{'at':9.45,'dur':0.3},{'at':50.35,'dur':0.3}]}
+    s0=c[0][1]; e0=c[-1][2]; nxt=subs[k+1][0][1] if k+1<len(subs) else e0+0.8
+    S.append({'start':round(s0,3),'end':round(min(nxt,e0+0.5),3),'text':' '.join(re.sub(r'^(RM[\d,]+|\d{2,4})',r'<b>\1</b>',x[0]) for x in c)})
+tl={'duration':DUR,'shots':[{'id':a,'start':x,'end':y} for a,x,y in shots],
+    'titles':[{'start':round(x,3),'end':round(y,3),'lines':l} for x,y,l in titles],'subs':S,
+    'talk':[{'who':'ibu','start':st(iIbu),'end':en(iIbuEnd)},{'who':'f1','start':st(iF1),'end':en(iF1End)},{'who':'aiman','start':st(iHug),'end':en(iAyah-1)},{'who':'ayah','start':st(iAyah),'end':en(iAyahEnd)}],
+    'fades':[{'at':b[1],'dur':0.3},{'at':b[7],'dur':0.3}]}
 json.dump(tl,open('timeline.json','w'),ensure_ascii=False,indent=1)
-print(len(S),'subs')
+print('DUR',DUR,'shots',[(a,round(x,2)) for a,x,_ in shots]); print('talk',tl['talk'])
