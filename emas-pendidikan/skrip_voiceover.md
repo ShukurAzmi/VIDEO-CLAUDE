@@ -6,25 +6,25 @@ Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saa
 ## Babak 1: Universiti (0:00 – 0:09)
 - [0:00] Hari ni, Nadim daftar masuk universiti.
 - [0:03] Semua yuran dah settle.
-- [0:05] Tapi tak ramai tahu, duit ni Baba dia mula simpan sejak sepuluh tahun lepas.
+- [0:05] Tapi tak ramai tahu, duit ni Baba dia mula simpan sejak 10 tahun lepas.
 
 ## Babak 2: Ruang tamu, malam 2016 (0:10 – 0:17)
-- [0:10] Tahun dua ribu enam belas.
-- [0:12] Encik Nor, gaji tiga ribu ringgit sebulan.
-- [0:15] Nadim baru lapan tahun.
+- [0:10] Tahun 2016.
+- [0:12] Encik Nor, gaji RM3,000 sebulan.
+- [0:15] Nadim baru 8 tahun.
 
 ## Babak 3: Meja makan (0:17 – 0:27)
 - [0:17] Satu malam, dia kira kos anak masuk universiti nanti.
-- [0:21] Paling kurang, empat puluh ribu ringgit.
+- [0:21] Paling kurang, RM40,000.
 - [0:24] *(suara ibu)* Banyaknya, bang. Mana kita nak cari duit sebanyak tu?
 
 ## Babak 4: Keputusan (0:28 – 0:34)
 - [0:28] Encik Nor buat satu keputusan.
-- [0:30] Setiap bulan, seratus ringgit, dia tukar jadi emas.
+- [0:30] Setiap bulan, RM100, dia tukar jadi emas.
 
 ## Babak 5: Kedai mamak (0:34 – 0:39)
 - [0:34] Kawan-kawan dia gelak.
-- [0:36] *(suara kawan)* Seratus ringgit je? Apa sangat yang boleh dapat?
+- [0:36] *(suara kawan)* RM100 je? Apa sangat yang boleh dapat?
 
 ## Babak 6: Tahun berganti (0:40 – 0:46)
 - [0:40] Tahun berganti.
@@ -32,11 +32,11 @@ Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saa
 - [0:44] Tapi dia tak pernah berhenti.
 
 ## Babak 7: Carta harga emas (0:46 – 0:52)
-- [0:46] Harga emas pula naik, dari sekitar seratus tujuh puluh ringgit segram, kepada lebih enam ratus ringgit segram.
+- [0:46] Harga emas pula naik, dari sekitar RM170 segram, kepada lebih RM600 segram.
 
 ## Babak 8: Kotak emas & surat tawaran (0:53 – 1:01)
-- [0:53] Sepuluh tahun kemudian, jumlah yang dia simpan, dua belas ribu ringgit.
-- [0:57] Tapi nilai emas tu sekarang, lebih dua puluh lima ribu ringgit.
+- [0:53] 10 tahun kemudian, jumlah yang dia simpan, RM12,000.
+- [0:57] Tapi nilai emas tu sekarang, lebih RM25,000.
 
 ## Babak 9: Berpelukan (1:01 – 1:09)
 - [1:01] *(suara Nadim)* Baba, macam mana Baba sempat simpan semua ni?
