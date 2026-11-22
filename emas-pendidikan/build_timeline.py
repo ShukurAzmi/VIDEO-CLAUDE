@@ -5,25 +5,30 @@ words=json.load(open(WF))['words']
 W=[]
 for i,w in enumerate(words):
     t=w['text']
-    if i==1: t='ni,'
+    if i==1 and t=='ini,': t='ni,'
     if t=='bank.': t='bang.'
+    if t=='RM3000': t='RM3,000'
     W.append((t,w['start_ms']/1000,w['end_ms']/1000))
 DUR=float(sys.argv[2]) if len(sys.argv)>2 else W[-1][2]+1.5
 def find(text,after=0):
     for i in range(after,len(W)):
         if W[i][0].rstrip('.,?!')==text: return i
     raise ValueError(text)
-def seq(*ts):  # index of first word of a phrase
+def seq(*ts):  # index of first word of a phrase; '|' separates alternatives
     for i in range(len(W)-len(ts)+1):
-        if all(W[i+k][0].rstrip('.,?!')==ts[k] for k in range(len(ts))): return i
+        if all(W[i+k][0].rstrip('.,?!') in ts[k].split('|') for k in range(len(ts))): return i
     raise ValueError(ts)
 st=lambda i:W[i][1]; en=lambda i:W[i][2]
 cut=lambda i:round((W[i-1][2]+W[i][1])/2,3)   # boundary just before word i
-iNight=seq('Tahun','2016'); iDining=seq('Satu','malam'); iIbu=seq('Banyaknya'); iIbuEnd=seq('sebanyak','tu')+1
-iDecide=seq('Encik','Hakim','buat'); iMamak=seq('Kawan-kawan'); iF1=seq('RM100','je'); iF1End=seq('boleh','dapat')+1
+iNight=seq('Tahun','2016'); iDining=seq('Satu','malam'); iIbu=seq('Banyaknya'); iIbuEnd=seq('sebanyak')+1
+iDecide=seq('Encik','Hakim|Nor|Noh','buat'); iMamak=seq('Kawan-kawan'); iF1=seq('RM100','je'); iF1End=seq('boleh','dapat|buat')+1
 iMont=seq('Tahun','berganti'); iChart=seq('Harga','emas'); iReveal=seq('10','tahun','kemudian'); iValue=seq('Tapi','nilai')
-iHug=seq('Ayah','macam'); iAyah=seq('Ayah','bukan'); iAyahEnd=seq('mula','awal')+1; iShop=seq('Anak','kita'); iJom=seq('Jom','mula')
+iHug=seq('Ayah|Baba','macam'); iAyah=seq('Ayah','bukan'); iAyahEnd=seq('mula','awal')+1; iShop=seq('Anak','kita'); iJom=seq('Jom','mula')
 NAME=W[2][0].rstrip('.,')
+BABA=any(x[0].rstrip('.,?!')=='Baba' for x in W)
+Q_IBU='“Banyaknya, Baba…<br>mana nak cari?”' if BABA else '“Banyaknya, bang…<br>mana nak cari?”'
+Q_F1='“Seratus je ke?”' if BABA else '“Seratus ringgit je?”'
+Q_ANAK='“Baba, macam mana<br>Baba simpan semua ni?”' if BABA else '“Ayah, macam mana<br>ayah sempat simpan?”'
 b=[0,cut(iNight),cut(iDining),cut(iDecide),cut(iMamak),cut(iMont),cut(iChart),cut(iReveal),cut(iHug),cut(iShop),DUR]
 ids=['uni','night','dining','decide','mamak','montage','chart','reveal','hug','shop']
 shots=[(ids[k],b[k],b[k+1]) for k in range(10)]
@@ -33,14 +38,14 @@ titles=[
  (0.3,e(b[1]),[T('big','HARI PENDAFTARAN'),T('sub',f'{NAME} masuk universiti')]),
  (b[1]+0.15,e(b[2]),[T('big','10 TAHUN SEBELUMNYA'),T('sub','2016 · Gaji RM3,000 sebulan')]),
  (b[2]+0.3,st(iIbu)-0.1,[T('sub','Kos belajar ijazah'),T('gold','±RM40,000')]),
- (st(iIbu),e(b[3]),[T('quote','“Banyaknya, bang…<br>mana nak cari?”')]),
+ (st(iIbu),e(b[3]),[T('quote',Q_IBU)]),
  (b[3]+0.25,e(b[4]),[T('gold','RM100 sebulan'),T('sub','ditukar jadi emas')]),
- (b[4]+0.15,e(b[5]),[T('quote','“Seratus ringgit je?”')]),
+ (b[4]+0.15,e(b[5]),[T('quote',Q_F1)]),
  (b[5]+0.2,e(b[6]),[T('big','TAHUN BERGANTI…'),T('sub','tapi dia tak pernah berhenti')]),
  (b[6]+0.2,e(b[7]),[T('sub','Harga emas segram'),T('gold','±RM170 → ±RM620'),T('small','*anggaran')]),
  (b[7]+0.15,st(iValue)-0.1,[T('big','10 TAHUN KEMUDIAN'),T('sub','Jumlah disimpan: RM12,000')]),
  (st(iValue)-0.1,e(b[8]),[T('sub','Nilai emas sekarang'),T('gold','±RM25,000+'),T('small','*anggaran; harga emas berubah-ubah')]),
- (b[8]+0.4,st(iAyah)-0.1,[T('quote','“Ayah, macam mana<br>ayah sempat simpan?”')]),
+ (b[8]+0.4,st(iAyah)-0.1,[T('quote',Q_ANAK)]),
  (st(iAyah)-0.1,e(b[9]),[T('quote','“Ayah bukan orang kaya.<br>Ayah cuma mula awal.”')]),
  (st(iJom)-0.1,DUR,[T('big','JOM SIMPAN EMAS'),T('sub','untuk anak, dari sekarang')]),
 ]

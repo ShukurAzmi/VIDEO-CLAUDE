@@ -6,3 +6,6 @@ frames/
 *.log
 frames_nadim/
 *.wav
+frames_shukur/
+*.f32
+*.m4a
