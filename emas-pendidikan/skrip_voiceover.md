@@ -1,6 +1,6 @@
 # Skrip Voice-Over Manual: "Ayah Mula Awal"
 
-Sama macam narasi dalam video (versi Nadim), cuma **Encik Hakim → Encik Noh** dan Nadim panggil **Baba**.
+Sama macam narasi dalam video (versi Nadim), cuma **Encik Hakim → Encik Nor** dan Nadim panggil **Baba**.
 Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saat). Ikut lebih kurang sahaja; babak akan dilaraskan ikut rakaman.
 
 ## Babak 1: Universiti (0:00 – 0:09)
@@ -10,7 +10,7 @@ Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saa
 
 ## Babak 2: Ruang tamu, malam 2016 (0:10 – 0:17)
 - [0:10] Tahun dua ribu enam belas.
-- [0:12] Encik Noh, gaji tiga ribu ringgit sebulan.
+- [0:12] Encik Nor, gaji tiga ribu ringgit sebulan.
 - [0:15] Nadim baru lapan tahun.
 
 ## Babak 3: Meja makan (0:17 – 0:27)
@@ -19,7 +19,7 @@ Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saa
 - [0:24] *(suara ibu)* Banyaknya, bang. Mana kita nak cari duit sebanyak tu?
 
 ## Babak 4: Keputusan (0:28 – 0:34)
-- [0:28] Encik Noh buat satu keputusan.
+- [0:28] Encik Nor buat satu keputusan.
 - [0:30] Setiap bulan, seratus ringgit, dia tukar jadi emas.
 
 ## Babak 5: Kedai mamak (0:34 – 0:39)
@@ -40,7 +40,7 @@ Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saa
 
 ## Babak 9: Berpelukan (1:01 – 1:09)
 - [1:01] *(suara Nadim)* Baba, macam mana Baba sempat simpan semua ni?
-- [1:05] *(suara Encik Noh)* Ayah bukan orang kaya, Nadim. Ayah cuma mula awal.
+- [1:05] *(suara Encik Nor)* Ayah bukan orang kaya, Nadim. Ayah cuma mula awal.
 
 ## Babak 10: Kedai emas (1:09 – 1:20)
 - [1:09] Anak kita membesar lebih cepat dari yang kita sangka.
@@ -49,5 +49,5 @@ Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saa
 
 ## Tips rakaman
 - Bilik senyap, telefon ±20 cm dari mulut. Satu fail panjang pun boleh; berhenti ±1 saat antara ayat, ±2 saat antara babak.
-- Bahagian *(suara ibu / kawan / Nadim / Encik Noh)* boleh dibaca oleh narator yang sama, atau dirakam oleh orang lain.
+- Bahagian *(suara ibu / kawan / Nadim / Encik Nor)* boleh dibaca oleh narator yang sama, atau dirakam oleh orang lain.
 - Hantar fail (m4a / mp3 / wav) dalam chat. Subtitle, gerak mulut watak dan panjang babak akan diselaraskan ikut rakaman.
