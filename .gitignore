@@ -1,0 +1,7 @@
+work/*
+!work/tools/
+!work/comp/
+work/comp/segs.js
+work/comp/words.js
+work/comp/comp.js
+*.mp4
