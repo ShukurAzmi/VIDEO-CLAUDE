@@ -1,12 +1,12 @@
 # Skrip Voice-Over Manual: "Ayah Mula Awal"
 
-Sama macam narasi dalam video (versi Nadim), cuma **Encik Hakim → Encik Nor** dan Nadim panggil **Baba**.
+Sama macam narasi dalam video (versi Nadim), cuma **Encik Hakim → Encik Nor** dan semua "ayah" ditukar kepada **Baba**.
 Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saat). Ikut lebih kurang sahaja; babak akan dilaraskan ikut rakaman.
 
 ## Babak 1: Universiti (0:00 – 0:09)
 - [0:00] Hari ni, Nadim daftar masuk universiti.
 - [0:03] Semua yuran dah settle.
-- [0:05] Tapi tak ramai tahu, duit ni ayah dia mula simpan sejak sepuluh tahun lepas.
+- [0:05] Tapi tak ramai tahu, duit ni Baba dia mula simpan sejak sepuluh tahun lepas.
 
 ## Babak 2: Ruang tamu, malam 2016 (0:10 – 0:17)
 - [0:10] Tahun dua ribu enam belas.
@@ -40,7 +40,7 @@ Masa ialah masa ayat itu bermula dan tamat dalam video sekarang (jumlah ±80 saa
 
 ## Babak 9: Berpelukan (1:01 – 1:09)
 - [1:01] *(suara Nadim)* Baba, macam mana Baba sempat simpan semua ni?
-- [1:05] *(suara Encik Nor)* Ayah bukan orang kaya, Nadim. Ayah cuma mula awal.
+- [1:05] *(suara Encik Nor)* Baba bukan orang kaya, Nadim. Baba cuma mula awal.
 
 ## Babak 10: Kedai emas (1:09 – 1:20)
 - [1:09] Anak kita membesar lebih cepat dari yang kita sangka.
