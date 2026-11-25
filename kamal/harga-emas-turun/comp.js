@@ -18,12 +18,11 @@ const wob=(t,a=1.2,f=1.3,p=0)=>Math.sin((t+p)*f*Math.PI*2)*a;
 const FACE=[495,795];
 const L={
   FULL:{x:0,y:0,s:1,r:0,b:0},
-  PUNCH:{x:FACE[0]*(1-1.12),y:FACE[1]*(1-1.12)+40,s:1.12,r:0,b:0},
+  PUNCH:{x:FACE[0]*(1-1.08),y:FACE[1]*(1-1.08)+25,s:1.08,r:0,b:0},
   PUNCH2:{x:FACE[0]*(1-1.2),y:FACE[1]*(1-1.2)+40,s:1.2,r:0,b:0},
 };
-const LT=[[0,'FULL'],[5.0,'PUNCH',.5],[8.62,'FULL',.4],[9.4,'PUNCH2',.5],[11.5,'FULL',.4],[16.6,'PUNCH',.5],[19.0,'FULL',.4],
- [24.6,'PUNCH',.5],[27.0,'FULL',.4],[30.5,'PUNCH2',.5],[34.8,'FULL',.4],[38.0,'PUNCH',.4],[39.8,'FULL',.4],[46.2,'PUNCH2',.5],[49.1,'FULL',.4],
- [51.95,'PUNCH',.4],[53.2,'FULL',.4],[56.0,'PUNCH',.5],[58.5,'FULL',.4],[62.2,'PUNCH2',.4],[63.5,'FULL',.4],[68.0,'PUNCH',.5],[70.9,'FULL',.4]];
+// v3: zoom dikurangkan — 4 kali sahaja, lembut (1.08x), perlahan
+const LT=[[0,'FULL'],[9.4,'PUNCH',.8],[11.5,'FULL',.6],[30.5,'PUNCH',.8],[34.8,'FULL',.6],[46.2,'PUNCH',.8],[49.1,'FULL',.6],[68.0,'PUNCH',.8],[70.9,'FULL',.6]];
 function layoutAt(t){let cur=L.FULL,prev=L.FULL,k=1;
   for(let i=0;i<LT.length;i++){const [s,n,d=.3]=LT[i];if(t>=s){prev=i?L[LT[i-1][1]]:L.FULL;cur=L[n];k=eio((t-s)/d)}}
   const o={};for(const p of['x','y','s','r','b'])o[p]=lerp(prev[p],cur[p],k);return o}

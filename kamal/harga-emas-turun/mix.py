@@ -21,6 +21,7 @@ EV=[('stinger',-8,0.0),('pop',-11,1.0),('fall',-9,1.15),('impact',-6,1.65),('pop
 ('pop',-12,63.6),('buzzer',-9,64.75),('chime',-8,66.2),('check',-11,67.1),
 ('pop',-12,71.0),('pop',-12,71.1),('tap',-6,71.25),('pop',-12,71.7),('tap',-6,71.85),('pop',-12,74.85),('ding',-13,74.85),('tap',-6,75.4),('chime',-12,75.6)]
 C={}
+if os.environ.get('NOSFX'): EV=[]  # v3: tanpa SFX (permintaan Adila)
 for n,g,t in EV:
   if n not in C: C[n]=sf.read(f'{W}/sfx/{n}.wav')[0]
   x=C[n]*db(g);s=int(t*SR);L=min(len(x),N-s)
