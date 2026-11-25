@@ -226,8 +226,7 @@ window.safecheck=function(){const bad=[];const box=(el)=>el.getBoundingClientRec
   const sc=1/(window.devicePixelRatio||1)*(window.devicePixelRatio||1);
   for(const s of SC){if(s.root.style.display==='none')continue;
     for(const el of s.root.children){if(+getComputedStyle(el).opacity<.05)continue;const r=box(el);if(r.width<2)continue;
-      if(r.left<58||r.right>942||r.top<248||r.bottom>1482)bad.push(`${s.s}:${el.textContent.slice(0,18)} [${r.left|0},${r.top|0},${r.right|0},${r.bottom|0}]`);
-      if(r.left<330&&r.bottom>1194&&r.top<1250)bad.push(`${s.s}: tindih watermark ${el.textContent.slice(0,18)}`)}}
+      if(r.left<58||r.right>942||r.top<248||r.bottom>1482)bad.push(`${s.s}:${el.textContent.slice(0,18)} [${r.left|0},${r.top|0},${r.right|0},${r.bottom|0}]`);}}
   const c=$('#cap').getBoundingClientRect();if(c.width>2){const sp=[...$('#cap').children];if(sp.length){const a=sp[0].getBoundingClientRect(),b=sp[sp.length-1].getBoundingClientRect();if(a.left<58||b.right>942)bad.push('cap terkeluar '+$('#cap').textContent)}}
   const l=VB.getBoundingClientRect();if(+VBR.style.opacity>.5&&(l.left<58||l.right>942||l.top<248||l.bottom>1482))bad.push('kad video terkeluar');
   return bad};

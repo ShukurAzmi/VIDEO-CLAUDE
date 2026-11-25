@@ -7,7 +7,7 @@ const FR=process.env.FINAL?'bfB':'bf';const NF=fs.readdirSync(path.join(W,FR)).l
 (async()=>{fs.mkdirSync(OUT,{recursive:true});const br=await chromium.launch();
  async function mk(){const p=await br.newPage({viewport:{width:1080,height:1920},deviceScaleFactor:scale});
   await p.addInitScript(`window.WORDS=${words};window.NF=${NF};`);
-  await p.goto('file://'+path.join(W,'index.html')+'?f='+FR);await p.evaluate(async()=>{await document.fonts.ready;await document.getElementById('wm').decode()});return p}
+  await p.goto('file://'+path.join(W,'index.html')+'?f='+FR);await p.evaluate(async()=>{await document.fonts.ready});return p}
  if(MODE==='stills'){const p=await mk();const bad=new Set();
   for(const t of A.split(',').map(Number)){await p.evaluate(t=>window.render(t),t);(await p.evaluate(()=>window.safecheck())).forEach(b=>bad.add(t+' '+b));
    await p.screenshot({path:path.join(OUT,`s_${t.toFixed(2)}.jpg`),type:'jpeg',quality:85})}
