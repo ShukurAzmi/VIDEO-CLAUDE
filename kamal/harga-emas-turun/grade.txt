@@ -1,1 +1,1 @@
-eq=contrast=1.07:saturation=0.93:gamma=0.98,colorbalance=rs=-0.02:bs=0.05:rm=0.02:gm=0.0:bm=-0.015:rh=0.03:gh=0.015:bh=0.0,curves=all='0/0.02 0.25/0.22 0.75/0.79 1/0.98',vignette=PI/5
+huesaturation=saturation=-0.45:colors=m+b:strength=1,eq=contrast=1.02:saturation=0.97:brightness=0.0:gamma=1.0,colorbalance=rm=-0.01:bm=0.01,curves=all='0/0.03 0.5/0.5 1/0.96',vignette=PI/7
