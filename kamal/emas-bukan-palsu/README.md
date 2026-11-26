@@ -6,3 +6,9 @@ Aliran: `tr.py` (+ `tr5.py` semak bahagian meragukan) → `DET=src_df.wav OFF=35
 FACE=[360,860]. Muka jelas 0–2.3s. Zoom 1.08x: 5.0, 20.5, 45.5, 66.0 (senyap). 14 babak grafik besar + video blur.
 B-roll (img/, tak di-commit): foto Unsplash — bar.jpg (jongkong), online.jpg (beli online telefon), parcel.jpg (bungkusan), kedai.jpg (kedai emas), kemas.jpg (barang kemas).
 Lantai bunyi: suara p90 vs lantai p10 = 37 dB (asal) → 50 dB.
+
+## v2 (maklum balas: bunyi "kipas", percakapan masih lambat)
+- Punca bunyi kipas = muzik sintetik lama (pad 55–110 Hz + pulse 55 Hz = dengung berterusan). Ganti `music2.py`: kotak muzik oktaf tinggi + pad lembut, highpass 350 Hz. Bass 20–300 Hz dalam mix turun ~17 dB.
+- Suara: `clean3.py` (NR stationary kuat, profil 15% paling senyap + expander maks −35 dB). Lantai −77 → −87 dB, p90 suara tak berubah. Pas NR tak-stationary dibuang (makan suara 2 dB).
+- Potong lebih ketat: `DET=src_df.wav OFF=34 MINP=0.11 MARG=0.06 START=0.0 END=82.45 python3 cut.py` (72.9s) + tempo 1.07x (`atempo`, `setpts=PTS/1.07`) → 68.2s + 1.2s CTA = 69.37s.
+- Babak kekal dalam masa v1 (`segs_v1.json`); `comp.js` `OLD(t)` = masa baru ×1.07 → sumber → v1. SFX dipeta semula; kapsyen = mapw ÷ 1.07.
