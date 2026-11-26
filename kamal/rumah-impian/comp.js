@@ -133,7 +133,7 @@ scene({s:37.55,e:44.55,build(R,o){
 // B7 CONTOH: 3 cara — asingkan duit / tabung khas / emas
 scene({s:44.6,e:52.75,build(R,o){
   o.h=H(R,head('CONTOH','CARA MENYIMPAN',46,80));
-  o.r=[['✂️','ASINGKAN DUIT GAJI',44],['🐷','BINA TABUNG KHAS',44],['🪙','SIMPAN DALAM EMAS',44]].map(([e,x,fs],i)=>E(R,`left:110px;top:${490+i*175}px;width:780px;height:155px`,row(e,x,1,fs)));
+  o.r=[['✂️','ASINGKAN DUIT GAJI',44],['🫙','BINA TABUNG KHAS',44],['🪙','SIMPAN DALAM EMAS',44]].map(([e,x,fs],i)=>E(R,`left:110px;top:${490+i*175}px;width:780px;height:155px`,row(e,x,1,fs)));
   o.gb=E(R,'left:360px;top:1030px;width:280px;height:130px',goldBar(280,130,30));
 },upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,44.65),{o:f}));
   [[45.46,47.54],[48.14,49.21],[50.39,52.39]].forEach(([a,b],i)=>rowUpd(o.r[i],t,a,b,f));
@@ -167,9 +167,11 @@ scene({s:68.1,e:71.45,nob:1,build(R,o){
 // B10 MULAKAN DENGAN APA YANG KITA MAMPU
 scene({s:71.5,e:73.8,build(R,o){
   o.h=H(R,head('MULAKAN DENGAN','APA YANG MAMPU',46,80),330);
-  o.b=E(R,'left:340px;top:560px;width:320px;height:320px',glow+big('🌱',260));
+  o.b=E(R,'left:330px;top:540px;width:340px;height:360px',glow+`<div style="position:absolute;left:30px;right:30px;top:60px;bottom:0;border:8px solid rgba(255,255,255,.75);border-top:none;border-radius:0 0 80px 80px;background:rgba(255,255,255,.07);overflow:hidden"><div class="lv" style="position:absolute;left:0;right:0;bottom:0;height:0;background:linear-gradient(180deg,#FFE680,#F5C542 40%,#C8901A)"></div></div>
+   <div style="position:absolute;left:12px;right:12px;top:40px;height:34px;border-radius:12px;background:#C8901A;border:4px solid #FFE680"></div>
+   <div class="cn" style="position:absolute;left:115px;top:-120px;font-size:110px;opacity:0">🪙</div>`);
   o.d=E(R,'left:60px;right:140px;top:940px;text-align:center;white-space:nowrap',pill('✓ HARI INI','#14401f','#fff','#2ecc71',60),'g');
-},upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,71.55),{o:f}));st(o.b,mix(pop(t,72.0,.5),{o:f,y:wob(t,8,.6)}));st(o.d,mix(pop(t,73.34),{o:f}));}});
+},upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,71.55),{o:f}));st(o.b,mix(pop(t,71.9,.45),{o:f}));{const k=(t-72.1)/.55,c=o.b.querySelector('.cn');c.style.opacity=k>0&&k<1?1:0;c.style.transform=`translateY(${lerp(0,230,eio(k))}px) rotate(${k*200}deg)`;o.b.querySelector('.lv').style.height=(8+22*eo((t-72.6)/.5))*(t>72.6?1:0)+'%';}st(o.d,mix(pop(t,73.34),{o:f}));}});
 
 // B11 SAVE & SHARE
 scene({s:75.6,e:79.15,build(R,o){
