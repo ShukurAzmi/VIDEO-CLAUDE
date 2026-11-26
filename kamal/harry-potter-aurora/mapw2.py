@@ -21,5 +21,19 @@ for w in W:
   if out and w['s']<=out[-1]['s']: w['s']=round(out[-1]['s']+.01,2)
   if w['e']<w['s']+.08: w['e']=round(w['s']+.08,2)
   out.append(w)
+# 'e-commerce (app)' -> AKAUN EMAS GAP (pembetulan Adila)
+o2=[]
+for w in out:
+  if w['w'].lower().startswith('e-commerce'):
+    p=',' if w['w'].endswith(',') else ''
+    if o2 and False: pass
+    s,e=w['s'],w['e']
+    if o2 and o2[-1]['w'].lower().startswith('app'): pass
+    d=(e-s)/3
+    for i,x in enumerate(['akaun','emas','GAP'+p]): o2.append(dict(w=x,s=round(s+i*d,2),e=round(s+(i+1)*d,2)))
+  elif w['w'].lower().startswith('app') and o2 and o2[-1]['w'].startswith('GAP'):
+    o2[-1]['w']='GAP'+(',' if w['w'].endswith(',') else '');o2[-1]['e']=w['e']
+  else: o2.append(w)
+out=o2
 json.dump(out,open('words_out.json','w'))
 print(' '.join(f"{w['w']}@{w['s']}" for w in out))

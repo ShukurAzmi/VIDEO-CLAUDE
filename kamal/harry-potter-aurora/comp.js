@@ -69,14 +69,14 @@ scene({s:2.35,e:6.35,build(R,o){
 // B2 (7.1) 2 CARA DAPATKAN: e-commerce app / beli direct PG Jewel
 scene({s:7.1,e:12.15,build(R,o){
   o.h=E(R,'left:60px;right:140px;top:300px;text-align:center;white-space:nowrap','<div style="font:800 46px Mont;color:#ddd">BOLEH DAPATKAN MELALUI</div>'+goldTx('2 CARA',110),'g sh');
-  o.c1=E(R,'left:140px;top:560px;width:720px;height:220px',card(`<div style="display:flex;align-items:center;gap:30px;height:100%;padding-left:40px"><div style="font-size:96px">📱</div><div style="line-height:1.1"><div style="font:800 34px Mont;color:#ddd">CARA 1</div><div class="gold" style="font:900 46px Mont;white-space:nowrap">E-COMMERCE APP</div></div></div>`));
-  o.c2=E(R,'left:140px;top:840px;width:720px;height:220px',card(`<div style="display:flex;align-items:center;gap:30px;height:100%;padding-left:40px"><div style="font-size:96px">🏬</div><div style="line-height:1.1"><div style="font:800 34px Mont;color:#ddd">CARA 2 · BELI DIRECT</div><div class="gold" style="font:900 60px Mont;white-space:nowrap">PG JEWEL</div></div></div>`));
+  o.c1=E(R,'left:140px;top:560px;width:720px;height:220px',card(`<div style="display:flex;align-items:center;gap:30px;height:100%;padding-left:40px"><div style="font-size:96px">📱</div><div style="line-height:1.1"><div style="font:800 34px Mont;color:#ddd">CARA 1</div><div class="gold" style="font:900 52px Mont;white-space:nowrap">AKAUN EMAS GAP</div></div></div>`));
+  o.c2=E(R,'left:140px;top:840px;width:720px;height:220px',card(`<div style="display:flex;align-items:center;gap:30px;height:100%;padding-left:40px"><div style="font-size:96px">🏬</div><div style="line-height:1.1"><div style="font:800 34px Mont;color:#ddd">CARA 2 · BELI DIRECT DI</div><div class="gold" style="font:900 40px Mont;white-space:nowrap">KEDAI EMAS PG JEWEL</div></div></div>`));
 },upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,7.15),{o:f}));st(o.c1,mix(slide(t,9.4,-120,0,.45),{o:f}));st(o.c2,mix(slide(t,10.6,120,0,.45),{o:f}));}});
 
 // B3 (12.2) TAPI — e-commerce app ✕ tak dapat box special edition
 scene({s:12.2,e:17.0,build(R,o){
   o.h=E(R,'left:60px;right:140px;top:300px;text-align:center;white-space:nowrap',goldTx('YANG SPECIAL…',84),'g sh');
-  o.c1=E(R,'left:160px;top:500px;width:680px;height:260px',card(`<div style="text-align:center;padding-top:30px;line-height:1.15"><div style="font-size:80px">📱</div><div style="font:900 50px Mont;color:#fff;white-space:nowrap">E-COMMERCE APP</div></div>`)+'<div class="mk1" style="opacity:0">'+mark(false,120)+'</div>');
+  o.c1=E(R,'left:160px;top:500px;width:680px;height:260px',card(`<div style="text-align:center;padding-top:30px;line-height:1.15"><div style="font-size:80px">📱</div><div style="font:900 50px Mont;color:#fff;white-space:nowrap">AKAUN EMAS GAP</div></div>`)+'<div class="mk1" style="opacity:0">'+mark(false,120)+'</div>');
   o.n=E(R,'left:60px;right:140px;top:830px;text-align:center;white-space:nowrap;line-height:1.15','<div style="font:900 50px Mont;color:#ff8a80">TAK DAPAT</div><div style="font:900 50px Mont;color:#fff">📦 SPECIAL EDITION BOX</div>','g sh');
 },upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,12.25),{o:f}));st(o.c1,mix(slide(t,14.0,0,80,.45),{o:f}));const m=o.c1.querySelector('.mk1');const p=pop(t,15.67);m.style.opacity=p.o;m.style.transform=`scale(${p.s})`;
   st(o.n,mix(pop(t,15.75),{o:f}));}});
@@ -86,7 +86,7 @@ scene({s:17.05,e:20.1,nob:1,build(R,o){o.t=topPill(R,'📦 <span class="gold">SP
 
 // B4 (20.15) ✓ KENA BELI DIRECT DI PG JEWEL — foto p2 (logo PG Jewel + box)
 scene({s:20.15,e:23.1,build(R,o){
-  o.h=E(R,'left:60px;right:140px;top:280px;text-align:center;white-space:nowrap;line-height:1.05','<div style="font:800 46px Mont;color:#ddd">KENA BELI DIRECT DI</div>'+goldTx('PG JEWEL',100),'g sh');
+  o.h=E(R,'left:60px;right:140px;top:280px;text-align:center;white-space:nowrap;line-height:1.05','<div style="font:800 40px Mont;color:#ddd">KENA BELI DIRECT DI KEDAI EMAS</div>'+goldTx('PG JEWEL',100),'g sh');
   o.p=E(R,'left:220px;top:480px;width:560px;height:700px',photo('img/p2s.jpg',null,'30% 35%')+'<div class="mk1" style="position:absolute;right:0;top:0;opacity:0">'+mark(true,130)+'</div>');
 },upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,20.2),{o:f}));st(o.p,mix(slide(t,20.3,0,80,.5),{o:f,r:1.5}));flip(o.p,t,20.3,-1,.7);kb(o.p,t,20.3,1,1.1,2.8);shine(o.p,t,20.9);
   const m=o.p.querySelector('.mk1');const p=pop(t,22.45);m.style.opacity=p.o;m.style.transform=`scale(${p.s})`;}});
@@ -131,7 +131,7 @@ scene({s:56.4,e:999,nob:1,build(R,o){o.t=topPill(R,'✨ <span class="gold">0.5G 
 function blurAt(t){let b=0;for(const s of SC){if(s.nob)continue;const k=Math.min(cl((t-s.s)/.25),cl((s.e-t)/.25));b=Math.max(b,k)}return eio(b)}
 
 // ---------- kapsyen ----------
-const W=window.WORDS||[];const KEY=/^(HARRY|POTTER|PUBLIC|GOLD|PG|JEWEL|EDISI|BOX|LIMITED|EDITION|SPECIAL|DIRECT|EMPAT|SLOT|CARD|E-COMMERCE|COVER|BUKA|BAR|DUA)$/;
+const W=window.WORDS||[];const KEY=/^(AKAUN|GAP|KEDAI|HARRY|POTTER|PUBLIC|GOLD|PG|JEWEL|EDISI|BOX|LIMITED|EDITION|SPECIAL|DIRECT|EMPAT|SLOT|CARD|E-COMMERCE|COVER|BUKA|BAR|DUA)$/;
 const CAPG=[];{let g=[];for(let i=0;i<W.length;i++){const w=W[i];g.push(w);const nx=W[i+1];const len=g.reduce((a,x)=>a+x.w.length+1,0)+(nx?nx.w.length:0);const end=/[.,?]$/.test(w.w)||g.length>=3||len>17||(W[i+1]&&W[i+1].s-w.e>.25);if(end||i==W.length-1){CAPG.push(g);g=[]}}}
 const CAP=$('#cap');
 function capUpd(t){let g=null;for(const x of CAPG){if(t>=x[0].s-.05&&t<x[x.length-1].e+.25)g=x}
