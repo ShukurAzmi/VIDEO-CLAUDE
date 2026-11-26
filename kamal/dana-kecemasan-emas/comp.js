@@ -66,10 +66,10 @@ scene({s:2.4,e:6.25,build(R,o){
   o.c1=E(R,'left:110px;top:460px;width:370px;height:420px',card(`<div style="text-align:center;padding-top:40px;line-height:1.15"><div style="font-size:150px;line-height:1">🛟</div><div style="font:900 44px Mont;color:#fff;margin-top:26px;white-space:nowrap">DANA</div><div style="font:900 44px Mont;color:#fff;white-space:nowrap">KECEMASAN</div></div>`));
   o.c2=E(R,'left:520px;top:460px;width:370px;height:420px',card(`<div style="text-align:center;padding-top:40px;line-height:1.15;position:relative;height:100%"><div style="font-size:150px;line-height:1">🪙</div><div style="font:900 44px Mont;color:#fff;margin-top:26px;white-space:nowrap">SIMPAN</div><div class="gold" style="font:900 52px Mont;white-space:nowrap">EMAS</div>${TW()}</div>`));
   o.vs=E(R,'left:440px;top:610px;width:120px;text-align:center;font:700 italic 80px Play;color:#fff','vs','g sh');
-  o.q=E(R,'left:60px;right:140px;top:940px;text-align:center;white-space:nowrap',pill('ATAU DUA-DUA? 🤔','#5a1414','#fff','#ff6b6b',54),'g');
+  o.q=E(R,'left:60px;right:140px;top:940px;text-align:center;white-space:nowrap',pill('ATAU DUA-DUA? 🤔','#5a1414','#fff','#ff6b6b',48),'g');
   o.b=E(R,'left:60px;right:140px;top:1080px;text-align:center;white-space:nowrap;font:800 42px Mont;color:#ddd','📅 DALAM BULAN YANG SAMA','g sh');
 },upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,2.45),{o:f}));st(o.c1,mix(slide(t,2.55,-160,0,.45),{o:f,r:-2}));st(o.vs,mix(pop(t,2.85),{o:f}));
-  st(o.c2,mix(slide(t,2.85,160,0,.45),{o:f,r:2}));twUpd(o.c2,t,2.9);st(o.q,mix(pop(t,4.62,.35),{o:f,s:1+.03*Math.sin(t*9)}));st(o.b,mix(slide(t,5.3,0,60,.35),{o:f}));
+  st(o.c2,mix(slide(t,2.85,160,0,.45),{o:f,r:2}));twUpd(o.c2,t,2.9);st(o.q,mix(pop(t,4.62,.35),{o:f,s:1+.015*Math.sin(t*9)}));st(o.b,mix(slide(t,5.3,0,60,.35),{o:f}));
 }});
 
 // (muka jelas 6.25–9.4) "Bagi Dila, dana kecemasan memang perlu diutamakan" — zoom
@@ -142,11 +142,11 @@ scene({s:44.8,e:54.85,build(R,o){
 }});
 
 // B8 JANGAN TUNGGU KEWANGAN SEMPURNA → MULA MENYIMPAN
-scene({s:54.95,e:59.25,build(R,o){
+scene({s:55.3,e:59.25,build(R,o){
   o.h=E(R,'left:60px;right:140px;top:330px;text-align:center;white-space:nowrap;line-height:1.05','<div style="font:800 52px Mont;color:#ddd">JANGAN TUNGGU</div><div style="font:900 80px Mont;color:#fff">KEWANGAN</div>','g sh');
   o.sm=E(R,'left:60px;right:140px;top:540px;text-align:center;white-space:nowrap',strike('<span style="font:900 110px Mont;color:#ff8a7a">SEMPURNA</span>'),'g sh');
   o.btn=E(R,'left:150px;top:780px;width:700px;height:200px','<div class="card" style="position:absolute;inset:0;border-radius:100px;display:flex;align-items:center;justify-content:center;gap:18px;font:900 56px Mont;white-space:nowrap"><span>🚀</span><span class="gold">MULA SEKARANG</span></div>'+SHN);
-},upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,55.0),{o:f}));st(o.sm,mix(pop(t,56.77),{o:f}));skUpd(o.sm,t,57.43);
+},upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,55.35),{o:f}));st(o.sm,mix(pop(t,56.77),{o:f}));skUpd(o.sm,t,57.43);
   st(o.btn,mix(pop(t,58.29,.4),{o:f,s:1+.03*Math.sin(t*7)}));shine(o.btn,t,58.6);
 }});
 
@@ -194,7 +194,13 @@ function capUpd(t){let g=null;for(const x of CAPG){if(t>=x[0].s-.05&&t<x[x.lengt
 const FL=[];
 const FLASH=$('#flash');
 
-window.render=async function(tn){const t=tn;
+// v2: potong jeda selepas "panjang" (0:54) — babak ditulis dalam masa v1; tukar masa baru -> sumber -> masa v1
+const SEG_N=[[1.3, 7.84], [7.97, 23.86], [23.91, 31.95], [33.27, 40.46], [40.64, 40.88], [40.94, 43.73], [43.73, 44.87], [44.85, 46.13], [47.71, 51.41], [51.62, 54.89], [55.03, 61.29], [63.11, 66.67], [66.65, 67.24], [68.89, 72.2], [72.17, 76.95], [77.22, 85.85], [85.94, 87.15]],OFF_N=[0, 6.406666666666666, 22.163333333333334, 30.07, 37.126666666666665, 37.233333333333334, 39.89, 40.89666666666667, 42.04333333333334, 45.61, 48.74666666666667, 54.873333333333335, 58.300000000000004, 58.75666666666666, 61.93333333333333, 66.58, 75.07666666666665],DUR_N=76.28666666666666;
+const SEG_O=[[1.3, 7.84], [7.97, 23.86], [23.91, 31.95], [33.27, 40.46], [40.64, 40.88], [40.94, 43.73], [43.73, 44.87], [44.85, 46.13], [47.71, 51.41], [51.62, 54.89], [55.03, 61.38], [62.62, 63.06], [63.04, 66.67], [66.65, 67.24], [68.89, 72.2], [72.17, 76.95], [77.22, 85.85], [85.94, 87.15]],OFF_O=[0, 6.406666666666666, 22.163333333333334, 30.07, 37.126666666666665, 37.233333333333334, 39.89, 40.89666666666667, 42.04333333333334, 45.61, 48.74666666666667, 54.96333333333334, 55.27000000000001, 58.76666666666668, 59.223333333333336, 62.400000000000006, 67.04666666666667, 75.54333333333332],DUR_O=76.75333333333333;
+function toSrc(t,S,O){let best=S[0][0];for(let i=0;i<S.length;i++){if(t>=O[i])best=S[i][0]+(t-O[i]);}return best}
+function fromSrc(x,S,O){let b=null;for(let i=0;i<S.length;i++){if(x<S[i][0])return b===null?O[i]:b;if(x<=S[i][1])return O[i]+x-S[i][0];b=O[i]+S[i][1]-S[i][0]}return b}
+function OLD(t){if(t>=DUR_N)return DUR_O+(t-DUR_N);return fromSrc(toSrc(t,SEG_N,OFF_N),SEG_O,OFF_O)}
+window.render=async function(tn){const t=OLD(tn);
   const f=Math.min(window.NF||1e9,Math.max(1,Math.round(tn*FPS)+1));
   const src=`${FR}/${String(f).padStart(5,'0')}.jpg`;
   if(V.getAttribute('src')!==src){V.src=src;await V.decode().catch(()=>{})}

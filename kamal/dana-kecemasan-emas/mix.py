@@ -7,7 +7,7 @@ db=lambda x:10**(x/20)
 # envelope suara utk ducking
 e=np.abs(v).mean(1);k=int(SR*0.05);e=np.convolve(e,np.ones(k)/k,'same');e=e/ (e.max()+1e-9)
 duck=1-0.5*np.clip(e*4,0,1);kk=int(SR*0.25);duck=np.convolve(duck,np.ones(kk)/kk,'same')
-out=v.copy()+m*db(-18)*duck[:,None]
+out=v.copy()+m*db(-22)*duck[:,None]
 # v2: TIADA whoosh/glitch/riser (zoom & transisi senyap — permintaan Adila)
 EV=[('stinger',-8,0.0),('pop',-11,1.0),('fall',-9,1.15),('impact',-6,1.65),('pop',-11,1.7),
 ('heart',-5,6.85),('pop',-12,7.4),('chime',-9,8.1),
@@ -24,11 +24,11 @@ C={}
 if os.environ.get('NOSFX'): EV=[]  # v3: tanpa SFX (permintaan Adila)
 # v4: SFX penting sahaja (permintaan Adila)
 if os.environ.get('KEYSFX'): EV=[('shimmer',-17,2.42),('pop2',-15,2.55),('pop2',-15,2.85),('pop2',-14,4.62),
-  ('pop2',-16,11.1),('pop2',-16,13.6),('pop2',-16,15.8),('sparkle',-14,19.2),('bell',-14,20.75),
-  ('pop2',-15,25.87),('pop2',-15,29.41),('sparkle',-14,32.6),('bell',-15,33.94),('bell',-13,36.04),
-  ('pop2',-15,39.13),('sparkle',-14,39.9),('bell',-14,40.4),('shimmer',-17,44.85),('pop2',-16,46.45),('pop2',-16,47.15),
-  ('sparkle',-13,48.81),('bell',-14,52.96),('pop2',-15,57.43),('bell',-13,58.29),('pop2',-15,61.25),('sparkle',-13,63.83),
-  ('pop2',-17,71.45),('bell',-13,73.55),('bell',-14,75.72)]  # SFX lembut/elegan (nicesfx.py), tiada thump/tong/whoosh
+  ('pop2',-16,11.10),('pop2',-16,13.60),('pop2',-16,15.80),('sparkle',-14,19.20),('bell',-14,20.75),
+  ('pop2',-15,25.87),('pop2',-15,29.41),('sparkle',-14,32.60),('bell',-15,33.94),('bell',-13,36.04),
+  ('pop2',-15,39.13),('sparkle',-14,39.90),('bell',-14,40.40),('shimmer',-17,44.85),('pop2',-16,46.45),('pop2',-16,47.15),
+  ('sparkle',-13,48.81),('bell',-14,52.96),('pop2',-15,56.96),('bell',-13,57.82),('pop2',-15,60.78),('sparkle',-13,63.36),
+  ('pop2',-17,70.98),('bell',-13,73.08),('bell',-14,75.25)]  # SFX lembut/elegan (nicesfx.py), tiada thump/tong/whoosh
 for n,g,t in EV:
   if n not in C: C[n]=sf.read(f'{W}/sfx/{n}.wav')[0]
   x=C[n]*db(g);s=int(t*SR);L=min(len(x),N-s)

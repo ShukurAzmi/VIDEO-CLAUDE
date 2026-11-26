@@ -27,10 +27,10 @@ scene({s:2.4,e:6.25,build(R,o){
   o.c1=E(R,'left:110px;top:460px;width:370px;height:420px',card(`<div style="text-align:center;padding-top:40px;line-height:1.15"><div style="font-size:150px;line-height:1">🛟</div><div style="font:900 44px Mont;color:#fff;margin-top:26px;white-space:nowrap">DANA</div><div style="font:900 44px Mont;color:#fff;white-space:nowrap">KECEMASAN</div></div>`));
   o.c2=E(R,'left:520px;top:460px;width:370px;height:420px',card(`<div style="text-align:center;padding-top:40px;line-height:1.15;position:relative;height:100%"><div style="font-size:150px;line-height:1">🪙</div><div style="font:900 44px Mont;color:#fff;margin-top:26px;white-space:nowrap">SIMPAN</div><div class="gold" style="font:900 52px Mont;white-space:nowrap">EMAS</div>${TW()}</div>`));
   o.vs=E(R,'left:440px;top:610px;width:120px;text-align:center;font:700 italic 80px Play;color:#fff','vs','g sh');
-  o.q=E(R,'left:60px;right:140px;top:940px;text-align:center;white-space:nowrap',pill('ATAU DUA-DUA? 🤔','#5a1414','#fff','#ff6b6b',54),'g');
+  o.q=E(R,'left:60px;right:140px;top:940px;text-align:center;white-space:nowrap',pill('ATAU DUA-DUA? 🤔','#5a1414','#fff','#ff6b6b',48),'g');
   o.b=E(R,'left:60px;right:140px;top:1080px;text-align:center;white-space:nowrap;font:800 42px Mont;color:#ddd','📅 DALAM BULAN YANG SAMA','g sh');
 },upd(t,o){const f=outF(t,o.e);st(o.h,mix(pop(t,2.45),{o:f}));st(o.c1,mix(slide(t,2.55,-160,0,.45),{o:f,r:-2}));st(o.vs,mix(pop(t,2.85),{o:f}));
-  st(o.c2,mix(slide(t,2.85,160,0,.45),{o:f,r:2}));twUpd(o.c2,t,2.9);st(o.q,mix(pop(t,4.62,.35),{o:f,s:1+.03*Math.sin(t*9)}));st(o.b,mix(slide(t,5.3,0,60,.35),{o:f}));
+  st(o.c2,mix(slide(t,2.85,160,0,.45),{o:f,r:2}));twUpd(o.c2,t,2.9);st(o.q,mix(pop(t,4.62,.35),{o:f,s:1+.015*Math.sin(t*9)}));st(o.b,mix(slide(t,5.3,0,60,.35),{o:f}));
 }});
 
 // (muka jelas 6.25–9.4) "Bagi Dila, dana kecemasan memang perlu diutamakan" — zoom
