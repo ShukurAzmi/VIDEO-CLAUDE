@@ -5,3 +5,8 @@ Aliran: `tr.py` (+ `tr4.py` transkrip semula bahagian meragukan) → `START=1.2 
 → `voice.sh` → `MOOD='[[0,1]]' python3 music.py music.wav 76.3` → `nicesfx.py` → `KEYSFX=1 python3 mix.py` → `node render.js <work> pv 0.5 all 0 76.2` → `final.sh`.
 FACE=[465,740]. Muka jelas 0–2.35s; babak nob: 29.95–32.1, 69.05–73.78 (tunjuk rantai). Zoom 1.08x: 4.85, 39.75, 58.6, 69.1.
 B-roll (img/, tak di-commit): rantais.jpg (rantai depan logo PG), pakais.jpg (pakai cincin & gelang), cincin3s.jpg (cincin di tapak tangan).
+
+## v5 (maklum balas: suara lebih jelas, percakapan lebih lancar)
+- Suara: `clean2.py` (noisereduce kedua, profil dari bahagian paling senyap + expander lembut di jeda, maks −18 dB) → `voice2.sh` (EQ jelas: −3 @250, +3 @3k; compressor 2.5:1). Lantai bunyi jeda −57 → −73 dB, suara p90 tak berubah. Muzik −18 dB.
+- Potong lebih ketat: `DET=src_df.wav OFF=35 MINP=0.15 MARG=0.09 START=1.2 END=81.85 python3 cut.py` (kesan jeda pada audio selepas DeepFilterNet) → 72.94s + 1.25s CTA = 74.2s.
+- Babak kekal dalam masa v1 (`segs_v1.json`); `comp.js` tukar masa baru → sumber → v1 (`OLD(t)`); SFX dipeta semula.

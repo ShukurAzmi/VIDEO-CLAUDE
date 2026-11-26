@@ -253,8 +253,14 @@ function capUpd(t){let g=null;for(const x of CAPG){if(t>=x[0].s-.05&&t<x[x.lengt
 const FL=[];
 const FLASH=$('#flash');
 
-window.render=async function(t){
-  const f=Math.min(window.NF||1e9,Math.max(1,Math.round(t*FPS)+1));
+// v5: potongan lebih ketat — babak ditulis dalam masa output v1; tukar masa baru -> sumber -> masa v1
+const SEG_N=[[1.36, 4.51], [4.75, 6.61], [6.7, 11.81], [12.02, 15.92], [16.06, 21.73], [21.78, 23.39], [23.54, 28.83], [29.14, 31.5], [31.47, 37.56], [37.69, 43.11], [43.29, 46.83], [47.34, 51.32], [51.5, 56.49], [56.86, 57.18], [57.24, 57.78], [57.97, 61.64], [61.86, 66.58], [66.74, 67.68], [67.88, 71.15], [71.32, 74.81], [74.97, 76.66], [76.84, 77.49], [77.94, 80.7], [80.86, 81.85]],OFF_N=[0, 3.016666666666666, 4.743333333333333, 9.719999999999999, 13.486666666666666, 19.023333333333333, 20.5, 25.656666666666666, 27.883333333333333, 33.84, 39.12666666666667, 42.53333333333334, 46.38, 51.23666666666667, 51.42333333333334, 51.830000000000005, 55.366666666666674, 59.95333333333334, 60.76000000000002, 63.8966666666667, 67.25333333333337, 68.81000000000003, 69.32666666666668, 71.95333333333335],DUR_N=72.94333333333334;
+const SEG_O=[[1.35, 4.53], [4.72, 6.64], [6.74, 15.94], [16.03, 23.42], [23.51, 28.86], [29.09, 31.41], [31.44, 37.59], [37.66, 43.14], [43.26, 46.85], [47.31, 56.51], [56.83, 57.81], [57.94, 61.67], [61.83, 66.61], [66.71, 67.71], [67.85, 71.18], [71.29, 74.84], [74.94, 76.68], [76.81, 77.52], [77.91, 80.77], [80.81, 81.85]],OFF_O=[0, 3.046666666666667, 4.833333333333334, 13.9, 21.156666666666666, 26.37333333333333, 28.56, 34.57666666666667, 39.92333333333334, 43.38000000000001, 52.44666666666667, 53.293333333333344, 56.890000000000015, 61.53666666666668, 62.40333333333335, 65.60000000000002, 69.01666666666668, 70.62333333333335, 71.2, 73.92666666666666],DUR_O=74.96666666666665;
+function toSrc(t,S,O){let best=S[0][0];for(let i=0;i<S.length;i++){if(t>=O[i])best=S[i][0]+(t-O[i]);}return best}
+function fromSrc(x,S,O){let b=null;for(let i=0;i<S.length;i++){if(x<S[i][0])return b===null?O[i]:b;if(x<=S[i][1])return O[i]+x-S[i][0];b=O[i]+S[i][1]-S[i][0]}return b}
+function OLD(t){if(t>=DUR_N)return DUR_O+(t-DUR_N);return fromSrc(toSrc(t,SEG_N,OFF_N),SEG_O,SEG_O.map((_,i)=>OFF_O[i]))}
+window.render=async function(tn){const t=OLD(tn);
+  const f=Math.min(window.NF||1e9,Math.max(1,Math.round(tn*FPS)+1));
   const src=`${FR}/${String(f).padStart(5,'0')}.jpg`;
   if(V.getAttribute('src')!==src){V.src=src;await V.decode().catch(()=>{})}
   const l=layoutAt(t);VB.style.left=l.x+'px';VB.style.top=l.y+'px';VB.style.width=1080*l.s+'px';VB.style.height=1920*l.s+'px';VB.style.borderRadius=l.r+'px';
@@ -263,7 +269,7 @@ window.render=async function(t){
   Object.assign(VBR.style,{left:l.x-5+'px',top:l.y-5+'px',width:1080*l.s+'px',height:1920*l.s+'px',borderRadius:l.r+5+'px',opacity:l.b});
   bgUpd(t,bl);
   for(const s of SC){const vis=t>=s.s-.001&&t<s.e;s.root.style.display=vis?'block':'none';if(vis){const fo=cl((s.e-t)/.18);s.root.style.opacity=fo;s.upd(t,s)}}
-  capUpd(t);
+  capUpd(tn);
   let fl=0;for(const x of FL){if(t>=x&&t<x+.25)fl=Math.max(fl,.35*(1-(t-x)/.25))}FLASH.style.opacity=fl;
 };
 // semakan safe zone: kembalikan elemen grafik yang terkeluar

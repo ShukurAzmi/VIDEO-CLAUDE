@@ -7,7 +7,7 @@ db=lambda x:10**(x/20)
 # envelope suara utk ducking
 e=np.abs(v).mean(1);k=int(SR*0.05);e=np.convolve(e,np.ones(k)/k,'same');e=e/ (e.max()+1e-9)
 duck=1-0.5*np.clip(e*4,0,1);kk=int(SR*0.25);duck=np.convolve(duck,np.ones(kk)/kk,'same')
-out=v.copy()+m*db(-15)*duck[:,None]
+out=v.copy()+m*db(-18)*duck[:,None]
 # v2: TIADA whoosh/glitch/riser (zoom & transisi senyap — permintaan Adila)
 EV=[('stinger',-8,0.0),('pop',-11,1.0),('fall',-9,1.15),('impact',-6,1.65),('pop',-11,1.7),
 ('heart',-5,6.85),('pop',-12,7.4),('chime',-9,8.1),
@@ -23,11 +23,11 @@ EV=[('stinger',-8,0.0),('pop',-11,1.0),('fall',-9,1.15),('impact',-6,1.65),('pop
 C={}
 if os.environ.get('NOSFX'): EV=[]  # v3: tanpa SFX (permintaan Adila)
 # v4: SFX penting sahaja (permintaan Adila)
-if os.environ.get('KEYSFX'): EV=[('shimmer',-17,2.35),('pop2',-15,2.4),('pop2',-15,2.7),('pop2',-14,4.15),
-  ('bell',-13,8.81),('sparkle',-15,10.9),('sparkle',-14,17.49),('bell',-14,26.44),('sparkle',-13,27.6),('bell',-13,29.36),
-  ('pop2',-16,35.52),('pop2',-16,38.4),('bell',-14,45.21),('sparkle',-13,48.65),('pop2',-15,50.47),('sparkle',-13,53.3),
-  ('pop2',-16,54.09),('pop2',-16,55.41),('bell',-15,56.95),('pop2',-16,61.95),('pop2',-17,62.77),('pop2',-17,63.53),('pop2',-17,64.23),
-  ('bell',-13,66.83),('bell',-13,74.26)]  # SFX lembut/elegan (nicesfx.py), tiada thump/tong/whoosh
+if os.environ.get('KEYSFX'): EV=[('shimmer',-17,2.34),('pop2',-15,2.39),('pop2',-15,2.69),('pop2',-14,4.09),
+  ('bell',-13,8.76),('sparkle',-15,10.51),('sparkle',-14,17.05),('bell',-14,25.67),('sparkle',-13,26.83),('bell',-13,28.65),
+  ('pop2',-16,34.75),('pop2',-16,37.63),('bell',-14,44.33),('sparkle',-13,47.46),('pop2',-15,49.28),('sparkle',-13,51.96),
+  ('pop2',-16,52.6),('pop2',-16,53.92),('bell',-15,55.4),('pop2',-16,60.34),('pop2',-17,61.1),('pop2',-17,61.86),('pop2',-17,62.56),
+  ('bell',-13,65.1),('bell',-13,72.24)]  # SFX lembut/elegan (nicesfx.py), tiada thump/tong/whoosh
 for n,g,t in EV:
   if n not in C: C[n]=sf.read(f'{W}/sfx/{n}.wav')[0]
   x=C[n]*db(g);s=int(t*SR);L=min(len(x),N-s)

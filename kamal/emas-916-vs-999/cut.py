@@ -1,9 +1,9 @@
 # Potong jeda: jeda > 0.26s dipendekkan; sambungan crossfade 4 frame (0.1333s)
 import soundfile as sf,numpy as np,json,sys,os,subprocess
 W=sys.argv[1]; os.chdir(W)
-a,sr=sf.read('a16.wav');h=160
+a,sr=sf.read(os.environ.get('DET','a16.wav'));h=sr//100  # v5: DET=src_df.wav (kesan jeda pada audio bersih)
 db=20*np.log10(np.array([np.sqrt(np.mean(a[i:i+h]**2)+1e-12) for i in range(0,len(a)-h,h)]))
-q=db<np.percentile(db,95)-32
+q=db<np.percentile(db,95)-float(os.environ.get('OFF',32))
 P=[];i=0
 while i<len(q):
   if q[i]:
@@ -15,12 +15,12 @@ M=[]
 for p in P:  # gabung jeda yang dipisah blip < 30ms
   if M and p[0]-M[-1][1]<0.03: M[-1][1]=p[1]
   else: M.append(p)
-M=[p for p in M if p[1]-p[0]>0.26]
+M=[p for p in M if p[1]-p[0]>float(os.environ.get('MINP',0.26))]
 # buang ulangan/gagap (env CUTS='[[s,e],...]' masa sumber; dianggap jeda)
 for c in json.loads(os.environ.get('CUTS','[]')):
   M=[p for p in M if p[1]<c[0] or p[0]>c[1]]+[c]
 M.sort()
-D=4/30; m=0.12
+D=4/30; m=float(os.environ.get('MARG',0.12))
 START=float(os.environ.get("START",0.8)); END=float(os.environ.get("END",81.75))
 segs=[];cur=START
 for s,e in M:
