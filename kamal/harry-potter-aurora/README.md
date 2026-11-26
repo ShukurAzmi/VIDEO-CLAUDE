@@ -5,3 +5,4 @@ Potong: `DET=src_df.wav OFF=35 MINP=0.15 MARG=0.09 START=3.2 END=77.6 CUTS='[[11
 Transkrip: Whisper large-v3 terlepas 0–30s (halusinasi "Terima kasih") → `tr2.py` tetingkap 7s dengan initial_prompt; `mapw2.py` (aircon market→E-COMMERCE, PJ→PG).
 Suara: voice.sh (DeepFilterNet3 + denoise.py) → clean2.py → voice2.sh. Muzik MOOD=[[0,1]]. SFX lembut (nicesfx) KEYSFX.
 B-roll: img/p1s.jpg, img/p2s.jpg (gambar Adila di PG Jewel, tak di-commit). FACE=[600,600]; zoom 0.9 & 48.95.
+Final: beauty2.py (muka bergerak, kesan setiap 10 frame) → final2.sh → FINAL_harry_potter_aurora_1080x1920.mp4 (61.5s, -14 LUFS). Thumbnail dipilih: B.
