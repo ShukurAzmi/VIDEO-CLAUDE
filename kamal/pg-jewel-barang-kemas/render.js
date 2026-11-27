@@ -3,7 +3,7 @@
 const {chromium}=require('playwright'),fs=require('fs'),path=require('path');
 const [W,OUT,SC,MODE,A,B]=process.argv.slice(2);const scale=+SC;
 const words=fs.readFileSync(path.join(W,'words_out.json'),'utf8');
-const FR=process.env.FINAL?'bfB':'bf';const NF=fs.readdirSync(path.join(W,FR)).length;
+const FR=process.env.FINAL?'bfB':(process.env.BF||'bf');const NF=fs.readdirSync(path.join(W,FR)).length;
 (async()=>{fs.mkdirSync(OUT,{recursive:true});const br=await chromium.launch();
  async function mk(){const p=await br.newPage({viewport:{width:1080,height:1920},deviceScaleFactor:scale});
   await p.addInitScript(`window.WORDS=${words};window.NF=${NF};`);

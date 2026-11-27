@@ -11,3 +11,12 @@ finger text, swap, skin tag, marker, green screen, CTA glass).
 - Green screen: `gs.py` (mediapipe selfie multiclass, `seg.tflite`) ganti latar dengan rakaman kedai IMG_5729; jalankan pada `bf` (preview) dan `bfF` (final).
 - Frame break: `segimg.py` potong Adila daripada foto IMG_5669.
 - B-roll iPhone (HLG, -90°) → tonemap `zscale…tonemap=mobius`, `brf/<klip>/%05d.jpg` 720×1280 bergrade.
+
+## v2 (maklum balas Adila, 27 Nov 2026)
+- Grade kembali ke grade Kamal (`grade.txt`).
+- Jeda lebih santai: `MINP=0.45 MARG=0.2` (74.4s).
+- Effect dikurangkan kepada 17 babak; 4 babak **green screen** (`gs.py` GSW: IMG_5630, IMG_5629×2, IMG_5729).
+- Gold bar & dinar guna foto sebenar; babak "simpanan jangka panjang" guna logo Public Gold (teks orbit dibuang).
+- Marker bulatan merah + "CANTIK JE?" dibuang.
+- Zon selamat lebih ketat: x 90–900, y 320–1420 (safecheck + kapsyen).
+- Babak v2 = `sv2_head.js + sv2_body.js` → `scenes.js`; v1 disimpan dalam `scenes_v1.js`.
