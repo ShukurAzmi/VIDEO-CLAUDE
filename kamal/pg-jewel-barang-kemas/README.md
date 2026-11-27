@@ -22,4 +22,4 @@ finger text, swap, skin tag, marker, green screen, CTA glass).
 - Babak v2 = `sv2_head.js + sv2_body.js` → `scenes.js`; v1 disimpan dalam `scenes_v1.js`.
 
 ## Thumbnail (dipilih: B)
-`thumb_b2.html` — foto IMG_5644 digrade (`eq=brightness=0.05:contrast=1.08:saturation=1.18:gamma=1.06` + colorbalance sejuk sikit + curves + unsharp) → `beauty.py run` (muka glowing) → `segimg.py` (potong Adila); latar = foto sama blur 9px. Tulisan hook di bawah dagu (y 960–1371), dalam zon selamat.
+`thumb_b2.html` — foto IMG_5644 digrade (`eq=brightness=0.015:contrast=1.06:saturation=1.12` + colorbalance sejuk sikit + curves (highlight dikawal 1→0.95) + unsharp — v1 terlalu cerah) → `beauty.py run` (muka glowing) → `segimg.py` (potong Adila); latar = foto sama blur 9px. Tulisan hook di bawah dagu (y 960–1371), dalam zon selamat.
