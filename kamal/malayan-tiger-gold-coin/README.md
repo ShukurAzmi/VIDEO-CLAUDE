@@ -20,3 +20,8 @@ Perintah potong: `CUTS='[[32.05,35.25]]' START=3.3 END=41.8 NOCUT_AFTER=39.1 MIN
 `scenes.js = hd2.js + bd_helpers.js + bd2.js`; `comp.js = head.js + segs.js + scenes.js + tail.js`.
 Foto syiling dipotong bulat dari gambar Adila (IMG_5678 harimau, IMG_5677 Public Gold, IMG_5679 kad ½ oz) → `img/c_*.png`.
 Green screen perlu `libegl1` (apt) untuk mediapipe.
+
+## Thumbnail (Adley)
+Foto IMG_5682 (Adila pegang kad ½ oz + syiling 1 oz, logo PG Jewel di latar). `thumb.html` = fail kerja `make_thumb.py`:
+`--pill "EDISI TERHAD! 🐯" --l1 "MALAYAN TIGER" --l2 "GOLD COIN" --l3 "2026" --sub "✨ <g>½ OZ</g> &amp; <g>1 OZ</g> · 999.9 ✨"` — tulisan y 988–1389 (zon selamat).
+Nota: emoji dalam baris emas (l1/l3) jadi gumpalan emas (background-clip text) — letak emoji dalam pil/sub sahaja.
