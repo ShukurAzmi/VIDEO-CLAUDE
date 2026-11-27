@@ -25,3 +25,8 @@ Green screen perlu `libegl1` (apt) untuk mediapipe.
 Foto IMG_5682 (Adila pegang kad ½ oz + syiling 1 oz, logo PG Jewel di latar). `thumb.html` = fail kerja `make_thumb.py`:
 `--pill "EDISI TERHAD! 🐯" --l1 "MALAYAN TIGER" --l2 "GOLD COIN" --l3 "2026" --sub "✨ <g>½ OZ</g> &amp; <g>1 OZ</g> · 999.9 ✨"` — tulisan y 988–1389 (zon selamat).
 Nota: emoji dalam baris emas (l1/l3) jadi gumpalan emas (background-clip text) — letak emoji dalam pil/sub sahaja.
+
+### Thumbnail B (gambar IMG_5683 — dipilih Adila untuk thumbnail)
+Muka kabur (portrait mode), syiling tajam → susunan khas: syiling jadi hero (pusat ≈ 640,800), tulisan hook DI BAWAH syiling (y 985–1320),
+tiada beauty.py/potong orang (muka memang kabur), cahaya emas lembut belakang syiling + 3 kilauan. `thumb_b.html` + `node thumb_shot.js <html> <out.jpg> [guide]`.
+Foto = IMG_5683 digrade Adley, lebar 1546px, left −287, top −416.
