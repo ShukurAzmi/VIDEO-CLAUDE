@@ -20,3 +20,6 @@ finger text, swap, skin tag, marker, green screen, CTA glass).
 - Marker bulatan merah + "CANTIK JE?" dibuang.
 - Zon selamat lebih ketat: x 90–900, y 320–1420 (safecheck + kapsyen).
 - Babak v2 = `sv2_head.js + sv2_body.js` → `scenes.js`; v1 disimpan dalam `scenes_v1.js`.
+
+## Thumbnail (dipilih: B)
+`thumb_b2.html` — foto IMG_5644 digrade (`eq=brightness=0.05:contrast=1.08:saturation=1.18:gamma=1.06` + colorbalance sejuk sikit + curves + unsharp) → `beauty.py run` (muka glowing) → `segimg.py` (potong Adila); latar = foto sama blur 9px. Tulisan hook di bawah dagu (y 960–1371), dalam zon selamat.
