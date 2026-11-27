@@ -16,3 +16,6 @@ Lantai bunyi: suara p90 vs lantai p10 = 37 dB (asal) → 50 dB.
 ## v3 (maklum balas: cakap terlalu laju — mahu santai)
 - Tempo 1.07x dibuang (kelajuan asal). Potongan lebih longgar: `DET=src_df.wav OFF=34 MINP=0.25 MARG=0.13 START=0.0 END=82.45 python3 cut.py` → jeda >0.25s dipendekkan ke ~0.13s, jeda pendek semula jadi kekal. 77.35s + 1.2s CTA = 78.55 s.
 - Suara (clean3) & music2 tanpa dengung kekal. `comp.js` KSP=1.0; SFX dipeta dari masa v1.
+
+## Thumbnail TikTok (1080×1920)
+`thumbP.html` + `node thumbP.js` → THUMB_A (frame @21s base_raw, senyum) / THUMB_B (frame @1.2s). Latar = frame video + grade; teks "MACAM MANA NAK TAHU / EMAS / BUKAN PALSU? / 3 SOALAN WAJIB TANYA / SEBELUM BELI EMAS" dalam zon grid 3:4 tengah, muka tidak ditutup; foto jongkong + 🔍 di sisi kanan.
