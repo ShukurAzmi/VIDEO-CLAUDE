@@ -30,3 +30,6 @@ Nota: emoji dalam baris emas (l1/l3) jadi gumpalan emas (background-clip text) �
 Muka kabur (portrait mode), syiling tajam → susunan khas: syiling jadi hero (pusat ≈ 640,800), tulisan hook DI BAWAH syiling (y 985–1320),
 tiada beauty.py/potong orang (muka memang kabur), cahaya emas lembut belakang syiling + 3 kilauan. `thumb_b.html` + `node thumb_shot.js <html> <out.jpg> [guide]`.
 Foto = IMG_5683 digrade Adley, lebar 1546px, left −287, top −416.
+
+## Final
+`final.sh <work>`: bfF (grade) → beauty.py → gs.py (green screen) → render 1080 → crf 16 + AAC 256k → FINAL_kamal_malayan_tiger_1080x1920.mp4 (32.9s, ~10 min).
